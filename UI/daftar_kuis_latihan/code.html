@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Daftar Kuis Latihan - Lab-MS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200 antialiased overflow-x-hidden">
+<!-- iOS Status Bar Spacer -->
+<div class="h-11 w-full bg-white/80 dark:bg-background-dark/80 sticky top-0 z-50 ios-blur"></div>
+<!-- Header Navigation -->
+<nav class="sticky top-11 z-50 bg-white/80 dark:bg-background-dark/80 ios-blur border-b border-primary/10 px-4 py-3 flex items-center justify-between">
+<button class="p-2 -ml-2 text-primary">
+<span class="material-icons text-[28px]">chevron_left</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Daftar Kuis</h1>
+<button class="p-2 -mr-2 text-primary">
+<span class="material-icons text-[24px]">notifications_none</span>
+</button>
+</nav>
+<main class="pb-24">
+<!-- Search & Filter Section -->
+<div class="px-4 py-4 space-y-4">
+<div class="relative group">
+<span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-primary/50 group-focus-within:text-primary">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-800 border-none rounded-xl shadow-sm focus:ring-2 focus:ring-primary/30 transition-all text-sm" placeholder="Cari modul atau kuis..." type="text"/>
+</div>
+<!-- iOS Style Segmented Control -->
+<div class="flex p-1 bg-primary/10 dark:bg-slate-800 rounded-xl">
+<button class="flex-1 py-2 text-sm font-semibold rounded-lg bg-white dark:bg-primary shadow-sm text-primary dark:text-white transition-all">
+                    Tersedia
+                </button>
+<button class="flex-1 py-2 text-sm font-semibold rounded-lg text-slate-500 dark:text-slate-400 hover:text-primary transition-all">
+                    Riwayat
+                </button>
+</div>
+</div>
+<!-- Filter Chips (Horizontal Scroll) -->
+<div class="flex overflow-x-auto hide-scrollbar px-4 gap-2 mb-6">
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-primary text-white text-xs font-bold uppercase tracking-wider">Semua</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-primary/10 text-xs font-bold uppercase tracking-wider">Hematologi</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-primary/10 text-xs font-bold uppercase tracking-wider">Kimia Klinik</button>
+<button class="whitespace-nowrap px-4 py-2 rounded-full bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-primary/10 text-xs font-bold uppercase tracking-wider">Mikrobiologi</button>
+</div>
+<!-- Quiz List -->
+<div class="px-4 space-y-4">
+<!-- Quiz Card 1: New/Available -->
+<div class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-primary/5 group active:scale-[0.98] transition-transform">
+<div class="flex justify-between items-start mb-4">
+<div class="space-y-1">
+<span class="text-[10px] font-extrabold text-primary uppercase tracking-widest px-2 py-0.5 bg-primary/10 rounded-full">Hematologi Dasar</span>
+<h3 class="text-base font-bold leading-tight pt-1">Analisis Sel Darah Putih (Leukosit)</h3>
+</div>
+<span class="text-[10px] font-bold text-orange-600 bg-orange-100 px-2 py-1 rounded-md">Belum Dikerjakan</span>
+</div>
+<div class="flex items-center gap-4 mb-6">
+<div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+<span class="material-icons text-sm">schedule</span>
+<span class="text-xs font-medium">15 Menit</span>
+</div>
+<div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+<span class="material-icons text-sm">fact_check</span>
+<span class="text-xs font-medium">20 Soal</span>
+</div>
+<div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+<span class="material-icons text-sm">grade</span>
+<span class="text-xs font-medium">Min. 75</span>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 transition-all">
+                    Mulai Kuis
+                    <span class="material-icons text-sm">play_arrow</span>
+</button>
+</div>
+<!-- Quiz Card 2: Completed (History Variant) -->
+<div class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-primary/5 group opacity-80">
+<div class="flex justify-between items-start mb-4">
+<div class="space-y-1">
+<span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest px-2 py-0.5 bg-slate-100 dark:bg-slate-700 rounded-full">Kimia Klinik</span>
+<h3 class="text-base font-bold leading-tight pt-1 text-slate-500">Profil Lipid &amp; Glukosa Darah</h3>
+</div>
+<span class="text-[10px] font-bold text-green-600 bg-green-100 px-2 py-1 rounded-md">Selesai</span>
+</div>
+<div class="flex items-center gap-4 mb-6">
+<div class="flex items-center gap-1.5 text-slate-400">
+<span class="material-icons text-sm">schedule</span>
+<span class="text-xs font-medium">12/15 Menit</span>
+</div>
+<div class="flex items-center gap-1.5 text-slate-400">
+<span class="material-icons text-sm">stars</span>
+<span class="text-xs font-bold text-primary">Skor: 95/100</span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 border border-primary text-primary font-bold py-3 rounded-xl hover:bg-primary/5 transition-all text-sm">
+                        Review Jawaban
+                    </button>
+<button class="w-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center">
+<span class="material-icons">refresh</span>
+</button>
+</div>
+</div>
+<!-- Quiz Card 3: New/Available -->
+<div class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-primary/5 group active:scale-[0.98] transition-transform">
+<div class="flex justify-between items-start mb-4">
+<div class="space-y-1">
+<span class="text-[10px] font-extrabold text-primary uppercase tracking-widest px-2 py-0.5 bg-primary/10 rounded-full">Mikrobiologi</span>
+<h3 class="text-base font-bold leading-tight pt-1">Pewarnaan Gram &amp; Identifikasi Bakteri</h3>
+</div>
+<span class="text-[10px] font-bold text-orange-600 bg-orange-100 px-2 py-1 rounded-md">Belum Dikerjakan</span>
+</div>
+<div class="flex items-center gap-4 mb-6">
+<div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+<span class="material-icons text-sm">schedule</span>
+<span class="text-xs font-medium">30 Menit</span>
+</div>
+<div class="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+<span class="material-icons text-sm">fact_check</span>
+<span class="text-xs font-medium">40 Soal</span>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 transition-all">
+                    Mulai Kuis
+                    <span class="material-icons text-sm">play_arrow</span>
+</button>
+</div>
+<!-- Quiz Card 4: Upcoming (Disabled State) -->
+<div class="bg-slate-50 dark:bg-slate-900 rounded-2xl p-5 border border-dashed border-slate-300 dark:border-slate-700">
+<div class="flex items-center justify-between opacity-50">
+<div class="space-y-1">
+<span class="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest">Imunologi</span>
+<h3 class="text-base font-bold leading-tight pt-1">Uji Serologi Dasar</h3>
+<p class="text-[10px] text-slate-400 italic">Terbuka pada: 25 Okt 2023</p>
+</div>
+<span class="material-icons text-slate-400">lock</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Navigation Tab Bar (iOS Style) -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/90 ios-blur border-t border-primary/10 px-6 pt-3 pb-8 flex justify-between items-center z-50">
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons">dashboard</span>
+<span class="text-[10px] font-semibold">Beranda</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-icons">assignment</span>
+<span class="text-[10px] font-semibold">Kuis</span>
+</button>
+<div class="relative -top-8">
+<button class="w-14 h-14 bg-primary text-white rounded-full shadow-xl shadow-primary/40 flex items-center justify-center">
+<span class="material-icons text-3xl">qr_code_scanner</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons">leaderboard</span>
+<span class="text-[10px] font-semibold">Ranking</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons">person</span>
+<span class="text-[10px] font-semibold">Profil</span>
+</button>
+</div>
+</body></html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Dashboard Admin &amp; Laboran</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200 antialiased">
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 ios-blur border-b border-slate-200 dark:border-slate-800 pt-12 pb-4 px-5">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-primary/10 flex items-center justify-center border border-primary/20">
+<img alt="Profil Admin" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNSU-XdyJ0FfT3K5srmV18ShPt8qdhBhOXgeYxXaS3hB0Jhq4nN3aMgFctvg0u2M3FSD7-eQ5bkLjc8oOLzE3jnBd0wAjsnSRjUcEPT8u_Fk5PIwEzzvwxbQfNZ4JN-wey4QF4w3xj5IJpZJnTXIfVyNVAZ99XI8-qvh6l483-cpMuEDBA67LZLFijhtlVLlQC6UfSYw28_rtCOhiQLXufvw1a30o5_qy5Tjl8UQQH5ZvIObyDN3WUcSwsAYt0D3JMe_yuvHBF69Ql"/>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-wider font-bold text-slate-400">Selamat Datang</p>
+<h1 class="text-lg font-extrabold text-slate-900 dark:text-white leading-tight">Dr. Sarah Smith</h1>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center relative">
+<span class="material-icons-round text-slate-600 dark:text-slate-400">notifications</span>
+<span class="absolute top-2 right-2 w-2.5 h-2.5 bg-red-500 border-2 border-white dark:border-slate-800 rounded-full"></span>
+</button>
+<button class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-icons-round text-slate-600 dark:text-slate-400">search</span>
+</button>
+</div>
+</div>
+</header>
+<main class="px-5 py-6 pb-32">
+<section class="mb-8">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-sm font-bold uppercase tracking-widest text-slate-400">Ringkasan Lab</h2>
+<span class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">Pembaruan Langsung</span>
+</div>
+<div class="flex overflow-x-auto gap-4 hide-scrollbar -mx-5 px-5 pb-2">
+<div class="min-w-[160px] flex-shrink-0 bg-white dark:bg-slate-900 p-4 rounded-xl border border-red-100 dark:border-red-900/30 shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<div class="w-8 h-8 rounded-lg bg-red-50 dark:bg-red-900/20 flex items-center justify-center">
+<span class="material-icons-round text-red-500 text-sm">warning</span>
+</div>
+</div>
+<p class="text-3xl font-extrabold text-slate-900 dark:text-white">12</p>
+<p class="text-xs font-semibold text-slate-500">Stok Kritis</p>
+<div class="mt-2 h-1 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-red-500 w-3/4"></div>
+</div>
+</div>
+<div class="min-w-[160px] flex-shrink-0 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-icons-round text-primary text-sm">swap_horiz</span>
+</div>
+</div>
+<p class="text-3xl font-extrabold text-slate-900 dark:text-white">28</p>
+<p class="text-xs font-semibold text-slate-500">Peminjaman Aktif</p>
+<div class="mt-2 h-1 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/2"></div>
+</div>
+</div>
+<div class="min-w-[160px] flex-shrink-0 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<div class="w-8 h-8 rounded-lg bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center">
+<span class="material-icons-round text-emerald-500 text-sm">science</span>
+</div>
+</div>
+<p class="text-3xl font-extrabold text-slate-900 dark:text-white">04</p>
+<p class="text-xs font-semibold text-slate-500">Sesi Berjalan</p>
+<div class="mt-2 h-1 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-emerald-500 w-1/4"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-8">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-sm font-bold uppercase tracking-widest text-slate-400">Aktivitas Mingguan</h2>
+<div class="flex gap-1">
+<button class="px-2 py-1 text-[10px] bg-slate-200 dark:bg-slate-800 rounded font-bold">M</button>
+<button class="px-2 py-1 text-[10px] text-slate-500 font-bold">B</button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex items-end justify-between h-32 gap-2">
+<div class="w-full bg-primary/10 rounded-t-sm relative group h-[40%]">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-bold text-primary">12</div>
+</div>
+<div class="w-full bg-primary/10 rounded-t-sm relative group h-[65%]"></div>
+<div class="w-full bg-primary rounded-t-sm relative group h-[90%]">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 opacity-100 text-[10px] font-bold text-primary">42</div>
+</div>
+<div class="w-full bg-primary/10 rounded-t-sm relative group h-[55%]"></div>
+<div class="w-full bg-primary/10 rounded-t-sm relative group h-[70%]"></div>
+<div class="w-full bg-primary/10 rounded-t-sm relative group h-[45%]"></div>
+<div class="w-full bg-primary/10 rounded-t-sm relative group h-[30%]"></div>
+</div>
+<div class="flex justify-between mt-3 text-[10px] font-bold text-slate-400 px-1">
+<span>SEN</span><span>SEL</span><span class="text-primary">RAB</span><span>KAM</span><span>JUM</span><span>SAB</span><span>MIN</span>
+</div>
+</div>
+</section>
+<section class="mb-8">
+<h2 class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-4">Aksi Cepat</h2>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex flex-col items-start p-4 bg-primary text-white rounded-xl shadow-lg shadow-primary/20">
+<div class="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center mb-3">
+<span class="material-icons-round">add_shopping_cart</span>
+</div>
+<span class="font-bold text-sm">Stok Ulang Barang</span>
+<span class="text-[10px] text-white/70">Input inventaris</span>
+</button>
+<button class="flex flex-col items-start p-4 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl shadow-sm">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+<span class="material-icons-round text-primary">history_edu</span>
+</div>
+<span class="font-bold text-sm text-slate-900 dark:text-white">Peminjaman Baru</span>
+<span class="text-[10px] text-slate-400">Catat peralatan</span>
+</button>
+</div>
+</section>
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-sm font-bold uppercase tracking-widest text-slate-400">Aktivitas Terakhir</h2>
+<button class="text-xs font-bold text-primary">Lihat Semua</button>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-4 p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800">
+<div class="w-10 h-10 rounded-full bg-red-50 dark:bg-red-900/20 flex items-center justify-center flex-shrink-0">
+<span class="material-icons-round text-red-500 text-xl">inventory_2</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white">Sarung Tangan Lateks (L) Rendah</h4>
+<p class="text-xs text-slate-500">Sisa stok 15 unit. Segera pesan kembali.</p>
+</div>
+<div class="text-[10px] font-bold text-slate-400">12m</div>
+</div>
+<div class="flex items-center gap-4 p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800">
+<div class="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center flex-shrink-0">
+<span class="material-icons-round text-primary text-xl">person</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white">John Doe Meminjam Mikroskop</h4>
+<p class="text-xs text-slate-500">ID Item: #MS-402, Kembali dlm 3 hari.</p>
+</div>
+<div class="text-[10px] font-bold text-slate-400">1j</div>
+</div>
+<div class="flex items-center gap-4 p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800">
+<div class="w-10 h-10 rounded-full bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center flex-shrink-0">
+<span class="material-icons-round text-emerald-500 text-xl">assignment</span>
+</div>
+<div class="flex-1">
+<h4 class="text-sm font-bold text-slate-900 dark:text-white">Praktikum Hematologi</h4>
+<p class="text-xs text-slate-500">Grup B-4 memulai sesi di Lab 2.</p>
+</div>
+<div class="text-[10px] font-bold text-slate-400">2j</div>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 h-20 bg-white/90 dark:bg-background-dark/90 ios-blur border-t border-slate-200 dark:border-slate-800 px-6 pb-4 flex justify-between items-center z-50">
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-icons-round">dashboard</span>
+<span class="text-[10px] font-bold">Beranda</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons-round">inventory</span>
+<span class="text-[10px] font-bold">Inventaris</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons-round">science</span>
+<span class="text-[10px] font-bold">Praktikum</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons-round">bar_chart</span>
+<span class="text-[10px] font-bold">Laporan</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons-round">settings</span>
+<span class="text-[10px] font-bold">Lainnya</span>
+</button>
+</nav>
+<div class="fixed top-0 left-0 right-0 h-1 bg-primary/20 z-[60]">
+<div class="h-full bg-primary w-full animate-pulse"></div>
+</div>
+
+</body></html>

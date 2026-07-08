@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Otomasi Pengingat Responden</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+        .ios-scroller::-webkit-scrollbar {
+            display: none;
+        }
+        .ios-switch:checked + .ios-switch-dot {
+            transform: translateX(100%);
+            background-color: white;
+        }
+        .ios-switch:checked {
+            background-color: #137fec;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+<div class="h-11 w-full bg-white dark:bg-background-dark sticky top-0 z-50"></div>
+<header class="sticky top-11 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 h-14 flex items-center justify-between">
+<button class="text-primary flex items-center">
+<span class="material-icons">chevron_left</span>
+<span class="font-medium">Blast</span>
+</button>
+<h1 class="text-lg font-bold absolute left-1/2 -translate-x-1/2">Otomasi Pengingat</h1>
+<button class="text-primary">
+<span class="material-icons">settings</span>
+</button>
+</header>
+<main class="pb-40">
+<section class="p-4">
+<div class="bg-gradient-to-br from-primary to-blue-600 rounded-2xl p-5 shadow-lg shadow-primary/20 text-white">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined font-bold">bolt</span>
+<h2 class="font-bold text-lg">Smart Reminder</h2>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only ios-switch" type="checkbox"/>
+<div class="w-12 h-6 bg-white/30 rounded-full transition-colors duration-200 ease-in-out ios-switch-bg"></div>
+<div class="absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform duration-200 ease-in-out ios-switch-dot"></div>
+</label>
+</div>
+<p class="text-white/80 text-xs leading-relaxed">Sistem akan secara otomatis mengirimkan pengingat kepada responden yang belum menyelesaikan kuesioner berdasarkan jadwal yang ditentukan.</p>
+</div>
+</section>
+<section class="px-4 space-y-5">
+<div class="space-y-4">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+<span class="material-icons text-primary text-lg">schedule</span>
+                    Konfigurasi Penjadwalan
+                </label>
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 divide-y divide-slate-100 dark:divide-slate-800">
+<div class="p-4">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Frekuensi Pengingat</p>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2.5 rounded-lg border border-primary bg-primary/5 text-primary text-xs font-bold">Tiap 3 Hari</button>
+<button class="py-2.5 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs font-semibold">Tiap 5 Hari</button>
+<button class="py-2.5 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs font-semibold">Tiap Minggu</button>
+</div>
+</div>
+<div class="p-4 grid grid-cols-2 gap-4">
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Jam Pengiriman</p>
+<div class="flex items-center gap-2 bg-slate-50 dark:bg-slate-800/50 p-3 rounded-lg border border-slate-100 dark:border-slate-800">
+<span class="material-icons text-primary text-sm">schedule</span>
+<input class="bg-transparent border-none p-0 text-sm font-bold focus:ring-0 w-full" type="time" value="09:00"/>
+</div>
+</div>
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Deadline Riset</p>
+<div class="flex items-center gap-2 bg-slate-50 dark:bg-slate-800/50 p-3 rounded-lg border border-slate-100 dark:border-slate-800">
+<span class="material-icons text-rose-500 text-sm">event</span>
+<input class="bg-transparent border-none p-0 text-sm font-bold focus:ring-0 w-full" type="date" value="2024-12-31"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+<span class="material-icons text-primary text-lg">list_alt</span>
+                        Jadwal Aktif
+                    </label>
+<span class="text-[10px] font-bold bg-primary/10 text-primary px-2 py-0.5 rounded">3 Grup Terdaftar</span>
+</div>
+<div class="space-y-3">
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center">
+<span class="material-icons text-primary text-xl">school</span>
+</div>
+<div>
+<p class="text-sm font-bold">Mahasiswa S1 - Lab Biotek</p>
+<p class="text-[10px] text-slate-500">124 Responden • Pengiriman Berikutnya: 24 Okt</p>
+</div>
+</div>
+<button class="text-slate-300 hover:text-rose-500">
+<span class="material-icons">more_vert</span>
+</button>
+</div>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between opacity-60">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+<span class="material-icons text-slate-400 text-xl">person</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-400">Dosen Farmasi</p>
+<p class="text-[10px] text-slate-500">32 Responden • <span class="text-amber-500 font-bold">DIJEDA</span></p>
+</div>
+</div>
+<button class="text-slate-300">
+<span class="material-icons">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-2">
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800">
+<p class="text-[10px] font-bold text-slate-400 uppercase">Pengingat Berhasil</p>
+<div class="flex items-baseline gap-1">
+<span class="text-xl font-extrabold text-slate-800 dark:text-white">856</span>
+<span class="text-[10px] font-bold text-emerald-500">↑ 12%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-100 dark:border-slate-800">
+<p class="text-[10px] font-bold text-slate-400 uppercase">Respon Baru</p>
+<div class="flex items-baseline gap-1">
+<span class="text-xl font-extrabold text-slate-800 dark:text-white">42</span>
+<span class="text-[10px] font-bold text-primary">Hari ini</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-6 pt-4 pb-8 z-50">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+<p class="text-[10px] text-slate-500 font-bold uppercase tracking-tight">Otomasi Sedang Berjalan</p>
+</div>
+<p class="text-[10px] text-slate-400 font-medium">Auto-save aktif</p>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 active:scale-[0.98] transition-all text-white font-bold py-4 rounded-xl flex items-center justify-center gap-3 shadow-lg shadow-primary/25">
+<span class="material-icons">save</span>
+            Simpan Konfigurasi Jadwal
+        </button>
+</footer>
+<div class="hidden">
+<img alt="Medical Lab" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGBtD-q_9ACn2ln4Np6EWggXquzJLkNdD6A7meqBlZV6o0pnY50XUXWSNa8_Rj3zj0UkL4lUpzTwRC8OdrC6mYoCvANfw68Pl3NDbQLiKQBHwgzAM4ZLVfcwKgnyHaBPoHIEbhW9bMgrLdp7E8h_31YAPJ9xdhYZPPUCxmIPFZte29U-OXbgCwxHl-tujAOQ4CgevTc0yyLGQJ9K3Fi5UQqZXgE2oPp9zDEhBmu0RRUyJ5jk6mP4_WVt3ccgAeiBhx8PYP7D-3wzIF"/>
+</div>
+
+</body></html>

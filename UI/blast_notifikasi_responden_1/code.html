@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Blast Notifikasi Responden</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+        .ios-scroller::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+<!-- iOS Status Bar Spacer -->
+<div class="h-11 w-full bg-white dark:bg-background-dark sticky top-0 z-50"></div>
+<!-- Header Navigation -->
+<header class="sticky top-11 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 h-14 flex items-center justify-between">
+<button class="text-primary flex items-center">
+<span class="material-icons">chevron_left</span>
+<span class="font-medium">Beranda</span>
+</button>
+<h1 class="text-lg font-bold absolute left-1/2 -translate-x-1/2">Blast Notifikasi</h1>
+<button class="text-primary">
+<span class="material-icons">history</span>
+</button>
+</header>
+<main class="pb-32">
+<!-- Analytics Section -->
+<section class="p-4">
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-sm font-bold uppercase tracking-wider text-slate-400">Statistik Blast Terakhir</h2>
+<span class="text-[10px] bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 px-2 py-0.5 rounded-full font-bold">LIVE</span>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<div class="text-center">
+<p class="text-2xl font-extrabold text-primary">1,284</p>
+<p class="text-[10px] text-slate-500 font-medium">Terkirim</p>
+</div>
+<div class="text-center border-x border-slate-100 dark:border-slate-800">
+<p class="text-2xl font-extrabold text-slate-800 dark:text-white">942</p>
+<p class="text-[10px] text-slate-500 font-medium">Dibaca</p>
+</div>
+<div class="text-center">
+<p class="text-2xl font-extrabold text-amber-500">42%</p>
+<p class="text-[10px] text-slate-500 font-medium">Respon</p>
+</div>
+</div>
+<div class="mt-4 bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 73%"></div>
+</div>
+</div>
+</section>
+<!-- Configuration Section -->
+<section class="px-4 space-y-4">
+<!-- Audience Selection -->
+<div class="space-y-3">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+<span class="material-icons text-primary text-lg">groups</span>
+                    Target Responden
+                </label>
+<div class="flex gap-2 overflow-x-auto ios-scroller pb-1">
+<button class="flex-none px-4 py-2 rounded-full bg-primary text-white text-xs font-semibold shadow-md shadow-primary/20">Semua</button>
+<button class="flex-none px-4 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold">Mahasiswa S1</button>
+<button class="flex-none px-4 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold">Dosen</button>
+<button class="flex-none px-4 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-xs font-semibold">Laboran</button>
+</div>
+<select class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg text-sm px-4 py-3 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all">
+<option>Pilih Kelas / Grup Spesifik</option>
+<option>Angkatan 2021 - Lab Biotek</option>
+<option>Angkatan 2022 - Lab Kimia</option>
+<option>Semua Dosen Farmasi</option>
+</select>
+</div>
+<!-- Message Editor -->
+<div class="space-y-3">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+<span class="material-icons text-primary text-lg">edit_note</span>
+                    Konten Kuesioner
+                </label>
+<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
+<div class="flex items-center gap-2 p-2 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50">
+<span class="text-[10px] font-bold text-slate-400 px-2">VARIABLES:</span>
+<button class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded-md border border-primary/20">[Nama]</button>
+<button class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded-md border border-primary/20">[Judul_Kuis]</button>
+<button class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-1 rounded-md border border-primary/20">[Deadline]</button>
+</div>
+<input class="w-full border-none focus:ring-0 text-sm font-bold px-4 py-3 bg-transparent" placeholder="Subjek Email / Judul Push" type="text" value="Undangan Responden: [Judul_Kuis]"/>
+<textarea class="w-full border-none focus:ring-0 text-sm px-4 py-3 bg-transparent resize-none" placeholder="Tulis pesan ajakan di sini..." rows="6">Halo [Nama], mohon kesediaannya untuk mengisi kuesioner penelitian S3 saya yang berjudul [Judul_Kuis]. Partisipasi Anda sangat berarti.</textarea>
+<div class="px-4 py-2 border-t border-slate-100 dark:border-slate-800 flex justify-end">
+<span class="text-[10px] text-slate-400 font-medium">124 / 500 Karakter</span>
+</div>
+</div>
+</div>
+<!-- Delivery Channels -->
+<div class="space-y-3 pt-2">
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+<span class="material-icons text-primary text-lg">sensors</span>
+                    Saluran Pengiriman
+                </label>
+<div class="grid grid-cols-2 gap-3">
+<label class="relative flex items-center justify-between p-4 bg-white dark:bg-slate-900 border-2 border-primary rounded-xl cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-icons text-primary">notifications_active</span>
+<div>
+<p class="text-xs font-bold">Push App</p>
+<p class="text-[10px] text-slate-500">Real-time</p>
+</div>
+</div>
+<div class="w-10 h-6 bg-primary rounded-full relative">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+<input checked="" class="hidden" type="checkbox"/>
+</label>
+<label class="relative flex items-center justify-between p-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-icons text-slate-400">alternate_email</span>
+<div>
+<p class="text-xs font-bold">Email</p>
+<p class="text-[10px] text-slate-500">Official Lab</p>
+</div>
+</div>
+<div class="w-10 h-6 bg-slate-200 dark:bg-slate-700 rounded-full relative">
+<div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+<input class="hidden" type="checkbox"/>
+</label>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar -->
+<footer class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-6 pt-4 pb-8 z-50">
+<div class="flex items-center justify-between mb-4">
+<div>
+<p class="text-[10px] text-slate-500 font-medium uppercase tracking-tight">Estimasi Penerima</p>
+<p class="text-lg font-extrabold text-slate-800 dark:text-white">452 Responden</p>
+</div>
+<div class="text-right">
+<p class="text-[10px] text-slate-500 font-medium uppercase tracking-tight">Kredit Sisa</p>
+<p class="text-lg font-extrabold text-primary">2,500</p>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 active:scale-[0.98] transition-all text-white font-bold py-4 rounded-xl flex items-center justify-center gap-3 shadow-lg shadow-primary/25">
+<span class="material-icons">send</span>
+            Kirim Notifikasi Blast
+        </button>
+</footer>
+<!-- Image for Context (Hidden but available for visual reference if needed) -->
+<div class="hidden">
+<img alt="Lab Background" data-alt="Microscope in a modern clean medical laboratory environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGBtD-q_9ACn2ln4Np6EWggXquzJLkNdD6A7meqBlZV6o0pnY50XUXWSNa8_Rj3zj0UkL4lUpzTwRC8OdrC6mYoCvANfw68Pl3NDbQLiKQBHwgzAM4ZLVfcwKgnyHaBPoHIEbhW9bMgrLdp7E8h_31YAPJ9xdhYZPPUCxmIPFZte29U-OXbgCwxHl-tujAOQ4CgevTc0yyLGQJ9K3Fi5UQqZXgE2oPp9zDEhBmu0RRUyJ5jk6mP4_WVt3ccgAeiBhx8PYP7D-3wzIF"/>
+</div>
+</body></html>

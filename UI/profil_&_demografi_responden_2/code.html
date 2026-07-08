@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Manajemen Etika &amp; Anonimitas Data</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body { font-family: 'Manrope', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .ios-shadow { box-shadow: 0 2px 12px -2px rgba(0, 0, 0, 0.05); }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .ios-toggle:checked ~ .toggle-bg { background-color: #137fec; }
+        .ios-toggle:checked ~ .toggle-dot { transform: translateX(100%); }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-100 antialiased overflow-x-hidden">
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+<div class="px-4 py-3 flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<button class="p-1 -ml-1 text-primary">
+<span class="material-icons">chevron_left</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Etika &amp; Anonimitas</h1>
+</div>
+<div class="flex space-x-3">
+<div class="flex items-center bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-xs text-primary mr-1">security</span>
+<span class="text-[10px] font-bold text-slate-600 dark:text-slate-300">SPSS PROTECTED</span>
+</div>
+</div>
+</div>
+</header>
+<main class="pb-32">
+<section class="px-4 py-4">
+<div class="bg-white dark:bg-slate-800 p-5 rounded-2xl ios-shadow border border-primary/20 bg-gradient-to-br from-white to-blue-50/30 dark:from-slate-800 dark:to-slate-800/50">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary">fingerprint</span>
+<h3 class="font-bold text-sm tracking-tight">Mode Anonimitas</h3>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only ios-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-200 dark:bg-slate-700 rounded-full transition-colors toggle-bg"></div>
+<div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full shadow-sm transition-transform toggle-dot"></div>
+</label>
+</div>
+<div class="space-y-3">
+<div class="flex items-start space-x-3 bg-blue-50/50 dark:bg-primary/10 p-3 rounded-xl border border-primary/10">
+<span class="material-icons text-primary text-sm mt-0.5">info</span>
+<p class="text-[11px] leading-relaxed text-slate-600 dark:text-slate-300">
+<span class="font-bold text-primary">Protokol Disertasi S3:</span> Identitas (Nama/NIM) akan dienkripsi dalam database. Kode responden (R_001) tetap dipertahankan untuk integritas analisis data.
+                    </p>
+</div>
+<div class="flex items-center justify-between p-2.5 bg-amber-50 dark:bg-amber-900/20 border border-amber-100 dark:border-amber-900/30 rounded-lg">
+<div class="flex items-center space-x-2">
+<span class="material-icons text-amber-500 text-sm">warning</span>
+<span class="text-[10px] font-bold text-amber-700 dark:text-amber-400">DATA IDENTITAS TERENKRIPSI</span>
+</div>
+<button class="text-[10px] font-bold text-amber-700 dark:text-amber-400 underline uppercase tracking-wider">Detail</button>
+</div>
+</div>
+</div>
+</section>
+<section class="px-4 mb-6">
+<div class="bg-slate-800 dark:bg-slate-900 p-4 rounded-xl flex items-center justify-between text-white ios-shadow">
+<div class="flex items-center space-x-3">
+<div class="p-2 bg-blue-500/20 rounded-lg">
+<span class="material-symbols-outlined text-blue-400">save</span>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-wide">Ekspor SPSS (.sav)</h4>
+<div class="flex items-center mt-1">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse mr-2"></span>
+<span class="text-[10px] text-slate-300 font-medium italic">Label: Data Teranonimkan</span>
+</div>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary/90 px-4 py-2 rounded-lg text-xs font-extrabold transition-all active:scale-95">
+                UNDUH
+            </button>
+</div>
+</section>
+<section class="px-4 mb-6">
+<div class="flex items-center justify-between mb-3 px-1">
+<h2 class="text-sm font-bold text-slate-400 uppercase tracking-widest">Dashboard Etika</h2>
+<span class="text-[10px] font-bold text-primary px-2 py-0.5 bg-primary/10 rounded-full">S3 PROTOCOL</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl ios-shadow border border-slate-100 dark:border-slate-700">
+<p class="text-[10px] text-slate-400 font-bold uppercase">Subjek Anonim</p>
+<p class="text-xl font-extrabold text-primary mt-1">128/128</p>
+<div class="mt-2 h-1 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 100%"></div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl ios-shadow border border-slate-100 dark:border-slate-700">
+<p class="text-[10px] text-slate-400 font-bold uppercase">Validasi IRB</p>
+<div class="flex items-center mt-2 text-green-500">
+<span class="material-icons text-sm mr-1">verified_user</span>
+<span class="text-xs font-bold uppercase">APPROVED</span>
+</div>
+</div>
+</div>
+</section>
+<section class="px-4">
+<div class="flex justify-between items-center mb-3 px-1">
+<h2 class="text-sm font-bold text-slate-400 uppercase tracking-widest">Daftar Responden</h2>
+<div class="flex items-center space-x-1 text-primary">
+<span class="material-icons text-[14px]">visibility_off</span>
+<span class="text-[10px] font-bold uppercase">Mode Anonim Aktif</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl ios-shadow border border-slate-100 dark:border-slate-700 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-16 h-16 bg-primary/5 -mr-8 -mt-8 rounded-full"></div>
+<div class="flex items-start justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined">person_off</span>
+</div>
+<div>
+<h4 class="font-bold text-sm tracking-tight text-slate-400 italic">[Identitas Tersembunyi]</h4>
+<p class="text-[11px] text-primary font-extrabold tracking-widest uppercase">KODE: R_001</p>
+</div>
+</div>
+<span class="text-[10px] bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded-full font-bold uppercase">Laki-Laki</span>
+</div>
+<div class="mt-4 grid grid-cols-2 gap-y-2 border-t border-slate-50 dark:border-slate-700 pt-3">
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold">Pendidikan</p>
+<p class="text-xs font-semibold">Sarjana (S1)</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold">Pengalaman</p>
+<p class="text-xs font-semibold">3 Tahun</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold">Usia</p>
+<p class="text-xs font-semibold">24 Tahun</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold">Inisial Enkripsi</p>
+<p class="text-[10px] font-mono bg-slate-100 dark:bg-slate-900 px-1 w-fit rounded">AR_SHA256</p>
+</div>
+</div>
+<div class="flex items-center justify-end mt-4 space-x-4 border-t border-slate-50 dark:border-slate-700 pt-3">
+<button class="flex items-center text-[11px] font-bold text-slate-400">
+<span class="material-icons text-sm mr-1">history</span> Log
+                    </button>
+<button class="flex items-center text-[11px] font-bold text-red-400">
+<span class="material-icons text-sm mr-1">delete_outline</span> Hapus
+                    </button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl ios-shadow border border-slate-100 dark:border-slate-700 relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined">person_off</span>
+</div>
+<div>
+<h4 class="font-bold text-sm tracking-tight text-slate-400 italic">[Identitas Tersembunyi]</h4>
+<p class="text-[11px] text-primary font-extrabold tracking-widest uppercase">KODE: R_002</p>
+</div>
+</div>
+<span class="text-[10px] bg-pink-50 dark:bg-pink-900/30 text-pink-500 dark:text-pink-400 px-2 py-0.5 rounded-full font-bold uppercase">Perempuan</span>
+</div>
+<div class="mt-4 grid grid-cols-2 gap-y-2 border-t border-slate-50 dark:border-slate-700 pt-3">
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold">Pendidikan</p>
+<p class="text-xs font-semibold">Magister (S2)</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold">Pengalaman</p>
+<p class="text-xs font-semibold">5 Tahun</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold">Usia</p>
+<p class="text-xs font-semibold">29 Tahun</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold">Status Etika</p>
+<div class="flex items-center text-green-500 font-bold text-[10px]">
+<span class="material-icons text-xs mr-1">verified</span> Terproteksi
+                        </div>
+</div>
+</div>
+<div class="flex items-center justify-end mt-4 space-x-4 border-t border-slate-50 dark:border-slate-700 pt-3">
+<button class="flex items-center text-[11px] font-bold text-slate-400">
+<span class="material-icons text-sm mr-1">history</span> Log
+                    </button>
+<button class="flex items-center text-[11px] font-bold text-red-400">
+<span class="material-icons text-sm mr-1">delete_outline</span> Hapus
+                    </button>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl ios-shadow border border-slate-100 dark:border-slate-700 relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined">person_off</span>
+</div>
+<div>
+<h4 class="font-bold text-sm tracking-tight text-slate-400 italic">[Identitas Tersembunyi]</h4>
+<p class="text-[11px] text-primary font-extrabold tracking-widest uppercase">KODE: R_003</p>
+</div>
+</div>
+<span class="text-[10px] bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded-full font-bold uppercase">Laki-Laki</span>
+</div>
+<div class="mt-4 grid grid-cols-2 gap-y-2 border-t border-slate-50 dark:border-slate-700 pt-3">
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold">Pendidikan</p>
+<p class="text-xs font-semibold">Diploma (D3)</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold">Pengalaman</p>
+<p class="text-xs font-semibold">10+ Tahun</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold">Usia</p>
+<p class="text-xs font-semibold">38 Tahun</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-400 uppercase font-bold">Inisial Enkripsi</p>
+<p class="text-[10px] font-mono bg-slate-100 dark:bg-slate-900 px-1 w-fit rounded">BH_SHA256</p>
+</div>
+</div>
+<div class="flex items-center justify-end mt-4 space-x-4 border-t border-slate-50 dark:border-slate-700 pt-3">
+<button class="flex items-center text-[11px] font-bold text-slate-400">
+<span class="material-icons text-sm mr-1">history</span> Log
+                    </button>
+<button class="flex items-center text-[11px] font-bold text-red-400">
+<span class="material-icons text-sm mr-1">delete_outline</span> Hapus
+                    </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-white rounded-full shadow-lg shadow-primary/30 flex items-center justify-center active:scale-95 transition-transform z-40">
+<span class="material-icons text-3xl">person_add</span>
+</button>
+<nav class="fixed bottom-0 inset-x-0 bg-white/90 dark:bg-background-dark/90 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 px-6 py-3 pb-8 z-50">
+<div class="flex justify-between items-center">
+<button class="flex flex-col items-center space-y-1 text-slate-400">
+<span class="material-icons">dashboard</span>
+<span class="text-[10px] font-bold">Dashboard</span>
+</button>
+<button class="flex flex-col items-center space-y-1 text-primary">
+<span class="material-symbols-outlined">health_and_safety</span>
+<span class="text-[10px] font-bold">Etika</span>
+</button>
+<button class="flex flex-col items-center space-y-1 text-slate-400">
+<span class="material-icons">biotech</span>
+<span class="text-[10px] font-bold">Analisis</span>
+</button>
+<button class="flex flex-col items-center space-y-1 text-slate-400">
+<span class="material-icons">settings</span>
+<span class="text-[10px] font-bold">Sistem</span>
+</button>
+</div>
+</nav>
+
+</body></html>

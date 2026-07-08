@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Rekapitulasi &amp; Analisis Nilai Mahasiswa</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#137fec",
+                "background-light": "#f6f7f8",
+                "background-dark": "#101922",
+                "medical-green": "#22c55e",
+              },
+              fontFamily: {
+                "display": ["Lexend"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            min-height: max(884px, 100dvh);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .pie-chart {
+            background: conic-gradient(#22c55e 0% 85%, #e2e8f0 85% 100%);
+            border-radius: 50%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen pb-32">
+<div class="h-12 bg-white/80 dark:bg-background-dark/80 ios-blur sticky top-0 z-50"></div>
+<header class="sticky top-12 z-50 bg-white/80 dark:bg-background-dark/80 ios-blur border-b border-primary/10 px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<button class="p-2 -ml-2 text-primary hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-icons-round text-2xl">arrow_back_ios_new</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight text-slate-800 dark:text-white">Rekap &amp; Analisis</h1>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-full">
+<span class="material-icons-round text-2xl">insights</span>
+</button>
+<button class="p-2 text-primary hover:bg-primary/10 rounded-full">
+<span class="material-icons-round text-2xl">more_horiz</span>
+</button>
+</div>
+</header>
+<main class="px-4 py-6 space-y-8">
+<section class="space-y-4">
+<div class="relative">
+<span class="material-icons-round absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white dark:bg-slate-800 border-none rounded-xl shadow-sm ring-1 ring-primary/10 focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Cari nama atau NIM..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto hide-scrollbar -mx-4 px-4">
+<button class="flex-shrink-0 flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-full text-sm font-medium shadow-md shadow-primary/20">
+<span>Semester Ganjil</span>
+<span class="material-icons-round text-sm">expand_more</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-primary/10 rounded-full text-sm font-medium">
+<span>Kelas TK-3A</span>
+<span class="material-icons-round text-sm">expand_more</span>
+</button>
+<button class="flex-shrink-0 flex items-center gap-2 px-4 py-2 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-primary/10 rounded-full text-sm font-medium">
+<span>Hematologi II</span>
+<span class="material-icons-round text-sm">expand_more</span>
+</button>
+</div>
+</section>
+<section class="grid grid-cols-3 gap-3">
+<div class="bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-sm border border-primary/5">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Rata-rata</p>
+<div class="flex items-baseline gap-1">
+<span class="text-xl font-bold text-primary">84.5</span>
+</div>
+<div class="mt-1 flex items-center gap-1">
+<span class="material-icons-round text-[10px] text-medical-green">trending_up</span>
+<span class="text-[9px] text-medical-green font-bold">+2.4%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-sm border border-primary/5 text-center">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Tertinggi</p>
+<span class="text-xl font-bold text-slate-800 dark:text-white">96.0</span>
+<p class="text-[9px] text-slate-400 truncate">Aditya S.</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-sm border border-primary/5 text-right">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Terendah</p>
+<span class="text-xl font-bold text-slate-800 dark:text-white">62.5</span>
+<p class="text-[9px] text-slate-400 truncate">Rendy M.</p>
+</div>
+</section>
+<section class="space-y-4">
+<div class="flex items-center justify-between px-1">
+<h2 class="text-sm font-semibold text-slate-500 uppercase tracking-widest">Analisis Visual</h2>
+<span class="text-[10px] font-medium text-slate-400">Update: 12 Okt 2023</span>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-sm border border-primary/5">
+<h3 class="text-xs font-bold text-slate-700 dark:text-slate-300 mb-6 flex items-center gap-2">
+<span class="material-icons-round text-primary text-sm">bar_chart</span>
+                        Distribusi Nilai (A-E)
+                    </h3>
+<div class="flex items-end justify-between h-32 px-2 gap-3">
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-md relative group">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-primary opacity-0 group-hover:opacity-100">8</div>
+<div class="w-full bg-primary rounded-t-md transition-all" style="height: 60%"></div>
+</div>
+<span class="text-xs font-bold text-slate-400">A</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-md relative group">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-primary opacity-0 group-hover:opacity-100">14</div>
+<div class="w-full bg-primary rounded-t-md transition-all" style="height: 100%"></div>
+</div>
+<span class="text-xs font-bold text-slate-400">B</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-md relative group">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-primary opacity-0 group-hover:opacity-100">7</div>
+<div class="w-full bg-primary rounded-t-md transition-all" style="height: 50%"></div>
+</div>
+<span class="text-xs font-bold text-slate-400">C</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-md relative group">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-primary opacity-0 group-hover:opacity-100">3</div>
+<div class="w-full bg-primary rounded-t-md transition-all" style="height: 20%"></div>
+</div>
+<span class="text-xs font-bold text-slate-400">D</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-md relative group">
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold text-primary opacity-0 group-hover:opacity-100">0</div>
+<div class="w-full bg-slate-300 rounded-t-md transition-all" style="height: 5%"></div>
+</div>
+<span class="text-xs font-bold text-slate-400">E</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-sm border border-primary/5 flex items-center gap-6">
+<div class="relative w-24 h-24 flex-shrink-0">
+<div class="pie-chart w-full h-full"></div>
+<div class="absolute inset-2 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center">
+<span class="text-sm font-bold text-slate-800 dark:text-white">85%</span>
+</div>
+</div>
+<div class="flex-1 space-y-3">
+<h3 class="text-xs font-bold text-slate-700 dark:text-slate-300">Tingkat Kelulusan</h3>
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-medical-green"></div>
+<div class="flex-1 flex justify-between text-[11px]">
+<span class="text-slate-500">Lulus</span>
+<span class="font-bold">28 Mhs</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-slate-200 dark:bg-slate-600"></div>
+<div class="flex-1 flex justify-between text-[11px]">
+<span class="text-slate-500">Mengulang</span>
+<span class="font-bold">4 Mhs</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="space-y-4">
+<div class="flex items-center justify-between px-1">
+<h2 class="text-sm font-semibold text-slate-500 uppercase tracking-widest">Daftar Mahasiswa</h2>
+<button class="text-xs font-medium text-primary flex items-center gap-1">
+                    Urutkan <span class="material-icons-round text-xs">sort</span>
+</button>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-primary/5 space-y-4">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
+                            AS
+                        </div>
+<div>
+<h3 class="font-semibold text-slate-800 dark:text-slate-100">Aditya Saputra</h3>
+<p class="text-xs text-slate-500">NIM: 20210401023</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Nilai Akhir</p>
+<p class="text-xl font-bold text-medical-green">88.5</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-3 border-t border-slate-50 dark:border-slate-700">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 uppercase font-semibold">Praktikum (60%)</span>
+<span class="font-medium text-sm">90.0</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 uppercase font-semibold">Kuis (40%)</span>
+<span class="font-medium text-sm">86.2</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-primary/5 space-y-4">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
+                            BR
+                        </div>
+<div>
+<h3 class="font-semibold text-slate-800 dark:text-slate-100">Bunga Ramadhani</h3>
+<p class="text-xs text-slate-500">NIM: 20210401045</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Nilai Akhir</p>
+<p class="text-xl font-bold text-primary">82.0</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-3 border-t border-slate-50 dark:border-slate-700">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 uppercase font-semibold">Praktikum (60%)</span>
+<span class="font-medium text-sm">80.5</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 uppercase font-semibold">Kuis (40%)</span>
+<span class="font-medium text-sm">84.2</span>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-primary/5 space-y-4">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
+                            DF
+                        </div>
+<div>
+<h3 class="font-semibold text-slate-800 dark:text-slate-100">Dandi Firmansyah</h3>
+<p class="text-xs text-slate-500">NIM: 20210401012</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Nilai Akhir</p>
+<p class="text-xl font-bold text-amber-500">76.8</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 pt-3 border-t border-slate-50 dark:border-slate-700">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 uppercase font-semibold">Praktikum (60%)</span>
+<span class="font-medium text-sm">74.0</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-400 uppercase font-semibold">Kuis (40%)</span>
+<span class="font-medium text-sm">81.0</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<div class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-slate-900/90 ios-blur border-t border-primary/10 px-6 pt-4 pb-8 flex justify-between items-center z-50">
+<div class="flex flex-col">
+<span class="text-xs text-slate-500 font-medium">Laporan Siap</span>
+<span class="text-sm font-bold text-primary">32 Mahasiswa</span>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center justify-center w-12 h-12 rounded-xl bg-medical-green/10 text-medical-green border border-medical-green/20">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+<button class="flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-xl font-semibold shadow-lg shadow-primary/30 active:scale-95 transition-transform">
+<span class="material-icons-round">file_download</span>
+<span>Ekspor</span>
+</button>
+</div>
+</div>
+<div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none opacity-20 dark:opacity-5">
+<div class="absolute top-[-10%] right-[-10%] w-[300px] h-[300px] bg-primary rounded-full blur-[100px]"></div>
+<div class="absolute bottom-[-5%] left-[-5%] w-[250px] h-[250px] bg-medical-green rounded-full blur-[80px]"></div>
+</div>
+
+</body></html>

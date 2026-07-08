@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Dashboard Dosen - MedLab MS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 font-display selection:bg-primary/30">
+<div class="h-11 w-full bg-background-light dark:bg-background-dark sticky top-0 z-50"></div>
+<main class="pb-24 px-4 max-w-md mx-auto">
+<header class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img alt="Profil Dosen" class="w-12 h-12 rounded-full object-cover border-2 border-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNzMbJIO53T0J5zM07ftjBCB_kLPn_YHSV8XnUnvewfxIyjbna8ODzP8n_RFCDlANgGRvZdsj99IaN52uF016CTQbYtFcLcIEWQPIsV84nE9YC0hmTfeLUbW0lITYnYF18qSo-DFU7000JRjS7LdwCbFTMi1-Ey-I0FnttRNdedE0pcqxDPwNUqAdqyKV9M2Mb30DbYW8yOZlJNtZ1XXdfdFc1gT7nAW0wPWydVN6uwyT9cqu5oj_C1Lc-fg3y2aQdh7o_HtjbiDdh"/>
+<div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></div>
+</div>
+<div>
+<h1 class="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Selamat Pagi</h1>
+<p class="text-lg font-bold text-slate-900 dark:text-white leading-tight">Dr. Sarah Jenkins</p>
+</div>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700 relative">
+<span class="material-icons-round text-slate-600 dark:text-slate-300">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full border border-white"></span>
+</button>
+</header>
+<div class="bg-primary rounded-xl p-5 mb-8 text-white shadow-lg shadow-primary/20 relative overflow-hidden">
+<div class="relative z-10 flex items-center justify-between">
+<div>
+<h2 class="text-sm font-medium opacity-90 mb-1">Validasi Tertunda</h2>
+<p class="text-3xl font-extrabold mb-1">12 <span class="text-sm font-normal opacity-80">Laporan</span></p>
+<p class="text-xs bg-white/20 inline-block px-2 py-1 rounded-full">+4 sejak kemarin</p>
+</div>
+<button class="bg-white text-primary px-4 py-2 rounded-lg text-sm font-bold shadow-sm active:scale-95 transition-transform">
+                    Tinjau Sekarang
+                </button>
+</div>
+<div class="absolute -bottom-6 -right-6 w-24 h-24 bg-white/10 rounded-full"></div>
+</div>
+<section class="mb-8">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Jadwal Hari Ini</h3>
+<button class="text-primary text-xs font-semibold">Lihat Kalender</button>
+</div>
+<div class="flex overflow-x-auto gap-4 hide-scrollbar py-1">
+<div class="min-w-[240px] bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-2 mb-3">
+<span class="px-2 py-1 rounded bg-primary/10 text-primary text-[10px] font-bold uppercase">Sesi Lab</span>
+<span class="text-[10px] text-slate-400 font-medium italic">Aktif</span>
+</div>
+<h4 class="font-bold text-slate-800 dark:text-white mb-1">Kimia Klinik</h4>
+<div class="flex items-center text-xs text-slate-500 dark:text-slate-400 gap-3">
+<div class="flex items-center gap-1">
+<span class="material-icons-round text-sm">schedule</span>
+<span>09:00 - 11:30</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-icons-round text-sm">room</span>
+<span>Lab 302</span>
+</div>
+</div>
+</div>
+<div class="min-w-[240px] bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-2 mb-3">
+<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-700 text-slate-500 text-[10px] font-bold uppercase">Seminar</span>
+</div>
+<h4 class="font-bold text-slate-800 dark:text-white mb-1">Hematologi Lanjutan</h4>
+<div class="flex items-center text-xs text-slate-500 dark:text-slate-400 gap-3">
+<div class="flex items-center gap-1">
+<span class="material-icons-round text-sm">schedule</span>
+<span>13:00 - 15:00</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-icons-round text-sm">room</span>
+<span>Ruang 104</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-8">
+<h3 class="text-base font-bold text-slate-900 dark:text-white mb-4">Tautan Cepat</h3>
+<div class="grid grid-cols-3 gap-3">
+<button class="flex flex-col items-center justify-center bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center mb-2">
+<span class="material-icons-round text-primary">upload_file</span>
+</div>
+<span class="text-[11px] font-semibold text-slate-700 dark:text-slate-300">Unggahan</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="w-10 h-10 rounded-full bg-emerald-50 dark:bg-emerald-900/30 flex items-center justify-center mb-2">
+<span class="material-icons-round text-emerald-500">how_to_reg</span>
+</div>
+<span class="text-[11px] font-semibold text-slate-700 dark:text-slate-300">Kehadiran</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="w-10 h-10 rounded-full bg-amber-50 dark:bg-amber-900/30 flex items-center justify-center mb-2">
+<span class="material-icons-round text-amber-500">inventory_2</span>
+</div>
+<span class="text-[11px] font-semibold text-slate-700 dark:text-slate-300">Inventaris</span>
+</button>
+</div>
+</section>
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-base font-bold text-slate-900 dark:text-white">Laporan Terbaru (LKP)</h3>
+<button class="text-primary text-xs font-semibold">Lihat Semua</button>
+</div>
+<div class="space-y-3">
+<div class="bg-white dark:bg-slate-800 p-3 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center overflow-hidden">
+<img alt="Mahasiswa" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-uLxGmh-QfrndcT5qbo6s8fmDBWgCIMT9lX4hCPamOYKv3uGY6alxn2ASfl5I6OBrgiPHr8rt7CzbKTKqkR2710YhJu1uuFiYWfL3GnbZHgC9OWAyv87tLWaAZtb9ZUjEMG1ydZ8dkV_Ch9rz49SL161hA13szxVobSnD0rCbhu8cJ390_PyhIN8-U_ftMOVqgS27Ob85VzJ0D131mCmsYlRahsxeKYvIc698weLFaIuQu--7FzksSyx0IIRf9lP45zRrOQBpVcNU"/>
+</div>
+<div>
+<h4 class="text-sm font-bold text-slate-800 dark:text-white">James Wilson</h4>
+<p class="text-[11px] text-slate-500 dark:text-slate-400">Lipid Profile Analysis • 2j lalu</p>
+</div>
+</div>
+<button class="px-3 py-1.5 bg-primary/10 text-primary text-xs font-bold rounded-lg hover:bg-primary hover:text-white transition-colors">
+                        Verifikasi
+                    </button>
+</div>
+<div class="bg-white dark:bg-slate-800 p-3 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center overflow-hidden">
+<img alt="Mahasiswa" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr_QhG-HJ27MmBb5yr0vLc005qTZcPTMyiwdt1GiBS7UGx-acDNSU3XoFDQxv9jPCZdcigyPP9lQSdz9kWtH1uh1HvNeeWHRcdQNwJu3QlLtEMQZikGJnfmKE8dlyBl3Rf69IrnYtklxyuxbnKechfsZSzUBzYVUsVfNGPcPM1BZPXdGi2TJ_znj5STBiHvesAnmlTVKqNVeUnO4MuKaL_Ag87vSOFVA4TdPcIhHvdeHicqC2AJWWjF63WYPf-FDbz_Q6eg1zAUVI3"/>
+</div>
+<div>
+<h4 class="text-sm font-bold text-slate-800 dark:text-white">Aria Smith</h4>
+<p class="text-[11px] text-slate-500 dark:text-slate-400">Microbiology Culture • 4j lalu</p>
+</div>
+</div>
+<button class="px-3 py-1.5 bg-primary/10 text-primary text-xs font-bold rounded-lg hover:bg-primary hover:text-white transition-colors">
+                        Verifikasi
+                    </button>
+</div>
+<div class="bg-white dark:bg-slate-800 p-3 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center overflow-hidden">
+<img alt="Mahasiswa" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_XDWQ5TgSXsKzqiIrOyKuC2JT6CDj6Io2353j4VHtBytP_iWMwJ8UQmAPNl57LbuUa1JY9AHbAEXr76A7ywL2pZO-gykuAZYiSb1aEy0WyZxmfu9xgavwKUNk8vMorGuqB16wFWH4_6pySI21FzBcgl7xacpqFPNHldpiX7KxAgUwI2Lu3jC60tgFaHJ8kuxuJwJtiKQJRDbzmBQeJktM5PS76gkHenDcFp3H0skmEFl_7jNspfyGs7V1dr6VUwGl5gLkJzQfKvjF"/>
+</div>
+<div>
+<h4 class="text-sm font-bold text-slate-800 dark:text-white">Elena Rodriguez</h4>
+<p class="text-[11px] text-slate-500 dark:text-slate-400">Urine Sedimentation • 5j lalu</p>
+</div>
+</div>
+<button class="px-3 py-1.5 bg-primary/10 text-primary text-xs font-bold rounded-lg hover:bg-primary hover:text-white transition-colors">
+                        Verifikasi
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 pb-8 pt-2 px-6 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-icons-round text-primary">dashboard</span>
+<span class="text-[10px] font-bold text-primary">Beranda</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-icons-round text-slate-400 dark:text-slate-500">assignment</span>
+<span class="text-[10px] font-medium text-slate-400 dark:text-slate-500">Laporan</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center -mt-8 shadow-lg shadow-primary/30 text-white">
+<span class="material-icons-round">add</span>
+</div>
+<span class="text-[10px] font-medium text-slate-400 dark:text-slate-500 opacity-0">Baru</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-icons-round text-slate-400 dark:text-slate-500">calendar_today</span>
+<span class="text-[10px] font-medium text-slate-400 dark:text-slate-500">Jadwal</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-icons-round text-slate-400 dark:text-slate-500">person_outline</span>
+<span class="text-[10px] font-medium text-slate-400 dark:text-slate-500">Profil</span>
+</a>
+</nav>
+<div class="fixed bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-slate-300 dark:bg-slate-700 rounded-full z-[60]"></div>
+
+</body></html>

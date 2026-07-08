@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Ekspor Data Statistik SPSS (.sav)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "ueq-excellent": "#22c55e",
+                        "ueq-good": "#84cc16",
+                        "ueq-above": "#eab308",
+                        "ueq-below": "#f97316",
+                        "ueq-bad": "#ef4444",
+                        "spss": "#8c1d3c",
+                        "excel": "#1d6f42"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            -webkit-tap-highlight-color: transparent;
+            overscroll-behavior-y: contain;
+            min-height: max(884px, 100dvh);
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<div class="h-11 w-full bg-white dark:bg-slate-900 sticky top-0 z-50"></div>
+<header class="sticky top-11 z-40 w-full bg-white/80 dark:bg-slate-900/80 ios-blur border-b border-slate-200 dark:border-slate-800 px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-full active:bg-slate-100 dark:active:bg-slate-800 transition-colors">
+<span class="material-icons text-primary">arrow_back_ios_new</span>
+</button>
+<div>
+<h1 class="text-lg font-bold tracking-tight">Ekspor Data Lanjut</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-semibold">Penelitian S3 - Statistik</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
+<span class="text-[10px] font-bold text-green-600 dark:text-green-400">DATA SIAP EKSPOR</span>
+</div>
+</header>
+<main class="pb-40 p-4 space-y-6">
+<section class="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-end mb-2">
+<h2 class="text-[11px] font-bold uppercase tracking-widest text-slate-400">Status Kelayakan Data</h2>
+<span class="text-xs font-bold text-slate-700 dark:text-slate-200">128 / 100 Responden</span>
+</div>
+<div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+<div class="bg-green-500 h-full rounded-full w-full"></div>
+</div>
+<p class="text-[10px] text-slate-500 mt-2 italic flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">check_circle</span>
+                Jumlah responden minimal untuk validitas statistik telah terpenuhi.
+            </p>
+</section>
+<section class="space-y-3">
+<h2 class="text-[11px] font-bold uppercase tracking-widest text-slate-400 px-1">Opsi Format File</h2>
+<div class="grid grid-cols-1 gap-3">
+<button class="flex items-center gap-4 bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm active:scale-[0.98] transition-all text-left group">
+<div class="w-12 h-12 rounded-xl bg-spss/10 text-spss flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl font-bold">analytics</span>
+</div>
+<div class="flex-1">
+<h3 class="text-sm font-bold">IBM SPSS Statistics (.sav)</h3>
+<p class="text-[10px] text-slate-500 italic">Termasuk variable labels &amp; metadata</p>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary">download</span>
+</button>
+<button class="flex items-center gap-4 bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm active:scale-[0.98] transition-all text-left group">
+<div class="w-12 h-12 rounded-xl bg-excel/10 text-excel flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl font-bold">table_view</span>
+</div>
+<div class="flex-1">
+<h3 class="text-sm font-bold">Microsoft Excel (.xlsx)</h3>
+<p class="text-[10px] text-slate-500 italic">Format tabel mentah untuk cleaning</p>
+</div>
+<span class="material-symbols-outlined text-slate-300 group-hover:text-primary">download</span>
+</button>
+</div>
+</section>
+<section class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="p-4 border-b border-slate-50 dark:border-slate-800 flex justify-between items-center bg-slate-50/50 dark:bg-slate-800/30">
+<h2 class="text-[11px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">Penyusunan Kode Variabel Otomatis</h2>
+<span class="text-[10px] font-bold px-2 py-0.5 bg-primary/10 text-primary rounded-full uppercase">Aktif</span>
+</div>
+<div class="p-0">
+<table class="w-full text-left">
+<thead>
+<tr class="text-[9px] uppercase tracking-tighter text-slate-400 border-b border-slate-50 dark:border-slate-800">
+<th class="px-4 py-2 font-bold">Label Instrumen</th>
+<th class="px-4 py-2 font-bold">Kode SPSS</th>
+<th class="px-4 py-2 font-bold">Tipe</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50 dark:divide-slate-800">
+<tr>
+<td class="px-4 py-2.5">
+<p class="text-[11px] font-medium leading-tight">TAM - Perceived Usefulness Item 1</p>
+</td>
+<td class="px-4 py-2.5">
+<code class="text-[10px] bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded font-mono font-bold text-primary">TAM_PU1</code>
+</td>
+<td class="px-4 py-2.5 text-[10px] text-slate-500 uppercase font-semibold tracking-tighter">Numeric</td>
+</tr>
+<tr>
+<td class="px-4 py-2.5">
+<p class="text-[11px] font-medium leading-tight">TAM - Perceived Usefulness Item 2</p>
+</td>
+<td class="px-4 py-2.5">
+<code class="text-[10px] bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded font-mono font-bold text-primary">TAM_PU2</code>
+</td>
+<td class="px-4 py-2.5 text-[10px] text-slate-500 uppercase font-semibold tracking-tighter">Numeric</td>
+</tr>
+<tr>
+<td class="px-4 py-2.5">
+<p class="text-[11px] font-medium leading-tight">UEQ - Daya Tarik Item 1</p>
+</td>
+<td class="px-4 py-2.5">
+<code class="text-[10px] bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded font-mono font-bold text-primary">UEQ_ATT1</code>
+</td>
+<td class="px-4 py-2.5 text-[10px] text-slate-500 uppercase font-semibold tracking-tighter">Numeric</td>
+</tr>
+<tr>
+<td class="px-4 py-2.5">
+<p class="text-[11px] font-medium leading-tight">UEQ - Kejelasan Item 1</p>
+</td>
+<td class="px-4 py-2.5">
+<code class="text-[10px] bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded font-mono font-bold text-primary">UEQ_PER1</code>
+</td>
+<td class="px-4 py-2.5 text-[10px] text-slate-500 uppercase font-semibold tracking-tighter">Numeric</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-3 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-800 text-center">
+<button class="text-[10px] font-bold text-primary uppercase tracking-wider flex items-center justify-center gap-1 w-full">
+<span class="material-symbols-outlined text-sm">settings_input_component</span>
+                    Konfigurasi Label Kustom
+                </button>
+</div>
+</section>
+<section class="p-4 rounded-2xl bg-primary/5 border border-primary/10">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-primary">info</span>
+<div class="space-y-1">
+<p class="text-[11px] font-bold text-slate-800 dark:text-slate-200 uppercase tracking-tight">Catatan Metodologi</p>
+<p class="text-[10px] leading-relaxed text-slate-600 dark:text-slate-400 italic">
+                        Ekspor SPSS secara otomatis menyertakan Value Labels (1="Sangat Tidak Setuju", dst.) dan Skala Likert 1-5 atau 1-7 sesuai instrumen penelitian yang digunakan untuk memudahkan proses "Data Analysis" langsung di perangkat lunak statistik.
+                    </p>
+</div>
+</div>
+</section>
+</main>
+<div class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-slate-900/90 ios-blur border-t border-slate-200 dark:border-slate-800 p-4 pb-10 z-50">
+<div class="flex gap-3">
+<button class="flex-1 bg-primary text-white font-bold py-4 rounded-2xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined text-xl">file_download</span>
+<span class="text-sm">Unduh Paket Data (.zip)</span>
+</button>
+<button class="w-14 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-2xl flex items-center justify-center active:scale-[0.98]">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+<div class="flex items-center justify-center gap-4 mt-3 opacity-60">
+<div class="flex items-center gap-1">
+<div class="w-1.5 h-1.5 rounded-full bg-spss"></div>
+<span class="text-[9px] font-bold uppercase tracking-widest">SPSS</span>
+</div>
+<div class="flex items-center gap-1">
+<div class="w-1.5 h-1.5 rounded-full bg-excel"></div>
+<span class="text-[9px] font-bold uppercase tracking-widest">EXCEL</span>
+</div>
+<div class="flex items-center gap-1">
+<div class="w-1.5 h-1.5 rounded-full bg-slate-400"></div>
+<span class="text-[9px] font-bold uppercase tracking-widest">CSV</span>
+</div>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Laporan Ringkasan Hasil Penelitian S3</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200 min-h-screen pb-24">
+<!-- Header / Kop Surat Akademis -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 p-6 mb-6">
+<div class="flex items-center justify-center mb-4">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-icons text-4xl">school</span>
+</div>
+</div>
+<div class="text-center">
+<h1 class="text-lg font-bold uppercase tracking-tight text-slate-900 dark:text-white">Universitas Pendidikan Indonesia</h1>
+<p class="text-xs text-slate-500 dark:text-slate-400">Program Studi Pendidikan Teknologi dan Kejuruan</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Sekolah Pascasarjana (Doktoral S3)</p>
+<div class="mt-4 border-t-2 border-slate-900 dark:border-slate-700 w-full"></div>
+<div class="mt-1 border-t border-slate-900 dark:border-slate-700 w-full"></div>
+</div>
+</header>
+<main class="px-4 space-y-6">
+<!-- Judul Laporan -->
+<div class="text-center space-y-1">
+<h2 class="text-xl font-bold text-primary italic uppercase tracking-wider">Laporan Ringkasan Hasil Penelitian</h2>
+<p class="text-sm font-medium">Uji Efektivitas Sistem Manajemen Laboratorium Medis</p>
+<p class="text-[10px] text-slate-400">ID Dokumen: RS-S3-PTK-2024-001</p>
+</div>
+<!-- Profil Responden -->
+<section class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-icons text-primary">groups</span>
+<h3 class="font-bold text-sm uppercase">Profil Responden (N=84)</h3>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-3 bg-primary/5 rounded-lg">
+<p class="text-[10px] text-slate-500 uppercase font-semibold">Mahasiswa Vokasi</p>
+<p class="text-xl font-bold">62</p>
+<p class="text-[10px] text-slate-400 italic">Pendidikan Lab Medis</p>
+</div>
+<div class="p-3 bg-primary/5 rounded-lg">
+<p class="text-[10px] text-slate-500 uppercase font-semibold">Dosen/Instruktur</p>
+<p class="text-xl font-bold">22</p>
+<p class="text-[10px] text-slate-400 italic">Tenaga Ahli Medis</p>
+</div>
+</div>
+</section>
+<!-- TAM Scores -->
+<section class="space-y-3">
+<div class="flex items-center gap-2 px-1">
+<span class="material-icons text-primary text-sm">analytics</span>
+<h3 class="font-bold text-xs uppercase italic tracking-wide">Technology Acceptance Model (TAM)</h3>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border-l-4 border-primary shadow-sm flex justify-between items-center">
+<div>
+<p class="text-xs font-semibold text-slate-500 uppercase">Perceived Usefulness (PU)</p>
+<p class="text-2xl font-bold text-primary">4.62<span class="text-xs text-slate-400 font-normal"> / 5.00</span></p>
+</div>
+<div class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-1 rounded text-[10px] font-bold">Sangat Tinggi</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-4 rounded-xl border-l-4 border-primary/50 shadow-sm flex justify-between items-center">
+<div>
+<p class="text-xs font-semibold text-slate-500 uppercase">Perceived Ease of Use (PEOU)</p>
+<p class="text-2xl font-bold text-primary">4.48<span class="text-xs text-slate-400 font-normal"> / 5.00</span></p>
+</div>
+<div class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-1 rounded text-[10px] font-bold">Sangat Tinggi</div>
+</div>
+</div>
+</section>
+<!-- UEQ Radar Visual (Mockup with CSS) -->
+<section class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-icons text-primary">hub</span>
+<h3 class="font-bold text-sm uppercase">6 Dimensi UEQ (User Experience)</h3>
+</div>
+<div class="relative flex justify-center py-4">
+<div class="w-48 h-48 rounded-full border border-primary/20 flex items-center justify-center">
+<div class="w-32 h-32 rounded-full border border-primary/40 flex items-center justify-center">
+<div class="w-16 h-16 rounded-full border border-primary/60"></div>
+</div>
+<!-- Mock Radar Polygon -->
+<div class="absolute inset-0 flex items-center justify-center">
+<svg class="w-40 h-40 transform -rotate-12" viewbox="0 0 100 100">
+<polygon fill="rgba(19, 127, 236, 0.2)" points="50,5 90,30 95,75 50,95 5,75 10,30" stroke="#137fec" stroke-width="1.5"></polygon>
+</svg>
+</div>
+</div>
+<!-- Labels -->
+<div class="absolute top-0 text-[8px] font-bold bg-white dark:bg-slate-900 px-1 border border-primary/20 rounded">Daya Tarik</div>
+<div class="absolute bottom-0 text-[8px] font-bold bg-white dark:bg-slate-900 px-1 border border-primary/20 rounded">Kebaruan</div>
+<div class="absolute left-0 top-1/2 -translate-y-1/2 text-[8px] font-bold bg-white dark:bg-slate-900 px-1 border border-primary/20 rounded">Kejelasan</div>
+<div class="absolute right-0 top-1/2 -translate-y-1/2 text-[8px] font-bold bg-white dark:bg-slate-900 px-1 border border-primary/20 rounded">Efisiensi</div>
+</div>
+<div class="mt-4 grid grid-cols-3 gap-2">
+<div class="text-center">
+<p class="text-[8px] text-slate-500">Ketepatan</p>
+<p class="text-xs font-bold">1.88 (Excel.)</p>
+</div>
+<div class="text-center">
+<p class="text-[8px] text-slate-500">Stimulasi</p>
+<p class="text-xs font-bold">1.75 (Good)</p>
+</div>
+<div class="text-center">
+<p class="text-[8px] text-slate-500">Kejelasan</p>
+<p class="text-xs font-bold">2.10 (Excel.)</p>
+</div>
+</div>
+</section>
+<!-- Pre-test / Post-test -->
+<section class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-icons text-primary">timeline</span>
+<h3 class="font-bold text-sm uppercase">Hasil Gain-Score (Learning)</h3>
+</div>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-[10px] font-bold mb-1">
+<span>PRE-TEST (Average)</span>
+<span>64.2 / 100</span>
+</div>
+<div class="w-full h-3 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-slate-400 h-full w-[64%]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[10px] font-bold mb-1">
+<span class="text-primary">POST-TEST (Average)</span>
+<span class="text-primary">91.8 / 100</span>
+</div>
+<div class="w-full h-3 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[92%]"></div>
+</div>
+</div>
+<div class="bg-primary/10 p-2 rounded flex items-center justify-center gap-2">
+<p class="text-xs font-bold italic">N-Gain Score: <span class="text-primary">0.77 (Kategori Tinggi)</span></p>
+</div>
+</div>
+</section>
+<!-- Cronbach's Alpha Table -->
+<section class="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-icons text-primary">fact_check</span>
+<h3 class="font-bold text-sm uppercase">Konsistensi Internal</h3>
+</div>
+<table class="w-full text-left text-[10px]">
+<thead class="bg-slate-50 dark:bg-slate-800 text-slate-500">
+<tr>
+<th class="p-2 border-b border-slate-200 dark:border-slate-700">Instrumen Penelitian</th>
+<th class="p-2 border-b border-slate-200 dark:border-slate-700">Alpha</th>
+<th class="p-2 border-b border-slate-200 dark:border-slate-700">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+<tr>
+<td class="p-2 font-medium">Kuesioner TAM</td>
+<td class="p-2">0.892</td>
+<td class="p-2 text-green-600 font-bold">Reliabel</td>
+</tr>
+<tr>
+<td class="p-2 font-medium">Kuesioner UEQ</td>
+<td class="p-2">0.915</td>
+<td class="p-2 text-green-600 font-bold">Reliabel</td>
+</tr>
+<tr>
+<td class="p-2 font-medium">Tes Kognitif</td>
+<td class="p-2">0.847</td>
+<td class="p-2 text-green-600 font-bold">Reliabel</td>
+</tr>
+</tbody>
+</table>
+</section>
+<!-- Automated Conclusion -->
+<section class="bg-slate-900 dark:bg-primary/20 text-white p-5 rounded-xl shadow-lg relative overflow-hidden">
+<div class="absolute top-0 right-0 p-2 opacity-20">
+<span class="material-icons text-6xl">format_quote</span>
+</div>
+<h3 class="font-bold text-sm uppercase mb-2 flex items-center gap-2">
+<span class="material-icons text-xs">auto_awesome</span>
+                Kesimpulan Otomatis
+            </h3>
+<p class="text-xs leading-relaxed font-light italic">
+                "Berdasarkan analisis statistik yang dilakukan, penggunaan aplikasi dalam ekosistem laboratorium medis menunjukkan peningkatan efektivitas yang signifikan terhadap kompetensi mahasiswa vokasi. Nilai kegunaan yang tinggi serta pengalaman pengguna yang memuaskan mengindikasikan aplikasi ini layak dijadikan media instruksional standar."
+            </p>
+</section>
+<!-- Dissertation Metadata -->
+<div class="p-4 text-center">
+<p class="text-[10px] text-slate-500 italic">Disahkan untuk Lampiran Disertasi:</p>
+<p class="text-xs font-bold mt-1 uppercase">Dwi Aris Sandy, S.Tr.Kes., M.T.</p>
+<p class="text-[10px] text-slate-400">NIM. 200845321 - Doktoral PTK</p>
+</div>
+</main>
+<!-- Fixed Action Button -->
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-t border-slate-200 dark:border-slate-800">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-3 shadow-lg shadow-primary/30 transition-all active:scale-95">
+<span class="material-icons">picture_as_pdf</span>
+<span>Unduh Laporan Formal (PDF)</span>
+</button>
+</div>
+</body></html>

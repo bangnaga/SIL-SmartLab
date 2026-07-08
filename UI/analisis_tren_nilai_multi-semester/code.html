@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Analisis Tren Nilai Multi-Semester</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            overscroll-behavior-y: contain;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .chart-container {
+            position: relative;
+            height: 200px;
+            width: 100%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+<!-- Header / Status Bar Area -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 ios-blur border-b border-primary/10">
+<div class="px-4 py-3 flex items-center justify-between">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary/10 text-primary transition-colors">
+<span class="material-icons-round">arrow_back_ios_new</span>
+</button>
+<h1 class="text-lg font-semibold tracking-tight">Tren Nilai Historis</h1>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary/10 text-primary transition-colors">
+<span class="material-icons-round">ios_share</span>
+</button>
+</div>
+</header>
+<main class="max-w-md mx-auto pb-24">
+<!-- Quick Filters -->
+<section class="px-4 py-4 space-y-4">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400 px-1">Filter Mata Kuliah</span>
+<div class="flex gap-2 overflow-x-auto hide-scrollbar py-1">
+<button class="px-4 py-2 bg-primary text-white rounded-full text-sm font-medium whitespace-nowrap shadow-sm shadow-primary/20">Semua MK</button>
+<button class="px-4 py-2 bg-white dark:bg-slate-800 border border-primary/20 text-slate-600 dark:text-slate-300 rounded-full text-sm font-medium whitespace-nowrap">Hematologi</button>
+<button class="px-4 py-2 bg-white dark:bg-slate-800 border border-primary/20 text-slate-600 dark:text-slate-300 rounded-full text-sm font-medium whitespace-nowrap">Mikrobiologi</button>
+<button class="px-4 py-2 bg-white dark:bg-slate-800 border border-primary/20 text-slate-600 dark:text-slate-300 rounded-full text-sm font-medium whitespace-nowrap">Imunoserologi</button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400 px-1">Kategori Kompetensi</span>
+<div class="flex gap-2 overflow-x-auto hide-scrollbar py-1">
+<button class="px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-lg text-sm font-medium whitespace-nowrap">Pra-Analitik</button>
+<button class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 rounded-lg text-sm font-medium whitespace-nowrap">Analitik</button>
+<button class="px-4 py-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 rounded-lg text-sm font-medium whitespace-nowrap">Pasca-Analitik</button>
+</div>
+</div>
+</section>
+<!-- Main Chart Card -->
+<section class="px-4 mb-6">
+<div class="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-sm border border-primary/5">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h2 class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide">Rata-Rata Nilai Kumulatif</h2>
+<p class="text-2xl font-bold text-slate-800 dark:text-white mt-1">84.2 <span class="text-xs font-normal text-green-500 ml-1">▲ 3.4%</span></p>
+</div>
+<div class="bg-primary/5 px-2 py-1 rounded text-[10px] font-bold text-primary border border-primary/10">
+                        2021 - 2024
+                    </div>
+</div>
+<!-- Custom SVG Line Chart Simulation -->
+<div class="chart-container flex items-end justify-between gap-1 pb-6 relative">
+<!-- Vertical Grid Lines -->
+<div class="absolute inset-0 flex justify-between px-2">
+<div class="h-full w-px bg-slate-100 dark:bg-slate-700"></div>
+<div class="h-full w-px bg-slate-100 dark:bg-slate-700"></div>
+<div class="h-full w-px bg-slate-100 dark:bg-slate-700"></div>
+<div class="h-full w-px bg-slate-100 dark:bg-slate-700"></div>
+<div class="h-full w-px bg-slate-100 dark:bg-slate-700"></div>
+<div class="h-full w-px bg-slate-100 dark:bg-slate-700"></div>
+</div>
+<!-- Line Simulation using SVG -->
+<svg class="absolute inset-0 w-full h-full overflow-visible" preserveaspectratio="none">
+<defs>
+<lineargradient id="lineGrad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#137fec" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#137fec" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,140 Q40,130 80,110 T160,80 T240,90 T320,50 T400,60" fill="none" stroke="#137fec" stroke-linecap="round" stroke-width="3"></path>
+<path d="M0,140 Q40,130 80,110 T160,80 T240,90 T320,50 T400,60 V200 H0 Z" fill="url(#lineGrad)"></path>
+<!-- Data Points -->
+<circle cx="0" cy="140" fill="white" r="4" stroke="#137fec" stroke-width="2"></circle>
+<circle cx="80" cy="110" fill="white" r="4" stroke="#137fec" stroke-width="2"></circle>
+<circle cx="160" cy="80" fill="white" r="4" stroke="#137fec" stroke-width="2"></circle>
+<circle cx="240" cy="90" fill="white" r="4" stroke="#137fec" stroke-width="2"></circle>
+<circle cx="320" cy="50" fill="white" r="4" stroke="#137fec" stroke-width="2"></circle>
+<circle cx="400" cy="60" fill="white" r="4" stroke="#137fec" stroke-width="2"></circle>
+</svg>
+<!-- X-Axis Labels -->
+<div class="absolute -bottom-1 w-full flex justify-between text-[9px] font-bold text-slate-400 uppercase tracking-tighter">
+<span>'21 Ganjil</span>
+<span>'22 Genap</span>
+<span>'22 Ganjil</span>
+<span>'23 Genap</span>
+<span>'23 Ganjil</span>
+<span>'24 Genap</span>
+</div>
+</div>
+</div>
+</section>
+<!-- KPI Summary Cards -->
+<section class="px-4 grid grid-cols-2 gap-4 mb-6">
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-8 h-8 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600 dark:text-green-400">
+<span class="material-icons-round text-lg">trending_up</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Growth Rate</span>
+</div>
+<p class="text-lg font-bold text-slate-800 dark:text-white">+5.2%</p>
+<p class="text-[10px] text-slate-500 mt-1">Tahun ke Tahun</p>
+</div>
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-2 mb-2">
+<div class="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-primary">
+<span class="material-icons-round text-lg">star</span>
+</div>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Peak Performer</span>
+</div>
+<p class="text-lg font-bold text-slate-800 dark:text-white">2023 Ganjil</p>
+<p class="text-[10px] text-slate-500 mt-1">Avg Score: 88.5</p>
+</div>
+</section>
+<!-- Insight Analysis -->
+<section class="px-4 mb-6">
+<div class="bg-primary/5 dark:bg-primary/10 p-4 rounded-xl border border-primary/20">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-icons-round text-primary text-sm">auto_awesome</span>
+<h3 class="text-xs font-bold text-primary uppercase">Analisis AI</h3>
+</div>
+<p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed italic">
+                    "Kualitas hasil praktikum menunjukkan tren stabil dengan kenaikan signifikan pada Semester Genap 2023. Disarankan untuk mempertahankan modul pembelajaran kolaboratif yang diimplementasikan pada periode tersebut."
+                </p>
+</div>
+</section>
+<!-- Detailed List -->
+<section class="px-4">
+<div class="flex items-center justify-between mb-3 px-1">
+<h3 class="font-bold text-slate-800 dark:text-white">Rincian Per Semester</h3>
+<button class="text-xs font-semibold text-primary">Lihat Semua</button>
+</div>
+<div class="space-y-3">
+<!-- Semester Row -->
+<div class="bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center font-bold text-xs text-slate-500">24.G</div>
+<div>
+<p class="text-sm font-semibold">Semester Genap 2024</p>
+<p class="text-[10px] text-slate-500 uppercase tracking-tighter">Januari - Juni 2024</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-slate-800 dark:text-white">82.4</p>
+<span class="text-[10px] text-red-500 font-medium">-2.1%</span>
+</div>
+</div>
+<!-- Semester Row -->
+<div class="bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-xs text-primary">23.J</div>
+<div>
+<p class="text-sm font-semibold">Semester Ganjil 2023</p>
+<p class="text-[10px] text-slate-500 uppercase tracking-tighter">Juli - Desember 2023</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-slate-800 dark:text-white">88.5</p>
+<span class="text-[10px] text-green-500 font-medium">+6.4%</span>
+</div>
+</div>
+<!-- Semester Row -->
+<div class="bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center font-bold text-xs text-slate-500">23.G</div>
+<div>
+<p class="text-sm font-semibold">Semester Genap 2023</p>
+<p class="text-[10px] text-slate-500 uppercase tracking-tighter">Januari - Juni 2023</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-slate-800 dark:text-white">82.1</p>
+<span class="text-[10px] text-green-500 font-medium">+1.2%</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (iOS Style) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/90 ios-blur border-t border-slate-200 dark:border-slate-800 pb-safe">
+<div class="max-w-md mx-auto flex justify-around items-center h-16">
+<button class="flex flex-col items-center justify-center w-full text-slate-400">
+<span class="material-icons-round">dashboard</span>
+<span class="text-[10px] mt-1">Beranda</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full text-primary">
+<span class="material-icons-round">insights</span>
+<span class="text-[10px] mt-1 font-medium">Analisis</span>
+</button>
+<div class="relative w-full flex justify-center -mt-8">
+<button class="w-14 h-14 bg-primary text-white rounded-full shadow-lg shadow-primary/40 flex items-center justify-center">
+<span class="material-icons-round text-3xl">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center justify-center w-full text-slate-400">
+<span class="material-icons-round">biotech</span>
+<span class="text-[10px] mt-1">Lab</span>
+</button>
+<button class="flex flex-col items-center justify-center w-full text-slate-400">
+<span class="material-icons-round">person</span>
+<span class="text-[10px] mt-1">Profil</span>
+</button>
+</div>
+</nav>
+<!-- Floating Action for Quick PDF -->
+<button class="fixed right-6 bottom-24 w-12 h-12 bg-white dark:bg-slate-800 text-primary rounded-full shadow-xl border border-primary/10 flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-icons-round">picture_as_pdf</span>
+</button>
+</body></html>

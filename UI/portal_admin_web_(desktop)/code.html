@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portal Admin Web - Medical Laboratory Management System</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#13ec5b",
+            "background-light": "#f6f8f6",
+            "background-dark": "#102216",
+          },
+          fontFamily: {
+            "display": ["Manrope"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Manrope', sans-serif; }
+    .sidebar-item-active {
+      background-color: #13ec5b;
+      color: white;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #13ec5b33;
+      border-radius: 10px;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200 transition-colors duration-300">
+<div class="flex min-h-screen">
+<!-- Sidebar -->
+<aside class="w-64 bg-white dark:bg-background-dark/50 border-r border-slate-200 dark:border-slate-800 flex flex-col fixed h-full z-50">
+<div class="p-6 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-icons-round">biotech</span>
+</div>
+<div>
+<h1 class="font-extrabold text-lg leading-tight">LAB<span class="text-primary">PORTAL</span></h1>
+<p class="text-[10px] uppercase tracking-wider font-semibold text-slate-400">Poltekkes Makassar</p>
+</div>
+</div>
+<nav class="flex-1 px-4 py-4 space-y-1 custom-scrollbar overflow-y-auto">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl sidebar-item-active shadow-lg shadow-primary/20 transition-all" href="#">
+<span class="material-icons-round">dashboard</span>
+<span class="font-semibold text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-icons-round">inventory_2</span>
+<span class="font-semibold text-sm">Master Data</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-icons-round">swap_horiz</span>
+<span class="font-semibold text-sm">Transactions</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-icons-round">calendar_today</span>
+<span class="font-semibold text-sm">Practicum Schedule</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-icons-round">psychology</span>
+<span class="font-semibold text-sm">AI Monitoring</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-icons-round">analytics</span>
+<span class="font-semibold text-sm">Research Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-500 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-all" href="#">
+<span class="material-icons-round">description</span>
+<span class="font-semibold text-sm">Reports</span>
+</a>
+</nav>
+<div class="p-4 mt-auto">
+<div class="bg-primary/5 dark:bg-primary/10 rounded-2xl p-4 border border-primary/20">
+<p class="text-xs font-bold text-primary uppercase mb-1">System Health</p>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+<span class="text-[11px] font-medium text-slate-600 dark:text-slate-400">All modules operational</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 ml-64 p-8">
+<!-- Top Header -->
+<header class="flex items-center justify-between mb-8">
+<div>
+<h2 class="text-2xl font-bold text-slate-800 dark:text-white">Admin Dashboard</h2>
+<p class="text-sm text-slate-500">Welcome back, Laboratory Administrator</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<span class="material-icons-round absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+<input class="pl-10 pr-4 py-2 bg-white dark:bg-slate-800 border-none rounded-xl focus:ring-2 focus:ring-primary w-64 text-sm transition-all shadow-sm" placeholder="Search data, reports..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-800 text-slate-500 hover:text-primary shadow-sm">
+<span class="material-icons-round">notifications</span>
+</button>
+<div class="h-10 w-[1px] bg-slate-200 dark:bg-slate-800 mx-1"></div>
+<div class="flex items-center gap-3 pl-2">
+<div class="text-right">
+<p class="text-xs font-bold">Dr. Ahmad Faisal</p>
+<p class="text-[10px] text-slate-500 uppercase font-semibold">Senior Admin</p>
+</div>
+<img class="w-10 h-10 rounded-xl object-cover border-2 border-primary/20" data-alt="Professional profile picture of male laboratory doctor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKTFatS2MlJnsBfR4PeOdJTZx2J6gPRE0NocNd1Hq_glFiFMFm7lzmSEfWNVgbLKazdP0ZjdjlKnneAurQPVbxuyoB0LbRVIYvdUzKLSfDobDrN0mzXpYLs4OTMWreMrqCdxcV3huWsQkugLVi1hHlMSndFSxT7dTzldJMKAhsYDhQOz7qnincnhZrnBPbeviI_XRdPJBQCtcwLALzxP47wti_7kux9hfWT0-QrlCsnMuIX4c2vNisEnLCjZepJtoJiAv00X0YF6of"/>
+</div>
+</div>
+</div>
+</header>
+<!-- KPI Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<!-- Card 1 -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-red-500/5 rounded-full group-hover:scale-110 transition-transform"></div>
+<div class="flex items-start justify-between mb-4">
+<div class="w-12 h-12 bg-red-100 dark:bg-red-500/20 rounded-xl flex items-center justify-center text-red-500">
+<span class="material-icons-round">warning</span>
+</div>
+<span class="text-xs font-bold text-red-500 flex items-center bg-red-50 px-2 py-1 rounded-full">+12%</span>
+</div>
+<h3 class="text-2xl font-extrabold">24</h3>
+<p class="text-sm font-medium text-slate-500">Total Stok Kritis</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/5 rounded-full group-hover:scale-110 transition-transform"></div>
+<div class="flex items-start justify-between mb-4">
+<div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+<span class="material-icons-round">inventory</span>
+</div>
+<span class="text-xs font-bold text-primary flex items-center bg-primary/5 px-2 py-1 rounded-full">Active</span>
+</div>
+<h3 class="text-2xl font-extrabold">142</h3>
+<p class="text-sm font-medium text-slate-500">Peminjaman Aktif</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-blue-500/5 rounded-full group-hover:scale-110 transition-transform"></div>
+<div class="flex items-start justify-between mb-4">
+<div class="w-12 h-12 bg-blue-100 dark:bg-blue-500/20 rounded-xl flex items-center justify-center text-blue-500">
+<span class="material-icons-round">auto_awesome</span>
+</div>
+<span class="text-xs font-bold text-blue-500 flex items-center bg-blue-50 px-2 py-1 rounded-full">98.5%</span>
+</div>
+<h3 class="text-2xl font-extrabold">High</h3>
+<p class="text-sm font-medium text-slate-500">Akurasi AI Monitoring</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-amber-500/5 rounded-full group-hover:scale-110 transition-transform"></div>
+<div class="flex items-start justify-between mb-4">
+<div class="w-12 h-12 bg-amber-100 dark:bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-500">
+<span class="material-icons-round">group</span>
+</div>
+<span class="text-xs font-bold text-amber-600 flex items-center bg-amber-50 px-2 py-1 rounded-full">30 New</span>
+</div>
+<h3 class="text-2xl font-extrabold">856</h3>
+<p class="text-sm font-medium text-slate-500">Responden Penelitian</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Chart Section -->
+<div class="lg:col-span-2 bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h3 class="font-bold text-lg">Aktivitas Laboratorium</h3>
+<p class="text-xs text-slate-500">Statistik penggunaan harian &amp; mingguan</p>
+</div>
+<div class="flex bg-slate-100 dark:bg-slate-700 p-1 rounded-lg">
+<button class="px-3 py-1 text-xs font-bold bg-white dark:bg-slate-600 rounded shadow-sm">Weekly</button>
+<button class="px-3 py-1 text-xs font-bold text-slate-500">Monthly</button>
+</div>
+</div>
+<!-- Mock Chart Visualization -->
+<div class="h-64 flex items-end gap-2 relative">
+<div class="flex-1 bg-primary/20 rounded-t-lg h-[40%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="flex-1 bg-primary/20 rounded-t-lg h-[60%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="flex-1 bg-primary/20 rounded-t-lg h-[45%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="flex-1 bg-primary rounded-t-lg h-[85%] hover:opacity-90 transition-all cursor-pointer"></div>
+<div class="flex-1 bg-primary/20 rounded-t-lg h-[50%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="flex-1 bg-primary/20 rounded-t-lg h-[75%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="flex-1 bg-primary/20 rounded-t-lg h-[65%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="flex-1 bg-primary/20 rounded-t-lg h-[95%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="flex-1 bg-primary/20 rounded-t-lg h-[40%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="flex-1 bg-primary/20 rounded-t-lg h-[55%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<!-- Baseline -->
+<div class="absolute bottom-0 left-0 w-full h-[1px] bg-slate-100 dark:bg-slate-700"></div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] font-bold text-slate-400 uppercase tracking-widest px-2">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+</div>
+</div>
+<!-- Recent Activity Feed -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
+<h3 class="font-bold text-lg mb-4">Laboratory AI Feed</h3>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="w-1 h-10 bg-primary rounded-full"></div>
+<div>
+<p class="text-sm font-bold">Equipment Health Check</p>
+<p class="text-xs text-slate-500">Centrifuge-04 reported vibration alert. Maintenance recommended.</p>
+<span class="text-[10px] text-slate-400 font-medium">2 mins ago</span>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-1 h-10 bg-blue-400 rounded-full"></div>
+<div>
+<p class="text-sm font-bold">Responden Update</p>
+<p class="text-xs text-slate-500">15 new participants registered for Hematology Research.</p>
+<span class="text-[10px] text-slate-400 font-medium">45 mins ago</span>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-1 h-10 bg-amber-400 rounded-full"></div>
+<div>
+<p class="text-sm font-bold">Stock Warning</p>
+<p class="text-xs text-slate-500">Reagent Pack Type B is below threshold (5 units left).</p>
+<span class="text-[10px] text-slate-400 font-medium">1 hour ago</span>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-2 border-2 border-slate-100 dark:border-slate-700 text-slate-500 rounded-xl text-xs font-bold hover:border-primary/30 hover:text-primary transition-all">View Full Analytics</button>
+</div>
+</div>
+<!-- Table Section -->
+<section class="mt-8 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
+<div class="p-6 flex items-center justify-between border-b border-slate-50 dark:border-slate-700">
+<div>
+<h3 class="font-bold text-lg">Peminjaman Barang Terbaru</h3>
+<p class="text-xs text-slate-500">Real-time status of items being borrowed</p>
+</div>
+<button class="px-4 py-2 bg-primary/10 text-primary text-xs font-bold rounded-xl hover:bg-primary hover:text-white transition-all">Export Report</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-900/50">
+<tr>
+<th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Item Name</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Borrower</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Lab / Room</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Time Out</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-400 uppercase tracking-wider text-center">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50 dark:divide-slate-700/50">
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-900/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center">
+<span class="material-icons-round text-sm text-slate-500">science</span>
+</div>
+<span class="text-sm font-bold">Microscope Nikon E200</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm">Andi Setiawan <span class="text-[10px] bg-slate-100 dark:bg-slate-700 px-1 rounded text-slate-500">S3-MD</span></td>
+<td class="px-6 py-4 text-sm text-slate-500 font-medium">Lab Parasitologi</td>
+<td class="px-6 py-4 text-sm text-slate-500">08:30 AM</td>
+<td class="px-6 py-4">
+<div class="flex justify-center">
+<span class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded-full border border-primary/20 uppercase tracking-tighter">Active</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-900/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center">
+<span class="material-icons-round text-sm text-slate-500">device_thermostat</span>
+</div>
+<span class="text-sm font-bold">Centrifuge XC-2000</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm">Siti Aminah <span class="text-[10px] bg-slate-100 dark:bg-slate-700 px-1 rounded text-slate-500">S1-TLM</span></td>
+<td class="px-6 py-4 text-sm text-slate-500 font-medium">Lab Hematologi</td>
+<td class="px-6 py-4 text-sm text-slate-500">09:15 AM</td>
+<td class="px-6 py-4">
+<div class="flex justify-center">
+<span class="px-3 py-1 bg-amber-100 text-amber-600 text-[10px] font-bold rounded-full border border-amber-200 uppercase tracking-tighter">Due Soon</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-slate-50/50 dark:hover:bg-slate-900/30 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center">
+<span class="material-icons-round text-sm text-slate-500">inventory</span>
+</div>
+<span class="text-sm font-bold">Spectrophotometer</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm">Budi Hartono <span class="text-[10px] bg-slate-100 dark:bg-slate-700 px-1 rounded text-slate-500">D3-KEP</span></td>
+<td class="px-6 py-4 text-sm text-slate-500 font-medium">Lab Kimia Klinik</td>
+<td class="px-6 py-4 text-sm text-slate-500">Yesterday</td>
+<td class="px-6 py-4">
+<div class="flex justify-center">
+<span class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-400 text-[10px] font-bold rounded-full border border-slate-200 dark:border-slate-600 uppercase tracking-tighter">Returned</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 bg-slate-50/50 dark:bg-slate-900/30 flex justify-center">
+<button class="text-xs font-bold text-slate-400 hover:text-primary transition-colors flex items-center gap-2">
+            View All Transactions <span class="material-icons-round text-sm">keyboard_arrow_right</span>
+</button>
+</div>
+</section>
+</main>
+</div>
+<!-- Floating Add Button -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-primary text-white rounded-full shadow-2xl shadow-primary/40 flex items-center justify-center hover:scale-110 active:scale-95 transition-all group z-[100]">
+<span class="material-icons-round text-2xl group-hover:rotate-90 transition-transform">add</span>
+</button>
+</body></html>

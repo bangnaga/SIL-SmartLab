@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kuesioner UEQ - Sistem Lab Medis</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Custom radio styling for the 7-point scale */
+        .ueq-radio:checked {
+            background-color: #137fec;
+            border-color: #137fec;
+            box-shadow: 0 0 0 2px white inset;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col font-display">
+<!-- Sticky Header (iOS Style) -->
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 ios-blur border-b border-primary/10">
+<div class="px-4 h-14 flex items-center justify-between max-w-md mx-auto">
+<button class="text-primary p-2 -ml-2">
+<span class="material-icons">chevron_left</span>
+</button>
+<h1 class="font-semibold text-sm uppercase tracking-wider text-slate-700 dark:text-slate-300">Kuesioner UEQ</h1>
+<div class="w-10"></div> <!-- Placeholder for symmetry -->
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-1 bg-primary/10">
+<div class="h-full bg-primary" style="width: 35%;"></div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-md mx-auto px-4 py-6 pb-32">
+<!-- Introduction Card -->
+<div class="bg-white dark:bg-slate-800 rounded-xl p-5 mb-8 shadow-sm border border-primary/5">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-icons text-primary">info</span>
+<h2 class="font-bold text-lg">Instruksi Penelitian</h2>
+</div>
+<p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                Silakan isi kuesioner ini untuk mengevaluasi <span class="text-primary font-medium">Sistem Manajemen Laboratorium Medis</span>. 
+                Pilihlah satu dari tujuh skala yang paling menggambarkan perasaan Anda terhadap sistem. Tidak ada jawaban benar atau salah.
+            </p>
+</div>
+<!-- UEQ Form Section -->
+<section class="space-y-6">
+<!-- Question Item 1: Attractiveness -->
+<div class="bg-white dark:bg-slate-800 rounded-xl p-5 shadow-sm border border-primary/5">
+<div class="flex justify-between items-center mb-6 px-1">
+<span class="text-xs font-semibold text-slate-400">Dimensi: Daya Tarik</span>
+<span class="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">1 dari 26</span>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex justify-between text-xs font-bold text-slate-500 uppercase tracking-tighter">
+<span class="w-1/3 text-left">Membingungkan</span>
+<span class="w-1/3 text-right">Jelas</span>
+</div>
+<div class="flex justify-between items-center relative px-2">
+<!-- Connecting line -->
+<div class="absolute h-px bg-slate-200 dark:bg-slate-700 w-[85%] left-[7.5%] top-1/2 -translate-y-1/2 z-0"></div>
+<!-- 7 Point Scale -->
+<label class="relative z-10">
+<input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q1" type="radio"/>
+</label>
+<label class="relative z-10">
+<input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q1" type="radio"/>
+</label>
+<label class="relative z-10">
+<input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q1" type="radio"/>
+</label>
+<label class="relative z-10">
+<input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q1" type="radio"/>
+</label>
+<label class="relative z-10">
+<input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q1" type="radio"/>
+</label>
+<label class="relative z-10">
+<input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q1" type="radio"/>
+</label>
+<label class="relative z-10">
+<input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q1" type="radio"/>
+</label>
+</div>
+</div>
+</div>
+<!-- Question Item 2: Efficiency -->
+<div class="bg-white dark:bg-slate-800 rounded-xl p-5 shadow-sm border border-primary/5">
+<div class="flex justify-between items-center mb-6 px-1">
+<span class="text-xs font-semibold text-slate-400">Dimensi: Efisiensi</span>
+<span class="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">2 dari 26</span>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex justify-between text-xs font-bold text-slate-500 uppercase tracking-tighter">
+<span class="w-1/3 text-left">Tidak Efisien</span>
+<span class="w-1/3 text-right">Efisien</span>
+</div>
+<div class="flex justify-between items-center relative px-2">
+<div class="absolute h-px bg-slate-200 dark:bg-slate-700 w-[85%] left-[7.5%] top-1/2 -translate-y-1/2 z-0"></div>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q2" type="radio"/></label>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q2" type="radio"/></label>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q2" type="radio"/></label>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q2" type="radio"/></label>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q2" type="radio"/></label>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q2" type="radio"/></label>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q2" type="radio"/></label>
+</div>
+</div>
+</div>
+<!-- Question Item 3: Dependability -->
+<div class="bg-white dark:bg-slate-800 rounded-xl p-5 shadow-sm border border-primary/5">
+<div class="flex justify-between items-center mb-6 px-1">
+<span class="text-xs font-semibold text-slate-400">Dimensi: Ketepatan</span>
+<span class="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">3 dari 26</span>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex justify-between text-xs font-bold text-slate-500 uppercase tracking-tighter">
+<span class="w-1/3 text-left">Tidak Dapat Diandalkan</span>
+<span class="w-1/3 text-right">Dapat Diandalkan</span>
+</div>
+<div class="flex justify-between items-center relative px-2">
+<div class="absolute h-px bg-slate-200 dark:bg-slate-700 w-[85%] left-[7.5%] top-1/2 -translate-y-1/2 z-0"></div>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q3" type="radio"/></label>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q3" type="radio"/></label>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q3" type="radio"/></label>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q3" type="radio"/></label>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q3" type="radio"/></label>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q3" type="radio"/></label>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q3" type="radio"/></label>
+</div>
+</div>
+</div>
+<!-- Lab Decorative Image (Subtle) -->
+<div class="relative h-40 w-full rounded-2xl overflow-hidden mt-8 opacity-60 grayscale hover:grayscale-0 transition-all">
+<img alt="Laboratory medical equipment background" class="w-full h-full object-cover" data-alt="Interior of a modern clean medical laboratory room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS_Fn9UuJ_otBd76nkjYKttR5bm6MTiz3UtnivKEx8WJdAsxJb_yhQ_Nsf3VlOYnfnUxCA3fr6aTr1UOc0Pcta45i6Ua0nAtXflF2w4bd60pH7CfGSTt99j3WB_MbfQY2_VM_2JE0kVMutwenAvpWQytPxehKx_aUd0-XTFhrFFntFR5WL0KPcIjYXFyQdAoFrLXv5piZT6TkrB8T6-edikHHBlEYdjAskMjVSWqseiT3YPprgsaf9xSczZyDIYqMPJ7YxR6G5GtmQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-light dark:from-background-dark via-transparent to-transparent"></div>
+</div>
+<!-- Question Item 4: Stimulation -->
+<div class="bg-white dark:bg-slate-800 rounded-xl p-5 shadow-sm border border-primary/5">
+<div class="flex justify-between items-center mb-6 px-1">
+<span class="text-xs font-semibold text-slate-400">Dimensi: Stimulasi</span>
+<span class="text-xs font-medium bg-primary/10 text-primary px-2 py-1 rounded-full">4 dari 26</span>
+</div>
+<div class="flex flex-col gap-6">
+<div class="flex justify-between text-xs font-bold text-slate-500 uppercase tracking-tighter">
+<span class="w-1/3 text-left">Membosankan</span>
+<span class="w-1/3 text-right">Menarik</span>
+</div>
+<div class="flex justify-between items-center relative px-2">
+<div class="absolute h-px bg-slate-200 dark:bg-slate-700 w-[85%] left-[7.5%] top-1/2 -translate-y-1/2 z-0"></div>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q4" type="radio"/></label>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q4" type="radio"/></label>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q4" type="radio"/></label>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q4" type="radio"/></label>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q4" type="radio"/></label>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q4" type="radio"/></label>
+<label class="relative z-10"><input class="ueq-radio w-6 h-6 border-2 border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-full appearance-none cursor-pointer transition-all" name="q4" type="radio"/></label>
+</div>
+</div>
+</div>
+<div class="text-center py-4">
+<p class="text-xs text-slate-400 italic">Gulir ke bawah untuk instrumen lainnya (Total 26 butir)</p>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar -->
+<footer class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/90 ios-blur border-t border-primary/10 pb-8 pt-4 px-6 z-50">
+<div class="max-w-md mx-auto flex gap-4">
+<button class="flex-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 py-3.5 rounded-xl font-semibold text-sm transition-all active:scale-95">
+                Simpan Draft
+            </button>
+<button class="flex-[2] bg-primary text-white py-3.5 rounded-xl font-semibold text-sm shadow-lg shadow-primary/30 transition-all active:scale-95 flex items-center justify-center gap-2">
+                Selanjutnya
+                <span class="material-icons text-sm">arrow_forward</span>
+</button>
+</div>
+</footer>
+<!-- iOS Home Indicator Spacing -->
+<div class="h-8 w-full bg-white dark:bg-background-dark fixed bottom-0 z-[60]"></div>
+</body></html>

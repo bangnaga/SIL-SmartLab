@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Dashboard Mahasiswa - LabFlow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 font-display">
+<div class="h-11 w-full bg-background-light dark:bg-background-dark sticky top-0 z-50 flex items-center justify-between px-6">
+<span class="text-sm font-bold">9:41</span>
+<div class="flex items-center space-x-1.5">
+<span class="material-icons-round text-sm">signal_cellular_alt</span>
+<span class="material-icons-round text-sm">wifi</span>
+<span class="material-icons-round text-sm rotate-90">battery_full</span>
+</div>
+</div>
+<main class="pb-24 px-5">
+<header class="py-6 flex justify-between items-center">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Selamat pagi,</p>
+<h1 class="text-2xl font-extrabold tracking-tight">Alex Rivera</h1>
+</div>
+<div class="relative">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white dark:border-slate-800 shadow-sm">
+<img alt="Student Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxh51HeD2zVgRDlBgzGbxR4H0K7_oHTIBQ6Cy0dmQiaTzREkqFCTGAb2Bc--MoCHEOF5SlaqcxaIrl-I8nt4fq_ui4N3QLs7ELXLQazuo7HCVKG_aRAH4B02KL-A39DYm-e_Vws7Jx46UxjHCDpTWZa6oJVjrgG-rLG8B-XOAngyk7TS58-w4SMTwP07DYEiDntDo1HrboAjqe3ev9g4fiOhqqFwGTo90HL_f5Ec3hO3LD2DPy3fI3OQaX5pitYTgAzNIP1oz-6A6k"/>
+</div>
+<div class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 border-2 border-background-light dark:border-background-dark rounded-full"></div>
+</div>
+</header>
+<section class="mb-8">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-lg font-bold">Praktikum Mendatang</h2>
+<button class="text-primary text-sm font-semibold">Lihat Semua</button>
+</div>
+<div class="flex overflow-x-auto space-x-4 hide-scrollbar -mx-5 px-5 pb-2">
+<div class="flex-shrink-0 w-72 bg-primary rounded-xl p-5 text-white shadow-lg shadow-primary/20">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-white/20 p-2 rounded-lg">
+<span class="material-icons-round">biotech</span>
+</div>
+<span class="text-xs font-bold bg-white/20 px-2 py-1 rounded-full uppercase">Hari Ini</span>
+</div>
+<h3 class="text-xl font-bold mb-1">Hematologi 101</h3>
+<p class="text-white/80 text-sm mb-4">Analisis Film Darah &amp; Pewarnaan</p>
+<div class="flex items-center space-x-4 text-xs font-medium">
+<div class="flex items-center">
+<span class="material-icons-round text-xs mr-1">schedule</span>
+                            14:00 - 16:30
+                        </div>
+<div class="flex items-center">
+<span class="material-icons-round text-xs mr-1">location_on</span>
+                            Lab B-04
+                        </div>
+</div>
+</div>
+<div class="flex-shrink-0 w-72 bg-white dark:bg-slate-800 rounded-xl p-5 border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="bg-primary/10 dark:bg-primary/20 p-2 rounded-lg">
+<span class="material-icons-round text-primary">science</span>
+</div>
+<span class="text-xs font-bold text-slate-400 uppercase">Besok</span>
+</div>
+<h3 class="text-xl font-bold mb-1 text-slate-800 dark:text-white">Mikrobiologi</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-4">Teknik Kultur Bakteri</p>
+<div class="flex items-center space-x-4 text-xs font-medium text-slate-400">
+<div class="flex items-center">
+<span class="material-icons-round text-xs mr-1">schedule</span>
+                            09:00 - 11:30
+                        </div>
+<div class="flex items-center">
+<span class="material-icons-round text-xs mr-1">location_on</span>
+                            Lab A-12
+                        </div>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-8">
+<h2 class="text-lg font-bold mb-4">Peminjaman Alat Aktif</h2>
+<div class="space-y-3">
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl border-l-4 border-red-500 shadow-sm flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 bg-red-50 dark:bg-red-900/20 flex items-center justify-center rounded-lg text-red-500">
+<span class="material-icons-round">precision_manufacturing</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-800 dark:text-white text-sm">Micropipette Set (P20-P1000)</h4>
+<p class="text-xs text-red-500 font-semibold">Kembali dalam 2 jam</p>
+</div>
+</div>
+<button class="bg-primary text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm">KEMBALIKAN</button>
+</div>
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl border-l-4 border-primary shadow-sm flex items-center justify-between">
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 bg-primary/5 dark:bg-primary/20 flex items-center justify-center rounded-lg text-primary">
+<span class="material-icons-round">view_in_ar</span>
+</div>
+<div>
+<h4 class="font-bold text-slate-800 dark:text-white text-sm">Digital Colorimeter v4</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Batas: 24 Mei, 17:00</p>
+</div>
+</div>
+<button class="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-bold px-3 py-1.5 rounded-lg">PERPANJANG</button>
+</div>
+</div>
+</section>
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-lg font-bold">Tugas Tertunda</h2>
+<span class="bg-primary/10 text-primary text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">3 Perlu Tindakan</span>
+</div>
+<div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-700 shadow-sm">
+<div class="p-4 flex items-start space-x-4 border-b border-slate-50 dark:border-slate-700/50">
+<div class="mt-1">
+<span class="material-icons-round text-amber-500 text-xl">assignment_late</span>
+</div>
+<div class="flex-1">
+<h5 class="text-sm font-bold text-slate-800 dark:text-white">Izin Keselamatan Diperlukan</h5>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">Harap tanda tangani surat pernyataan keselamatan kimia untuk Lab B-04.</p>
+<div class="mt-2 flex space-x-2">
+<button class="text-[11px] font-bold text-primary bg-primary/10 px-3 py-1 rounded">Tanda Tangani Sekarang</button>
+</div>
+</div>
+</div>
+<div class="p-4 flex items-start space-x-4 border-b border-slate-50 dark:border-slate-700/50">
+<div class="mt-1">
+<span class="material-icons-round text-blue-500 text-xl">quiz</span>
+</div>
+<div class="flex-1">
+<h5 class="text-sm font-bold text-slate-800 dark:text-white">Kuis Pre-Lab: Hemoglobin</h5>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">Selesaikan sebelum sesi pukul 14:00.</p>
+<div class="mt-2 flex space-x-2">
+<button class="text-[11px] font-bold text-primary bg-primary/10 px-3 py-1 rounded">Mulai Kuis</button>
+</div>
+</div>
+</div>
+<div class="p-4 flex items-start space-x-4">
+<div class="mt-1">
+<span class="material-icons-round text-emerald-500 text-xl">verified</span>
+</div>
+<div class="flex-1">
+<h5 class="text-sm font-bold text-slate-800 dark:text-white">Nilai Laporan Telah Terbit</h5>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">Hasil praktikum 'Dasar-dasar Urinalisis' sudah tersedia.</p>
+<div class="mt-2 flex space-x-2">
+<button class="text-[11px] font-bold text-primary bg-primary/10 px-3 py-1 rounded">Lihat Nilai</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-background-dark/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 px-6 py-3 pb-8 flex justify-between items-center z-50">
+<button class="flex flex-col items-center space-y-1 text-primary">
+<span class="material-icons-round">dashboard</span>
+<span class="text-[10px] font-bold">Beranda</span>
+</button>
+<button class="flex flex-col items-center space-y-1 text-slate-400 dark:text-slate-500">
+<span class="material-icons-round">calendar_today</span>
+<span class="text-[10px] font-bold">Jadwal</span>
+</button>
+<button class="relative -top-8 w-14 h-14 bg-primary text-white rounded-full flex items-center justify-center shadow-lg shadow-primary/40 ring-4 ring-background-light dark:ring-background-dark">
+<span class="material-icons-round text-3xl">add</span>
+</button>
+<button class="flex flex-col items-center space-y-1 text-slate-400 dark:text-slate-500">
+<span class="material-icons-round">inventory_2</span>
+<span class="text-[10px] font-bold">Inventaris</span>
+</button>
+<button class="flex flex-col items-center space-y-1 text-slate-400 dark:text-slate-500">
+<span class="material-icons-round">notifications</span>
+<span class="text-[10px] font-bold">Kotak Masuk</span>
+</button>
+</nav>
+<div class="fixed bottom-24 right-5 space-y-3 flex flex-col items-end">
+<div class="bg-emerald-500 text-white px-4 py-2 rounded-full shadow-lg text-xs font-bold flex items-center space-x-2">
+<span class="material-icons-round text-sm">bolt</span>
+<span>Panduan Lab Baru Tersedia</span>
+</div>
+</div>
+
+</body></html>

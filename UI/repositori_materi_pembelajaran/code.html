@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Repositori Materi Pembelajaran</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200 min-h-screen pb-24">
+<!-- Header / Navigation Bar (iOS Style) -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 ios-blur border-b border-slate-200 dark:border-slate-800">
+<div class="px-4 py-3 flex items-center justify-between">
+<button class="p-1 -ml-1 text-primary">
+<span class="material-icons-round text-2xl">arrow_back_ios</span>
+</button>
+<h1 class="text-lg font-semibold tracking-tight">Repositori Materi</h1>
+<button class="p-1 -mr-1 text-primary">
+<span class="material-icons-round text-2xl">add_circle_outline</span>
+</button>
+</div>
+<!-- Search Bar -->
+<div class="px-4 pb-3">
+<div class="relative flex items-center">
+<span class="material-icons-round absolute left-3 text-slate-400 text-xl">search</span>
+<input class="w-full bg-slate-200/50 dark:bg-slate-800/50 border-none rounded-xl py-2.5 pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/50 transition-all outline-none" placeholder="Cari modul atau materi..." type="text"/>
+</div>
+</div>
+<!-- Category Filter Chips -->
+<div class="flex overflow-x-auto hide-scrollbar gap-2 px-4 pb-4">
+<button class="whitespace-nowrap bg-primary text-white px-4 py-1.5 rounded-full text-xs font-medium shadow-sm shadow-primary/20">Semua</button>
+<button class="whitespace-nowrap bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-1.5 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300">Mikrobiologi</button>
+<button class="whitespace-nowrap bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-1.5 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300">Hematologi</button>
+<button class="whitespace-nowrap bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-1.5 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300">Kimia Klinik</button>
+<button class="whitespace-nowrap bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-1.5 rounded-full text-xs font-medium text-slate-600 dark:text-slate-300">Parasitologi</button>
+</div>
+</header>
+<main class="px-4 pt-4 space-y-4">
+<!-- Section Title -->
+<div class="flex items-center justify-between mb-2">
+<h2 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Materi Terbaru</h2>
+<button class="text-primary text-xs font-semibold">Lihat Semua</button>
+</div>
+<!-- Material Cards List -->
+<!-- Card 1: PDF Modul -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-200/60 dark:border-slate-800/60 shadow-sm active:scale-[0.98] transition-transform">
+<div class="flex gap-4">
+<div class="w-12 h-12 flex-shrink-0 bg-red-50 dark:bg-red-900/20 rounded-lg flex items-center justify-center">
+<span class="material-icons-round text-red-500 text-2xl">picture_as_pdf</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<span class="text-[10px] font-bold text-primary uppercase mb-1">Modul Praktikum</span>
+<span class="text-[10px] text-slate-400">12 MB</span>
+</div>
+<h3 class="font-semibold text-slate-900 dark:text-white truncate">Panduan Isolasi Bakteri Enteric</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">Prosedur media selektif dan diferensial untuk Salmonella...</p>
+<div class="flex items-center gap-3 mt-3">
+<div class="flex items-center text-[10px] text-slate-400">
+<span class="material-icons-round text-xs mr-1">person</span>
+                            Dr. Ahmad S.
+                        </div>
+<div class="flex items-center text-[10px] text-slate-400">
+<span class="material-icons-round text-xs mr-1">calendar_today</span>
+                            14 Okt 2023
+                        </div>
+</div>
+</div>
+</div>
+<div class="mt-4 flex gap-2">
+<button class="flex-1 bg-primary text-white text-xs font-semibold py-2 rounded-lg flex items-center justify-center gap-1">
+<span class="material-icons-round text-sm">visibility</span> Buka
+                </button>
+<button class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 p-2 rounded-lg">
+<span class="material-icons-round text-sm">download</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Video Tutorial -->
+<div class="bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200/60 dark:border-slate-800/60 shadow-sm active:scale-[0.98] transition-transform">
+<div class="relative h-32 w-full">
+<img class="w-full h-full object-cover" data-alt="Microscope medical laboratory environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDisORU-lYInIKxMQ0cTJh1aYXSjAEyp9Z1GwZGgZHXNz6oytJ4XCFunCe5_2rSB1sU6RP75_D-YyB_hwdOdJ0Gsa-_EDc5SyeQ1tFh58JHD1FHPV3WhmDStDy9yxR53h5GTujyqw5nYmpAFVjSC2Ba_FfqnwzevkbWp0Aa51WoENRYCwdpdECxX4ChBpgJYaUi7eXh2RmIHcbNmqLEFVC5QXi5_xebbZho7BeDo4KZKHaxcrOx_6UmJad2lhPrx-tOZg122TtNEcjt"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+<div class="w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40">
+<span class="material-icons-round text-white text-2xl">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-2 right-2 bg-black/60 text-white text-[10px] px-1.5 py-0.5 rounded">08:45</div>
+</div>
+<div class="p-4">
+<span class="text-[10px] font-bold text-primary uppercase mb-1">Video Tutorial</span>
+<h3 class="font-semibold text-slate-900 dark:text-white">Teknik Venipuncture pada Pasien Pediatrik</h3>
+<div class="flex items-center gap-3 mt-3">
+<div class="flex items-center text-[10px] text-slate-400">
+<span class="material-icons-round text-xs mr-1">history</span>
+                        2 hari yang lalu
+                    </div>
+<div class="flex items-center text-[10px] text-slate-400">
+<span class="material-icons-round text-xs mr-1">remove_red_eye</span>
+                        1.2k views
+                    </div>
+</div>
+</div>
+</div>
+<!-- Card 3: Question Bank -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-200/60 dark:border-slate-800/60 shadow-sm active:scale-[0.98] transition-transform">
+<div class="flex gap-4">
+<div class="w-12 h-12 flex-shrink-0 bg-blue-50 dark:bg-blue-900/20 rounded-lg flex items-center justify-center">
+<span class="material-icons-round text-blue-500 text-2xl">quiz</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<span class="text-[10px] font-bold text-primary uppercase mb-1">Bank Soal</span>
+<span class="text-[10px] text-slate-400">50 Soal</span>
+</div>
+<h3 class="font-semibold text-slate-900 dark:text-white truncate">Latihan UKOM 2023 - Hematologi</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">Kumpulan soal persiapan ujian kompetensi nasional...</p>
+</div>
+</div>
+<div class="mt-4">
+<button class="w-full bg-slate-100 dark:bg-slate-800 text-primary text-xs font-bold py-2 rounded-lg flex items-center justify-center gap-1">
+                    Mulai Latihan <span class="material-icons-round text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Card 4: Audio Materi -->
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-200/60 dark:border-slate-800/60 shadow-sm active:scale-[0.98] transition-transform">
+<div class="flex gap-4">
+<div class="w-12 h-12 flex-shrink-0 bg-purple-50 dark:bg-purple-900/20 rounded-lg flex items-center justify-center">
+<span class="material-icons-round text-purple-500 text-2xl">headset</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start">
+<span class="text-[10px] font-bold text-primary uppercase mb-1">Podcast/Audio</span>
+<span class="text-[10px] text-slate-400">15 Menit</span>
+</div>
+<h3 class="font-semibold text-slate-900 dark:text-white truncate">Interpretasi Hasil Urinalisis</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">Diskusi mendalam tentang sedimen urin dan makroskopis.</p>
+</div>
+</div>
+</div>
+<!-- Section: Categories Grid -->
+<div class="mt-8">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">Kategori Populer</h2>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-primary/10 dark:bg-primary/20 p-4 rounded-xl flex flex-col items-center justify-center text-center">
+<div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center mb-2">
+<span class="material-icons-round text-primary">biotech</span>
+</div>
+<span class="text-xs font-semibold text-primary">Mikrobiologi</span>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-xl flex flex-col items-center justify-center text-center">
+<div class="w-10 h-10 bg-slate-200 dark:bg-slate-700 rounded-full flex items-center justify-center mb-2">
+<span class="material-icons-round text-slate-500">bloodtype</span>
+</div>
+<span class="text-xs font-semibold text-slate-700 dark:text-slate-300">Hematologi</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Tab Bar (iOS Style) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-slate-900/90 ios-blur border-t border-slate-200 dark:border-slate-800 px-6 py-2 flex justify-between items-center z-50">
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons-round">home</span>
+<span class="text-[10px]">Beranda</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-icons-round">library_books</span>
+<span class="text-[10px]">Materi</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons-round">event_note</span>
+<span class="text-[10px]">Jadwal</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons-round">person</span>
+<span class="text-[10px]">Profil</span>
+</button>
+</nav>
+<!-- Floating Action Button for Lecturers -->
+<button class="fixed bottom-20 right-4 w-14 h-14 bg-primary text-white rounded-full shadow-lg shadow-primary/30 flex items-center justify-center z-40 active:scale-95 transition-transform">
+<span class="material-icons-round text-3xl">upload</span>
+</button>
+</body></html>

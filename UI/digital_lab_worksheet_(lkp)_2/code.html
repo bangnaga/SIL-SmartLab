@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Lembar Kerja Praktikum (LKP) Digital</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#137fec",
+                "background-light": "#f6f7f8",
+                "background-dark": "#101922",
+              },
+              fontFamily: {
+                "display": ["Manrope"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(19, 127, 236, 0.2);
+        }
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 ios-blur border-b border-slate-200 dark:border-slate-800">
+<div class="px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<button class="p-1 -ml-1 text-primary">
+<span class="material-icons text-2xl">chevron_left</span>
+</button>
+<h1 class="font-bold text-lg">Lembar Kerja Digital</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold px-2 py-0.5 bg-green-100 text-green-600 rounded-full dark:bg-green-900/30 dark:text-green-400">DRAF TERSIMPAN</span>
+<span class="material-icons text-slate-400">more_horiz</span>
+</div>
+</div>
+<div class="flex items-center px-6 py-4 bg-white dark:bg-background-dark">
+<div class="flex flex-1 items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold">1</div>
+<span class="text-xs font-bold text-primary">Pra-analitik</span>
+</div>
+<div class="w-8 h-[2px] bg-slate-200 dark:bg-slate-700"></div>
+<div class="flex flex-1 items-center gap-2 justify-end opacity-40">
+<span class="text-xs font-bold">Analitik</span>
+<div class="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 flex items-center justify-center text-sm font-bold">2</div>
+</div>
+</div>
+</header>
+<main class="p-4 space-y-6 pb-32">
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h2 class="text-sm font-bold uppercase tracking-wider text-slate-500">Identifikasi Pasien</h2>
+<span class="text-[10px] text-primary font-medium flex items-center gap-1">
+<span class="material-icons text-xs">verified_user</span> Terverifikasi
+            </span>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-400">ID Pasien / Nama</label>
+<div class="relative">
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg px-4 py-3 text-sm font-medium" readonly="" type="text" value="PX-2024-8812 - John Doe"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 material-icons text-slate-400 text-lg">search</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-400">Jenis Kelamin</label>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg px-4 py-3 text-sm" readonly="" type="text" value="Laki-laki, 45 thn"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-400">Prioritas</label>
+<div class="flex items-center gap-2 h-11 bg-red-50 dark:bg-red-900/10 px-4 rounded-lg border border-red-100 dark:border-red-900/20">
+<span class="w-2 h-2 rounded-full bg-red-500"></span>
+<span class="text-sm font-bold text-red-600">CITO</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="space-y-4">
+<h2 class="text-sm font-bold uppercase tracking-wider text-slate-500">Informasi Spesimen</h2>
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 border border-slate-200 dark:border-slate-800 shadow-sm space-y-4">
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-400">Tipe Spesimen</label>
+<select class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-sm">
+<option>Darah Vena (EDTA)</option>
+<option>Serum</option>
+<option>Urin (Porsi Tengah)</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-400">Tanggal Pengambilan</label>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg px-3 py-3 text-sm" type="date" value="2023-11-20"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-400">Waktu Pengambilan</label>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg px-3 py-3 text-sm" type="time" value="08:30"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-500 dark:text-slate-400">Riwayat Klinis / Catatan</label>
+<textarea class="w-full bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 rounded-lg px-4 py-3 text-sm placeholder:text-slate-400" placeholder="Masukkan gejala klinis pasien atau persyaratan khusus..." rows="3">Pasien mengalami kelelahan akut dan dicurigai anemia. Cek Hb dan indeks eritrosit.</textarea>
+</div>
+</div>
+</section>
+<section class="space-y-4">
+<h2 class="text-sm font-bold uppercase tracking-wider text-slate-500">Cek Integritas</h2>
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+<div class="flex items-center justify-between p-4 border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center">
+<span class="material-icons text-primary text-sm">science</span>
+</div>
+<span class="text-sm font-semibold">Kondisi Sampel</span>
+</div>
+<span class="text-xs font-bold text-green-500">OPTIMAL</span>
+</div>
+<div class="p-4 grid grid-cols-2 gap-3">
+<label class="flex items-center gap-2 p-2 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-transparent hover:border-primary transition-colors">
+<input checked="" class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-xs font-medium">Tidak Hemolisis</span>
+</label>
+<label class="flex items-center gap-2 p-2 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-transparent hover:border-primary transition-colors">
+<input checked="" class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-xs font-medium">Volume Benar</span>
+</label>
+<label class="flex items-center gap-2 p-2 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-transparent hover:border-primary transition-colors">
+<input checked="" class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-xs font-medium">Berlabel</span>
+</label>
+<label class="flex items-center gap-2 p-2 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-transparent hover:border-primary transition-colors">
+<input checked="" class="rounded text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-xs font-medium">Puasa (8 jam)</span>
+</label>
+</div>
+</div>
+</section>
+<section class="space-y-4">
+<h2 class="text-sm font-bold uppercase tracking-wider text-slate-500">Referensi Peralatan</h2>
+<div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm">
+<img alt="Lab Setup" class="w-full h-32 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfSnSaMJGb0DIXHJSY5X2zTlJdEm1_lDGB7Cv9yH8hbxw9aHnxzwUROF9eV3fSDPET0Sj8giujrbW4cMnWxzrU9r3R_ZCQxanx0a8-0Um-PrE7PKIhQPwaDMJEFP0Tv2ZprZZstpcc4cIfbsNLX-C02gwZchErpGgUtNu2Q1xghHovdUz7HoRn6CKgL5bmp1hqW-BK5TNMKccavn7MWEh3_lC84dL1zSDblibQhQfRuAHaUnM57nuSIFuEfEHH1oeX5VJWhKGzW52f"/>
+</div>
+</section>
+</main>
+<footer class="fixed bottom-0 left-0 right-0 p-4 bg-white/90 dark:bg-background-dark/90 ios-blur border-t border-slate-200 dark:border-slate-800 flex gap-3">
+<button class="flex-1 py-3.5 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-bold text-sm bg-white dark:bg-slate-800 active:scale-95 transition-transform">
+        Simpan Draf
+    </button>
+<button class="flex-[2] py-3.5 rounded-xl bg-primary text-white font-bold text-sm shadow-lg shadow-primary/30 flex items-center justify-center gap-2 active:scale-95 transition-transform">
+        Selanjutnya: Hasil
+        <span class="material-icons text-lg">arrow_forward</span>
+</button>
+</footer>
+<div class="fixed bottom-24 right-4 z-40">
+<div class="bg-primary/10 text-primary border border-primary/20 rounded-full px-4 py-2 flex items-center gap-2 shadow-xl ios-blur">
+<span class="material-icons text-sm">history</span>
+<span class="text-[10px] font-bold">Menyimpan otomatis...</span>
+</div>
+</div>
+
+</body></html>

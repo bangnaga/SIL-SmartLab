@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>LabLoan - Peminjaman Mandiri</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#137fec",
+                "background-light": "#f6f7f8",
+                "background-dark": "#101922",
+              },
+              fontFamily: {
+                "display": ["Manrope", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            overscroll-behavior-y: contain;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .safe-area-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased selection:bg-primary/30">
+<div class="h-12 w-full bg-white/80 dark:bg-background-dark/80 ios-blur sticky top-0 z-50">
+<div class="flex justify-between items-center px-6 h-full">
+<span class="text-sm font-bold">9:41</span>
+<div class="flex gap-1.5 items-center">
+<span class="material-icons-round text-sm">signal_cellular_alt</span>
+<span class="material-icons-round text-sm">wifi</span>
+<span class="material-icons-round text-sm">battery_full</span>
+</div>
+</div>
+</div>
+<header class="bg-white/80 dark:bg-background-dark/80 ios-blur sticky top-12 z-40 border-b border-slate-200 dark:border-slate-800 px-4 py-3">
+<div class="flex items-center justify-between mb-3">
+<div>
+<h1 class="text-2xl font-extrabold tracking-tight text-primary">LabLoan</h1>
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400">Layanan Mandiri Mahasiswa</p>
+</div>
+<div class="relative">
+<button class="bg-slate-100 dark:bg-slate-800 p-2.5 rounded-full relative">
+<span class="material-icons-round text-slate-600 dark:text-slate-300">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white dark:border-background-dark">3</span>
+</button>
+</div>
+</div>
+<div class="space-y-3">
+<div class="relative">
+<span class="material-icons-round absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-slate-100 dark:bg-slate-800 border-none rounded-xl focus:ring-2 focus:ring-primary text-sm placeholder:text-slate-500" placeholder="Cari alat atau bahan..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto hide-scrollbar pb-1">
+<button class="px-4 py-1.5 bg-primary text-white rounded-full text-xs font-bold whitespace-nowrap">Semua</button>
+<button class="px-4 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs font-semibold whitespace-nowrap">Mikroskop</button>
+<button class="px-4 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs font-semibold whitespace-nowrap">Pipet</button>
+<button class="px-4 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs font-semibold whitespace-nowrap">Reagen</button>
+<button class="px-4 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs font-semibold whitespace-nowrap">Alat Gelas</button>
+</div>
+</div>
+</header>
+<main class="p-4 space-y-6 pb-32">
+<section class="bg-primary/10 dark:bg-primary/5 border border-primary/20 rounded-xl p-4">
+<div class="flex items-center gap-3 mb-3">
+<div class="bg-primary p-2 rounded-lg">
+<span class="material-icons-round text-white text-sm">event_note</span>
+</div>
+<div>
+<h2 class="text-sm font-bold text-primary">Praktikum Aktif</h2>
+<p class="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider font-bold">ID Sesi: MB-204-LAB</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-white dark:bg-slate-900/50 p-2.5 rounded-lg border border-slate-100 dark:border-slate-800">
+<p class="text-[10px] text-slate-500 font-bold mb-1 uppercase">Meja Lab</p>
+<p class="text-sm font-bold">Stasiun 12B</p>
+</div>
+<div class="bg-white dark:bg-slate-900/50 p-2.5 rounded-lg border border-slate-100 dark:border-slate-800">
+<p class="text-[10px] text-slate-500 font-bold mb-1 uppercase">Dosen</p>
+<p class="text-sm font-bold">Dr. Aris Thorne</p>
+</div>
+</div>
+</section>
+<div class="space-y-4">
+<h3 class="text-lg font-bold flex items-center justify-between">
+            Barang Tersedia
+            <span class="text-xs font-medium text-slate-500">24 Barang ditemukan</span>
+</h3>
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex">
+<div class="w-32 h-32 bg-slate-50 dark:bg-slate-800 flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Modern laboratory microscope on a clean bench" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhB3R4zNhBZO-4F_sulGxM9gr-tSIH-qDiEppgDNG3J47tWNxYWYpK457b60-9leZU7mh_sxuBX7k4V41I9AGiBmO1-6a_rSPOlkABx8DIMRcVRbFRr7YJgdzEy4QYmAJzjyxXxA-nk6f2aTHeezUkG9J48VA859D0JOHRM441vdx0iXkNdqCr_v61kG_yi0liOVML9PtUZvHPbqPu-9V1Y-WLTBlubS9G8U0zsC2sIh5rbGWMj-6Z9bptJkSENFec19GLkxeH1JQD"/>
+</div>
+<div class="p-4 flex-grow flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-sm leading-tight">Mikroskop Cahaya</h4>
+<span class="material-icons-round text-primary text-lg">info</span>
+</div>
+<p class="text-[11px] text-slate-500 mt-1">Ref: OPT-7720 • Binokuler</p>
+<div class="mt-2 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+<span class="text-[10px] font-bold">12 Tersedia</span>
+</div>
+</div>
+<div class="flex justify-end">
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1 transition-colors">
+<span class="material-icons-round text-sm">add</span> Tambah
+                    </button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex">
+<div class="w-32 h-32 bg-slate-50 dark:bg-slate-800 flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Amber glass chemical bottle with dropper" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsbsgvEbvuMTPXLvsAOedecBARUeSdsjppk2yV3zy8PsuwfNRjfxzWKxfNDTh_g-naJE1C8UjkDkytT0KeXRon1dm14JwCuMu3_ri05axtYafdI4o07CU5v5FMtfIlC6NyD1-KpXt9VU4Xq9LZUbGGLsY2-GpQexWKVe_pXDpb8qZY8vxtnMZKbHbcc-kj_o006XOMuDYTNea34dfdRVjnYlRMOB-l_s-wofOQ-RNQn9nAWoaVNqxORlEfPLsyHEMLT8JkCVIX0T2p"/>
+<div class="absolute top-2 left-2 bg-red-500 text-white p-1 rounded-md">
+<span class="material-icons-round text-xs">warning</span>
+</div>
+</div>
+<div class="p-4 flex-grow flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-sm leading-tight">Asam Sulfat 0.1M</h4>
+<span class="material-icons-round text-primary text-lg">info</span>
+</div>
+<p class="text-[11px] text-slate-500 mt-1">Ref: CHM-402 • Botol 500ml</p>
+<div class="mt-2 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400">
+<span class="w-1.5 h-1.5 rounded-full bg-yellow-500"></span>
+<span class="text-[10px] font-bold">Stok Menipis (2)</span>
+</div>
+</div>
+<div class="flex justify-end">
+<button class="bg-primary/10 text-primary px-4 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1">
+<span class="material-icons-round text-sm">add</span> Tambah
+                    </button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex">
+<div class="w-32 h-32 bg-slate-50 dark:bg-slate-800 flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Digital precision laboratory scale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm24u86UGDLc1aCEU-QMZkaRFKZ2VsGo-Cs5H5tENnFCpslbU3VC_gt4RxBJsAWUorq5W_IfpHt3coZvQbB2hdXRPhMsv4oRxB9XE2IdJl-hzBeN-enQI7VslFR-XLUVCmXDJ7N1N7tv0MxWGpQnLO_lTdQlDPMFCVw8TiCI4E8P-IDRoWcoq6yz65Z_NWCbrVbSEk5fnxMEqyKck_YoDdOPn4sTjL48odanOtYHbwHfFfaW-pNcETGXJnrPz1oSm8NVvfJ9nvNTeL"/>
+</div>
+<div class="p-4 flex-grow flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-sm leading-tight">Mikrobalance Digital</h4>
+<span class="material-icons-round text-primary text-lg">info</span>
+</div>
+<p class="text-[11px] text-slate-500 mt-1">Ref: SCA-101 • Maks 200g</p>
+<div class="mt-2 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+<span class="text-[10px] font-bold">Pemeliharaan</span>
+</div>
+</div>
+<div class="flex justify-end">
+<button class="bg-slate-100 dark:bg-slate-800 text-slate-400 px-4 py-1.5 rounded-lg text-xs font-bold cursor-not-allowed" disabled="">
+                        Tidak Tersedia
+                    </button>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm flex">
+<div class="w-32 h-32 bg-slate-50 dark:bg-slate-800 flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Adjustable electronic pipette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnT4zYZm9l3VlQX5HhgfJdrFnKXUK0Xq6x7I23SEdt6bwr8qzYMWx7b1Cc7sNXTd66QQn3B7JOvQsBhma6w76oF4CrLBB5SSJsLwNPqLoNx-KLytw2X8OiPbVwTDuZCMCvYJKfdENMHVhqwn6HoUA2-7_AmydQ9mMbaRsBtfsHY2uhN64_wM9mwx_RhkHdWRVqSitdsho-Jlf-g97tTovlSzzbL90YxAsQCO0ZfVuJLtTix7uG1h9UPlWd5U_1dhLJ_g37M0Ah-86T"/>
+</div>
+<div class="p-4 flex-grow flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-sm leading-tight">Pipet Variabel (10-100μL)</h4>
+<span class="material-icons-round text-primary text-lg">info</span>
+</div>
+<p class="text-[11px] text-slate-500 mt-1">Ref: PIP-881 • Single Channel</p>
+<div class="mt-2 inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+<span class="text-[10px] font-bold">45 Tersedia</span>
+</div>
+</div>
+<div class="flex justify-end">
+<button class="bg-primary hover:bg-primary/90 text-white px-4 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1 transition-colors">
+<span class="material-icons-round text-sm">add</span> Tambah
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/90 ios-blur border-t border-slate-200 dark:border-slate-800 safe-area-bottom z-50">
+<div class="px-6 py-4">
+<div class="flex items-center justify-between mb-4">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 overflow-hidden bg-slate-100">
+<img class="w-full h-full object-cover" data-alt="Microscope icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD669nSPGXUaW9gqMpp4Ilf2UMdlQkDKjU2pEZqTkVeVr_wul8dd8AmGZNQV2584pkTx-pSjklhPMvQ-kLlCIAFYe2Ekd-cPMXdTZzaOOpQcvNuKE-X9z8OZujsK8s5ZxYa0sxT-B3GJd6kdgq0_kap6eGJ2HaVEoQ9oLTHhhw9dxWRZb2-wl1C8gMJlxTcex-v-KAN4oRVkTiwftmspjl49wF6NnGmZJE9Eh-EoDzdWAlNKBnqxdFmOnQXYUCY7kpJsMj6fz0xIqhY"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 overflow-hidden bg-slate-100">
+<img class="w-full h-full object-cover" data-alt="Chemical bottle icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTWzK3Lnpnow8Zm-agKewX0_yADCdfFRKrcusyMfKUGpfAf5IhrvCTecdAdpqYvGv50ovDotNm_KNRmvIv5eAlr5GvMqOCoyAkqDRY962Yw7IQTPm3lGMuyaAwRNJ_BoT509tOQOUl8_yTbLrL5_MwbOVo0mCiq8tRudT7BXuWxAJe-e-H97cvBS4oF__4PA1sFwBKqI2zcFRgDOWWLqZv2sXV4lwTshs9P9HNBN6uP2DGC5_9sGDT3RdQIaoWKdvhemucTb_DFRvW"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-[10px] font-bold">
+                    +1
+                </div>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold text-slate-500 uppercase">Permintaan Saat Ini</p>
+<p class="text-sm font-extrabold">3 Barang Terpilih</p>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-3 shadow-lg shadow-primary/25 transition-all active:scale-[0.98]">
+            Tinjau Permintaan Pinjaman
+            <span class="material-icons-round">arrow_forward</span>
+</button>
+</div>
+</div>
+<nav class="fixed bottom-24 left-1/2 -translate-x-1/2 bg-white/95 dark:bg-slate-900/95 border border-slate-200/50 dark:border-slate-700/50 rounded-full px-2 py-1.5 flex items-center gap-1 shadow-2xl ios-blur z-40">
+<button class="p-3 text-slate-400 dark:text-slate-500">
+<span class="material-icons-round text-xl">dashboard</span>
+</button>
+<button class="p-3 text-primary bg-primary/10 rounded-full">
+<span class="material-icons-round text-xl">biotech</span>
+</button>
+<button class="p-3 text-slate-400 dark:text-slate-500">
+<span class="material-icons-round text-xl">history</span>
+</button>
+<button class="p-3 text-slate-400 dark:text-slate-500">
+<span class="material-icons-round text-xl">qr_code_scanner</span>
+</button>
+<button class="p-3 text-slate-400 dark:text-slate-500">
+<span class="material-icons-round text-xl">person_outline</span>
+</button>
+</nav>
+<div class="fixed top-20 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-4 py-2 rounded-full text-[11px] font-bold shadow-xl flex items-center gap-2 opacity-0 transition-opacity pointer-events-none">
+<span class="material-icons-round text-sm text-green-400">check_circle</span>
+    Berhasil ditambahkan
+</div>
+
+</body></html>

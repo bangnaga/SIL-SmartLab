@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bexon - Landing Page Template</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'n8n-base': '#1c1e26',
+                        'n8n-surface': '#252836',
+                        'n8n-lighter': '#2f3346',
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white text-slate-800 font-sans selection:bg-blue-600/20">
+    <div class="bg-white dark:bg-n8n-base min-h-screen text-slate-800 dark:text-slate-200 font-sans selection:bg-blue-600/20 overflow-hidden">
+        <div class="bg-white dark:bg-n8n-base min-h-screen text-slate-800 dark:text-slate-200 font-sans selection:bg-blue-600/20 overflow-hidden">
+            <!--  Topbar  -->
+            <div class="hidden lg:flex items-center justify-between px-10 py-2 bg-slate-900 dark:bg-n8n-base text-slate-300 text-xs font-semibold">
+                <div class="flex gap-6">
+                    <span class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-emerald-500"></div> +62 (811) 544-7818</span>
+                    <span class="flex items-center gap-2"><div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div> info@sil.ac.id</span>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition-colors">Help</a>
+                    <a href="#" class="hover:text-white transition-colors">Support</a>
+                    <a href="#" class="hover:text-white transition-colors">Contact</a>
+                </div>
+            </div>
+
+            <!--  Navbar  -->
+            <nav class="fixed w-full z-50 transition-all duration-300 bg-white/95 dark:bg-n8n-base/95 backdrop-blur-md shadow-sm dark:shadow-none py-4 top-0 lg:top-[32px]">
+                <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shadow-lg dark:shadow-none shadow-blue-600/20 text-white transform rotate-[5deg] hover:rotate-0 transition-transform">
+                            <i data-lucide="microscope" class="w-6 h-6" ></i>
+                        </div>
+                        <span class="text-3xl font-black text-slate-900 dark:text-white tracking-tight" style="font-family: 'Outfit, sans-serif';">Bexon<span class="text-blue-600">.</span></span>
+                    </div>
+
+                    <div class="hidden md:flex items-center gap-7 text-[16px] font-[600] text-slate-800 dark:text-slate-200" style="font-family: 'Outfit, sans-serif';">
+                        <a href="#" class="text-blue-600">Home</a>
+                        <a href="#pages" class="hover:text-blue-600 transition-colors">Pages</a>
+                        <a href="#services" class="hover:text-blue-600 transition-colors">Services</a>
+                        <a href="#portfolios" class="hover:text-blue-600 transition-colors">Portfolios</a>
+                        <a href="#shop" class="hover:text-blue-600 transition-colors">Shop</a>
+                        <a href="#news" class="hover:text-blue-600 transition-colors">News</a>
+                        <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <button class="p-2 md:p-3 rounded-full bg-slate-100 dark:bg-n8n-surface text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-n8n-lighter transition-colors">
+                            <i data-lucide="moon" class="w-5 h-5" ></i>
+                        </button>
+                        <a href="/login" class="hidden lg:flex px-7 py-3 text-[15px] font-[600] text-white bg-blue-600 hover:bg-slate-900 dark:hover:bg-n8n-lighter rounded-full transition-all shadow-md dark:shadow-none items-center gap-2" style="font-family: 'Outfit, sans-serif';">
+                            Sign In / Get Started <i data-lucide="arrow-right" class="w-4 h-4 ml-1" ></i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            <!--  Hero Section  -->
+            <div class="relative pt-40 pb-20 lg:pt-48 lg:pb-20 px-6 overflow-hidden bg-white dark:bg-n8n-base border-b border-slate-100 dark:border-n8n-surface">
+                <!--  Background Graphics (Image + Video)  -->
+                <div class="absolute bottom-0 right-0 top-0 z-0 w-full flex-col items-end justify-center hidden lg:flex">
+                    <img
+                        src="https://n8n.io/images/hero-bg.webp"
+                        alt="Hero background"
+                        class="pointer-events-none absolute bottom-0 left-[69%] z-10 w-auto h-full max-w-none -translate-x-1/2 select-none opacity-30 dark:opacity-100 mix-blend-screen"
+                    />
+                    <video
+                        class="pointer-events-none absolute bottom-0 left-[70%] z-0 aspect-[3.46/1] max-w-none -translate-x-1/2 select-none opacity-0 dark:opacity-60 mix-blend-hard-light h-[112%] top-[-7%]"
+                        preload="none" muted loop autoPlay playsInline
+                    >
+                        <source src="https://n8n.io/videos/home-intro.mp4" type="video/mp4" />
+                    </video>
+                </div>
+
+                <div class="max-w-7xl mx-auto relative z-10 w-full flex flex-col items-center xl:items-start text-center xl:text-left">
+                    <div class="w-full xl:max-w-[650px] flex flex-col gap-8">
+
+                        <h1 class="text-5xl md:text-6xl lg:text-[64px] font-[800] text-slate-900 dark:text-white leading-[1.05] tracking-tight" style="font-family: 'Outfit, sans-serif';">
+                            Ship AI workflows that <br class="hidden md:block" />
+                            <span class="text-[#FF6B6B] dark:text-[#FF6B6B] relative inline-block">
+                                survive in the wild
+                            </span>
+                        </h1>
+
+                        <p class="text-lg lg:text-xl text-slate-600 dark:text-slate-400 font-medium leading-relaxed max-w-2xl mx-auto xl:mx-0">
+                            Connect to any data source, AI model, or tool. Move fast with a visual canvas and go deep with code. See inside every step of your agents' reasoning. n8n gives you the flexibility and control to ensure AI stays manageable as you scale.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row items-center gap-4 mt-2 w-full sm:w-auto mx-auto xl:mx-0">
+                            <a href="#" class="w-full sm:w-auto px-6 py-3.5 bg-[#FF6B6B] hover:bg-[#FF4B4B] text-white font-bold rounded-lg transition-colors flex items-center justify-center gap-2 group">
+                                Get started for free <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform" ></i>
+                            </a>
+                            <a href="#" class="w-full sm:w-auto px-6 py-3.5 bg-transparent border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-n8n-surface text-slate-700 dark:text-slate-200 font-bold rounded-lg transition-colors flex items-center justify-center">
+                                Talk to sales
+                            </a>
+                        </div>
+                    </div>
+
+                    <!--  Section Bottom Logos  -->
+                    <div class="mt-24 xl:mt-32 flex flex-col lg:flex-row items-center justify-between gap-12 w-full lg:w-[85%] border-t border-slate-200 dark:border-n8n-surface pt-10">
+                        <div class="text-slate-500 dark:text-slate-400 text-sm font-medium w-full lg:w-3/12 max-lg:text-center">
+                            The world's most popular workflow automation platform for technical teams including
+                        </div>
+
+                        <div class="w-full lg:w-9/12 overflow-hidden h-12 relative flex items-center">
+                            <!--  Simple CSS animation ticker for logos to match n8n style slightly jumping/blinking or just static flex to be simple and robust  -->
+                            <div class="flex w-full items-center justify-center lg:justify-between gap-6 lg:gap-8">
+                                <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/meta_66ca35072c.svg" alt="Meta" class="h-8 md:h-10 object-contain opacity-50 dark:opacity-60 dark:invert-0 invert grayscale hover:grayscale-0 transition-all" />
+                                <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-stage/assets/re_mistral_ai_e2a2bff83f.svg" alt="Mistral AI" class="h-8 md:h-10 object-contain opacity-50 dark:opacity-60 dark:invert-0 invert grayscale hover:grayscale-0 transition-all" />
+                                <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-stage/assets/microsoft_logo_white_673a9e3e32.svg" alt="Microsoft" class="h-8 md:h-10 object-contain opacity-50 dark:opacity-60 dark:invert-0 invert grayscale hover:grayscale-0 transition-all hidden sm:block" />
+                                <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-stage/assets/wayfair_logo_white_fe595e6b33.svg" alt="Wayfair" class="h-8 md:h-10 object-contain opacity-50 dark:opacity-60 dark:invert-0 invert grayscale hover:grayscale-0 transition-all hidden md:block" />
+                                <img src="https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-stage/assets/zendesk_logo_white_33a443408b.svg" alt="Zendesk" class="h-8 md:h-10 object-contain opacity-50 dark:opacity-60 dark:invert-0 invert grayscale hover:grayscale-0 transition-all hidden lg:block" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--  Features Tabs Section  -->
+            <section class="w-full px-6 py-20 lg:py-32 relative bg-white dark:bg-n8n-base border-b border-slate-100 dark:border-n8n-surface">
+                <div class="max-w-7xl mx-auto w-full">
+                    <div class="flex flex-col lg:flex-row gap-10">
+                        <!--  Tabs List  -->
+                        <div class="w-full lg:w-3/12 relative border-l border-slate-200 dark:border-white/20 pl-2 lg:pl-0">
+                            <!--  Animated Indicator  -->
+                            <div
+                                class="absolute left-0 w-1 bg-[#FF6B6B] rounded-sm transition-all duration-300 shadow-[0_0_10px_rgba(255,107,107,0.5)] hidden lg:block"
+                                
+                            />
+
+                            <div class="flex flex-col gap-2">
+                                <!-- Tab 1 -->
+<button
+                                        
+                                       
+                                        class="relative z-10 flex w-full flex-col items-start justify-start rounded-md py-4 pl-6 pr-4 text-left transition-colors ${activeFeatureTab === idx
+                                                ? 'bg-slate-50 dark:bg-n8n-surface'
+                                                : 'bg-transparent hover:bg-slate-50/50 dark:hover:bg-n8n-surface/50 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                                            }"
+                                    >
+                                        <!--  Mobile Indicator  -->
+                                        <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#FF6B6B] rounded-sm lg:hidden transition-opacity opacity-100" />
+
+                                        <div class="mb-1 text-lg text-slate-900 dark:text-white">
+                                            <p><strong>IT Ops</strong> can</p>
+                                        </div>
+                                        <p class="text-sm xl:text-md text-slate-600 dark:text-slate-300">
+                                            On-board new employees
+                                        </p>
+                                    </button>
+<!-- Duplicate for other tabs -->
+                            </div>
+                        </div>
+
+                        <!--  Tab Content  -->
+                        <div class="relative aspect-video w-full flex-shrink-0 overflow-hidden rounded-2xl lg:w-9/12 bg-slate-50 dark:bg-n8n-surface border border-slate-200 dark:border-n8n-lighter flex items-center justify-center">
+                            <div
+                                
+                               }
+                               } class="relative flex size-full flex-col items-center justify-center p-4 lg:p-8"
+                            >
+                                <img
+                                    src=https://n8niostorageaccount.blob.core.windows.net/n8nio-strapi-blobs-prod/assets/workflow_itops_5d5a4bf299.svg
+                                    alt=IT Ops
+                                    class="relative z-20 h-full w-full object-contain"
+                                />
+                                <!--  Glow effect behind image  -->
+                                <div class="absolute left-[50%] top-1/2 z-0 w-[50%] h-[50%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white opacity-20 blur-[80px]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--  About Section (Inserted)  -->
+            <section class="py-24 bg-white dark:bg-n8n-base relative overflow-hidden" id="about">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="flex flex-col lg:flex-row gap-16 items-center">
+                        <!--  Left Column (Images)  -->
+                        <div whileInView="visible" class="w-full lg:w-1/2 relative">
+                            <div class="relative rounded-3xl overflow-hidden shadow-2xl dark:shadow-none">
+                                <img src="images/bexon/about/about-1.webp" alt="About Bexon" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700" />
+                            </div>
+
+                            <!--  Floating Experience Box  -->
+                            <div
+                               }
+                               }
+                               } class="absolute -bottom-10 -right-4 md:-right-10 bg-white dark:bg-n8n-base p-8 rounded-2xl shadow-2xl dark:shadow-none border-b-4 border-blue-600 max-w-[280px]"
+                            >
+                                <span class="text-blue-600 font-bold uppercase tracking-widest text-xs mb-2 block">Experiences</span>
+                                <div class="text-5xl font-black text-slate-900 dark:text-white mb-2" style="font-family: 'Outfit, sans-serif';">13+</div>
+                                <h6 class="text-slate-600 dark:text-slate-400 font-bold text-sm leading-relaxed">
+                                    Decades of Experience, Endless Innovation
+                                </h6>
+                            </div>
+                        </div>
+
+                        <!--  Right Column (Content)  -->
+                        <div class="w-full lg:w-1/2 pt-10 lg:pt-0">
+                            <div whileInView="visible" class="flex flex-col gap-6">
+                                <span class="inline-flex items-center gap-2 text-blue-600 font-bold font-sm tracking-widest uppercase">
+                                    <span class="w-3 h-3 rounded-full bg-blue-100 flex items-center justify-center"><div class="w-1.5 h-1.5 rounded-full bg-blue-600"></div></span> Get to Know Us
+                                </span>
+
+                                <h2 class="text-4xl md:text-5xl lg:text-[54px] font-[800] text-slate-900 dark:text-white leading-[1.1]" style="font-family: 'Outfit, sans-serif';">
+                                    Empowering <br class="hidden md:block" /> Businesses with <br class="hidden md:block" /> <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Innovation, Expertise,</span><br class="hidden md:block" /> and for Success.
+                                </h2>
+
+                                <div class="mt-4">
+                                    <a href="/about" class="group inline-flex items-center gap-3 px-8 py-4 bg-slate-100 dark:bg-n8n-surface hover:bg-blue-600 text-slate-900 dark:text-white hover:text-white font-bold rounded-full transition-all duration-300">
+                                        Learn More <div class="w-8 h-8 rounded-full bg-white dark:bg-n8n-base text-slate-900 dark:text-white flex items-center justify-center group-hover:scale-110 transition-transform"><i data-lucide="arrow-right" class="w-4 h-4" ></i></div>
+                                    </a>
+                                </div>
+
+                                <div class="mt-8 flex flex-col md:flex-row items-center gap-8 bg-slate-50 dark:bg-n8n-surface p-8 rounded-[32px] border border-slate-100 dark:border-n8n-surface relative">
+                                    <!--  Quote Box  -->
+                                    <div class="flex-1">
+                                        <div class="flex items-center gap-1 text-amber-500 mb-4">
+                                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
+                                        </div>
+                                        <p class="text-slate-600 dark:text-slate-400 font-medium italic mb-6 leading-relaxed">
+                                            "We believe in building lasting relationships with our clients through trust, innovation, and exceptional service."
+                                        </p>
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <h6 class="font-bold text-slate-900 dark:text-white" style="font-family: 'Outfit, sans-serif';">Esther Howard</h6>
+                                                <span class="text-sm font-medium text-slate-500 dark:text-slate-400">Co.Founder</span>
+                                            </div>
+                                            <!--  decorative quote icon  -->
+                                            <div class="text-4xl text-slate-200 font-serif leading-none">"</div>
+                                        </div>
+                                    </div>
+
+                                    <!--  Video Wrapper  -->
+                                    <div class="w-full md:w-auto flex-shrink-0 relative overflow-hidden rounded-2xl shadow-lg dark:shadow-none group">
+                                        <img src="images/bexon/about/about-2.webp" alt="Video cover" class="w-[180px] h-full object-cover transform group-hover:scale-105 transition-transform" />
+                                        <a href="https://www.youtube.com/watch?v=MLpWrANjFbI" target="_blank" rel="noopener noreferrer" class="absolute inset-0 flex items-center justify-center bg-slate-900/20 dark:bg-white/10 group-hover:bg-slate-900/40 dark:group-hover:bg-white/20 transition-colors">
+                                            <div class="w-12 h-12 bg-white dark:bg-n8n-base rounded-full flex items-center justify-center text-blue-600 shadow-xl group-hover:scale-110 transition-transform">
+                                                <i data-lucide="play" class="w-5 h-5 ml-1" fill="currentColor" ></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--  Client / Brands Section  -->
+            <section class="py-20 border-b border-slate-100 dark:border-n8n-surface bg-white dark:bg-n8n-base relative z-10 overflow-hidden">
+                <div class="max-w-7xl mx-auto px-6 mb-12">
+                    <div class="text-center">
+                        <h5
+                           }
+                           } class="text-3xl md:text-[38px] font-[800] text-slate-800 dark:text-slate-200 leading-tight"
+                            style="font-family: 'Outfit, sans-serif';"
+                        >
+                            Join Over <span class="text-blue-600">1000+</span> Companies with <span class="text-slate-900 dark:text-white border-b-4 border-blue-600">Bexon</span> Here
+                        </h5>
+                    </div>
+                </div>
+
+                <!--  Marquee Slider  -->
+                <div class="relative w-full overflow-hidden whitespace-nowrap mask-image-fade">
+                    <div class="inline-flex w-max animate-marquee items-center gap-16 md:gap-24 px-8 md:px-12">
+                        <!--  First set of logos  -->
+                        <img
+                                `}
+                                src="images/bexon/brands/brand-1.webp"
+                                alt="Brand image"
+                                class="h-10 md:h-12 w-auto object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+                            /><img
+                                `}
+                                src="images/bexon/brands/brand-1.webp"
+                                alt="Brand image"
+                                class="h-10 md:h-12 w-auto object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+                            /><img
+                                `}
+                                src="images/bexon/brands/brand-1.webp"
+                                alt="Brand image"
+                                class="h-10 md:h-12 w-auto object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+                            /><img
+                                `}
+                                src="images/bexon/brands/brand-1.webp"
+                                alt="Brand image"
+                                class="h-10 md:h-12 w-auto object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+                            /><img
+                                `}
+                                src="images/bexon/brands/brand-1.webp"
+                                alt="Brand image"
+                                class="h-10 md:h-12 w-auto object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+                            /><img
+                                `}
+                                src="images/bexon/brands/brand-1.webp"
+                                alt="Brand image"
+                                class="h-10 md:h-12 w-auto object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+                            />
+                        <!--  Cloned set for loop  -->
+                        <img
+                                `}
+                                src="images/bexon/brands/brand-1.webp"
+                                alt="Brand image"
+                                class="h-10 md:h-12 w-auto object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+                            /><img
+                                `}
+                                src="images/bexon/brands/brand-1.webp"
+                                alt="Brand image"
+                                class="h-10 md:h-12 w-auto object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+                            /><img
+                                `}
+                                src="images/bexon/brands/brand-1.webp"
+                                alt="Brand image"
+                                class="h-10 md:h-12 w-auto object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+                            /><img
+                                `}
+                                src="images/bexon/brands/brand-1.webp"
+                                alt="Brand image"
+                                class="h-10 md:h-12 w-auto object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+                            /><img
+                                `}
+                                src="images/bexon/brands/brand-1.webp"
+                                alt="Brand image"
+                                class="h-10 md:h-12 w-auto object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+                            /><img
+                                `}
+                                src="images/bexon/brands/brand-1.webp"
+                                alt="Brand image"
+                                class="h-10 md:h-12 w-auto object-contain opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-300"
+                            />
+                    </div>
+                </div>
+            </section>
+
+
+            <!--  Team Section  -->
+            <section class="py-24 bg-white dark:bg-n8n-base relative">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <span whileInView="visible" class="inline-flex items-center justify-center gap-2 text-blue-600 font-bold font-sm tracking-widest uppercase mb-4"
+                        >
+                            <span class="w-3 h-3 rounded-full bg-blue-100 flex items-center justify-center"><div class="w-1.5 h-1.5 rounded-full bg-blue-600"></div></span> Meet Our Team
+                        </span>
+                        <h2 whileInView="visible" class="text-4xl md:text-5xl lg:text-[54px] font-[800] text-slate-900 dark:text-white leading-[1.1]"
+                            style="font-family: 'Outfit, sans-serif';"
+                        >
+                            Success Stories Fuel <br class="hidden md:block" /> our <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Innovation.</span>
+                        </h2>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <!--  Member 1  -->
+                        <div whileInView="visible" class="group cursor-pointer">
+                            <div class="relative rounded-3xl overflow-hidden mb-6 aspect-[4/5] shadow-lg dark:shadow-none">
+                                <img src="images/bexon/team/team-1.webp" alt="Eade Marren" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+
+                                <!--  Social Overlay  -->
+                                <div class="absolute inset-0 bg-blue-600/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                                    <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-n8n-base text-blue-600 flex items-center justify-center hover:scale-110 transition-transform"><i data-lucide="facebook" class="w-4 h-4" ></i></a>
+                                    <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-n8n-base text-blue-600 flex items-center justify-center hover:scale-110 transition-transform"><i data-lucide="twitter" class="w-4 h-4" ></i></a>
+                                    <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-n8n-base text-blue-600 flex items-center justify-center hover:scale-110 transition-transform"><i data-lucide="linkedin" class="w-4 h-4" ></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center relative">
+                                <h4 class="text-2xl font-[800] text-slate-900 dark:text-white mb-1 group-hover:text-blue-600 transition-colors" style="font-family: 'Outfit, sans-serif';">Eade Marren</h4>
+                                <span class="text-slate-500 dark:text-slate-400 font-bold text-sm uppercase tracking-wide">Chief Executive</span>
+                                <a href="mailto:info@bexon.com" class="absolute -top-12 right-0 w-12 h-12 bg-slate-900 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:-translate-y-4 transition-all duration-300 shadow-xl">
+                                    <i data-lucide="mail" class="w-5 h-5" ></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--  Member 2  -->
+                        <div whileInView="visible"} class="group cursor-pointer">
+                            <div class="relative rounded-3xl overflow-hidden mb-6 aspect-[4/5] shadow-lg dark:shadow-none">
+                                <img src="images/bexon/team/team-2.webp" alt="Savannah Ngueen" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                                <div class="absolute inset-0 bg-blue-600/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                                    <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-n8n-base text-blue-600 flex items-center justify-center hover:scale-110 transition-transform"><i data-lucide="facebook" class="w-4 h-4" ></i></a>
+                                    <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-n8n-base text-blue-600 flex items-center justify-center hover:scale-110 transition-transform"><i data-lucide="twitter" class="w-4 h-4" ></i></a>
+                                    <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-n8n-base text-blue-600 flex items-center justify-center hover:scale-110 transition-transform"><i data-lucide="linkedin" class="w-4 h-4" ></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center relative">
+                                <h4 class="text-2xl font-[800] text-slate-900 dark:text-white mb-1 group-hover:text-blue-600 transition-colors" style="font-family: 'Outfit, sans-serif';">Savannah Ngueen</h4>
+                                <span class="text-slate-500 dark:text-slate-400 font-bold text-sm uppercase tracking-wide">Operations Head</span>
+                                <a href="mailto:info@bexon.com" class="absolute -top-12 right-0 w-12 h-12 bg-slate-900 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:-translate-y-4 transition-all duration-300 shadow-xl">
+                                    <i data-lucide="mail" class="w-5 h-5" ></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--  Member 3  -->
+                        <div whileInView="visible"} class="group cursor-pointer">
+                            <div class="relative rounded-3xl overflow-hidden mb-6 aspect-[4/5] shadow-lg dark:shadow-none">
+                                <img src="images/bexon/team/team-3.webp" alt="Kristin Watson" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                                <div class="absolute inset-0 bg-blue-600/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                                    <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-n8n-base text-blue-600 flex items-center justify-center hover:scale-110 transition-transform"><i data-lucide="facebook" class="w-4 h-4" ></i></a>
+                                    <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-n8n-base text-blue-600 flex items-center justify-center hover:scale-110 transition-transform"><i data-lucide="twitter" class="w-4 h-4" ></i></a>
+                                    <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-n8n-base text-blue-600 flex items-center justify-center hover:scale-110 transition-transform"><i data-lucide="linkedin" class="w-4 h-4" ></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center relative">
+                                <h4 class="text-2xl font-[800] text-slate-900 dark:text-white mb-1 group-hover:text-blue-600 transition-colors" style="font-family: 'Outfit, sans-serif';">Kristin Watson</h4>
+                                <span class="text-slate-500 dark:text-slate-400 font-bold text-sm uppercase tracking-wide">Marketing Lead</span>
+                                <a href="mailto:info@bexon.com" class="absolute -top-12 right-0 w-12 h-12 bg-slate-900 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:-translate-y-4 transition-all duration-300 shadow-xl">
+                                    <i data-lucide="mail" class="w-5 h-5" ></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!--  Member 4  -->
+                        <div whileInView="visible"} class="group cursor-pointer">
+                            <div class="relative rounded-3xl overflow-hidden mb-6 aspect-[4/5] shadow-lg dark:shadow-none">
+                                <img src="images/bexon/team/team-4.webp" alt="Darlene Robertson" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                                <div class="absolute inset-0 bg-blue-600/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                                    <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-n8n-base text-blue-600 flex items-center justify-center hover:scale-110 transition-transform"><i data-lucide="facebook" class="w-4 h-4" ></i></a>
+                                    <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-n8n-base text-blue-600 flex items-center justify-center hover:scale-110 transition-transform"><i data-lucide="twitter" class="w-4 h-4" ></i></a>
+                                    <a href="#" class="w-10 h-10 rounded-full bg-white dark:bg-n8n-base text-blue-600 flex items-center justify-center hover:scale-110 transition-transform"><i data-lucide="linkedin" class="w-4 h-4" ></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center relative">
+                                <h4 class="text-2xl font-[800] text-slate-900 dark:text-white mb-1 group-hover:text-blue-600 transition-colors" style="font-family: 'Outfit, sans-serif';">Darlene Robertson</h4>
+                                <span class="text-slate-500 dark:text-slate-400 font-bold text-sm uppercase tracking-wide">Business Director</span>
+                                <a href="mailto:info@bexon.com" class="absolute -top-12 right-0 w-12 h-12 bg-slate-900 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:-translate-y-4 transition-all duration-300 shadow-xl">
+                                    <i data-lucide="mail" class="w-5 h-5" ></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-16 text-center md:hidden">
+                        <a href="/team" class="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white font-bold rounded-full transition-all">
+                            More member <i data-lucide="arrow-right" class="w-4 h-4" ></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!--  CTA Section (Breaking Boundaries)  -->
+            <div class="py-24 bg-slate-900 text-white relative overflow-hidden" >
+                <div class="absolute inset-0 bg-slate-900/80" />
+                <div class="absolute right-0 top-0 w-1/2 h-full bg-blue-600 rounded-l-full opacity-30 blur-[100px]" />
+
+                <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+                    <div whileInView="visible">
+                        <h2 class="text-5xl md:text-7xl font-black mb-8" style="font-family: 'Outfit, sans-serif';">
+                            Breaking Boundaries,<br />Building <span class="text-blue-400">Dreams.</span>
+                        </h2>
+                        <p class="text-xl text-slate-300 max-w-2xl mx-auto mb-10 font-medium">
+                            Step into the future of corporate strategy. Equip your business with an integrated platform built for scale, transparency, and accuracy.
+                        </p>
+                        <div>
+                            <a href="/login" class="inline-flex px-10 py-5 bg-blue-600 text-white font-bold rounded-full hover:bg-blue-700 transition-transform hover:-translate-y-1 text-lg shadow-xl shadow-blue-600/30">
+                                Get Started Today
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--  Footer  -->
+            <footer class="bg-white dark:bg-n8n-base dark:bg-n8n-base border-t border-slate-200 dark:border-n8n-lighter">
+                <div class="max-w-7xl mx-auto px-6 py-16">
+                    <div class="grid md:grid-cols-4 gap-12 border-b border-slate-200 dark:border-n8n-lighter pb-16">
+                        <div class="col-span-1 md:col-span-2">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white">
+                                    <i data-lucide="microscope" class="w-6 h-6" ></i>
+                                </div>
+                                <span class="text-xl font-black text-slate-900 dark:text-white tracking-tight" style="font-family: 'Outfit, sans-serif';">Bexon<span class="text-blue-600">.</span></span>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-400 mb-8 max-w-sm font-medium leading-relaxed">
+                                Seamless Process, Great Results. We provide top-tier academic and corporate management tools configured for the highest efficiency.
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-n8n-surface flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-blue-600 hover:text-white transition-all"><span class="font-bold">fb</span></a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-n8n-surface flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-blue-600 hover:text-white transition-all"><span class="font-bold">tw</span></a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-n8n-surface flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-blue-600 hover:text-white transition-all"><span class="font-bold">in</span></a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-black text-slate-900 dark:text-white mb-6" style="font-family: 'Outfit, sans-serif';">Company</h4>
+                            <ul class="space-y-4 text-slate-600 dark:text-slate-400 font-medium">
+                                <li><a href="#" class="hover:text-blue-600 transition-colors">About Us</a></li>
+                                <li><a href="#" class="hover:text-blue-600 transition-colors">Careers</a></li>
+                                <li><a href="#" class="hover:text-blue-600 transition-colors">Services</a></li>
+                                <li><a href="#" class="hover:text-blue-600 transition-colors">Contact Us</a></li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="text-lg font-black text-slate-900 dark:text-white mb-6" style="font-family: 'Outfit, sans-serif';">Resources</h4>
+                            <ul class="space-y-4 text-slate-600 dark:text-slate-400 font-medium">
+                                <li><a href="#" class="hover:text-blue-600 transition-colors">Help Center</a></li>
+                                <li><a href="#" class="hover:text-blue-600 transition-colors">Documentation</a></li>
+                                <li><a href="#" class="hover:text-blue-600 transition-colors">Privacy Policy</a></li>
+                                <li><a href="#" class="hover:text-blue-600 transition-colors">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-slate-500 dark:text-slate-400 font-medium">
+                        <p>© 2026 Bexon Platform. All rights reserved.</p>
+                        <p>Designed with ❤️ for Enterprise.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    
+    </div>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>

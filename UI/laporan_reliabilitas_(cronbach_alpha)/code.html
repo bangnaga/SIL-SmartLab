@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Laporan Reliabilitas - Lab Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            overscroll-behavior-y: contain;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200 min-h-screen">
+<!-- iOS Status Bar Spacer -->
+<div class="h-12 w-full bg-white/80 dark:bg-background-dark/80 fixed top-0 z-50 ios-blur border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-6">
+<button class="text-primary flex items-center gap-1">
+<span class="material-icons text-xl">chevron_left</span>
+<span class="text-sm font-semibold">Kembali</span>
+</button>
+<h1 class="text-sm font-bold tracking-tight uppercase opacity-60">S3 Research System</h1>
+<button class="text-primary">
+<span class="material-icons text-xl">share</span>
+</button>
+</div>
+<!-- Main Content -->
+<main class="pt-16 pb-24 px-4 max-w-md mx-auto">
+<!-- Header Section -->
+<header class="py-6">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 bg-primary/10 text-primary text-[10px] font-bold rounded uppercase tracking-wider">Statistik Otomatis</span>
+</div>
+<h2 class="text-2xl font-800 text-slate-900 dark:text-white leading-tight">Laporan Reliabilitas Instrumen</h2>
+<p class="text-sm text-slate-500 mt-1">Uji Cronbach's Alpha (TAM &amp; UEQ)</p>
+</header>
+<!-- Summary Statistics Card -->
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200/60 dark:border-slate-800 p-4 mb-6">
+<div class="grid grid-cols-2 gap-4">
+<div class="border-r border-slate-100 dark:border-slate-800">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Total Responden (N)</p>
+<p class="text-2xl font-800 text-slate-900 dark:text-white">142</p>
+</div>
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Total Butir Pertanyaan</p>
+<p class="text-2xl font-800 text-slate-900 dark:text-white">32</p>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+<span class="text-sm font-semibold text-slate-700 dark:text-slate-300">Status: Reliabel</span>
+</div>
+<span class="text-[10px] text-slate-400">Terakhir Update: 24/05/2024</span>
+</div>
+</div>
+<!-- Section: Technology Acceptance Model (TAM) -->
+<div class="mb-8">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-800 text-lg flex items-center gap-2">
+<span class="w-1.5 h-6 bg-primary rounded-full"></span>
+                    Dimensi TAM
+                </h3>
+<span class="text-xs font-bold text-primary">Standar &gt; 0.70</span>
+</div>
+<!-- TAM: Perceived Usefulness -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/60 dark:border-slate-800 overflow-hidden mb-4">
+<div class="p-4 flex items-center justify-between bg-slate-50/50 dark:bg-slate-800/30">
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">Perceived Usefulness</h4>
+<p class="text-[11px] text-slate-500">6 Butir Pertanyaan (P1-P6)</p>
+</div>
+<div class="text-right">
+<div class="text-2xl font-800 text-green-600 dark:text-green-400">0.892</div>
+<span class="text-[10px] font-bold px-1.5 py-0.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded">SANGAT TINGGI</span>
+</div>
+</div>
+<div class="p-4">
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Alpha if Item Deleted</p>
+<div class="space-y-2">
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-600 dark:text-slate-400">P1: Mempercepat pekerjaan</span>
+<span class="font-mono font-semibold text-slate-800 dark:text-slate-200">0.871</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-slate-600 dark:text-slate-400">P2: Meningkatkan performa</span>
+<span class="font-mono font-semibold text-slate-800 dark:text-slate-200">0.880</span>
+</div>
+<div class="flex justify-between items-center text-xs bg-amber-50 dark:bg-amber-900/20 px-1 rounded">
+<span class="text-amber-700 dark:text-amber-400">P3: Relevansi dengan tugas *</span>
+<span class="font-mono font-bold text-amber-700 dark:text-amber-400">0.912</span>
+</div>
+</div>
+</div>
+</div>
+<!-- TAM: Perceived Ease of Use -->
+<div class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/60 dark:border-slate-800 overflow-hidden">
+<div class="p-4 flex items-center justify-between">
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white">Perceived Ease of Use</h4>
+<p class="text-[11px] text-slate-500">4 Butir Pertanyaan (P7-P10)</p>
+</div>
+<div class="text-right">
+<div class="text-2xl font-800 text-green-600 dark:text-green-400">0.745</div>
+<span class="text-[10px] font-bold px-1.5 py-0.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded uppercase">Reliabel</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: User Experience Questionnaire (UEQ) -->
+<div class="mb-8">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-800 text-lg flex items-center gap-2">
+<span class="w-1.5 h-6 bg-primary rounded-full"></span>
+                    Dimensi UEQ
+                </h3>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200/60 dark:border-slate-800">
+<p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Efficiency</p>
+<div class="flex items-baseline gap-1">
+<span class="text-xl font-800 text-slate-900 dark:text-white">0.82</span>
+<span class="material-icons text-green-500 text-sm">check_circle</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200/60 dark:border-slate-800">
+<p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Perspicuity</p>
+<div class="flex items-baseline gap-1">
+<span class="text-xl font-800 text-slate-900 dark:text-white">0.78</span>
+<span class="material-icons text-green-500 text-sm">check_circle</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200/60 dark:border-slate-800">
+<p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Dependability</p>
+<div class="flex items-baseline gap-1">
+<span class="text-xl font-800 text-slate-900 dark:text-white">0.69</span>
+<span class="material-icons text-amber-500 text-sm">warning</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900 p-3 rounded-xl border border-slate-200/60 dark:border-slate-800">
+<p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Stimulation</p>
+<div class="flex items-baseline gap-1">
+<span class="text-xl font-800 text-slate-900 dark:text-white">0.85</span>
+<span class="material-icons text-green-500 text-sm">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Diagnostic Note -->
+<div class="bg-primary/5 dark:bg-primary/10 border border-primary/20 p-4 rounded-xl mb-6">
+<div class="flex gap-3">
+<span class="material-icons text-primary">insights</span>
+<div>
+<h5 class="text-sm font-bold text-primary">Saran Perbaikan (Diagnostic)</h5>
+<p class="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+                        Nilai Alpha untuk item <b>P3 (Relevansi)</b> lebih tinggi jika dihapus. Pertimbangkan untuk merevisi kalimat pertanyaan atau menghapus item tersebut untuk meningkatkan konsistensi internal dimensi.
+                    </p>
+</div>
+</div>
+</div>
+<!-- Methodological Footnote -->
+<footer class="text-center pb-8">
+<p class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">Medical Lab Research v2.4.1</p>
+<p class="text-[9px] text-slate-400 mt-1 italic">Kriteria Reliabilitas: Sangat Tinggi (&gt;0.80), Tinggi (&gt;0.70), Moderat (&gt;0.60)</p>
+</footer>
+</main>
+<!-- Bottom Action Bar (iOS Style) -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/90 ios-blur border-t border-slate-200 dark:border-slate-800 px-6 pt-3 pb-8 z-50 flex items-center justify-between">
+<button class="flex flex-col items-center gap-1 opacity-40">
+<span class="material-icons">dashboard</span>
+<span class="text-[10px] font-bold">Dashboard</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-icons">analytics</span>
+<span class="text-[10px] font-bold">Laporan</span>
+</button>
+<div class="relative -top-6">
+<button class="w-14 h-14 bg-primary text-white rounded-full shadow-lg shadow-primary/40 flex items-center justify-center">
+<span class="material-icons text-3xl">picture_as_pdf</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 opacity-40">
+<span class="material-icons">storage</span>
+<span class="text-[10px] font-bold">Database</span>
+</button>
+<button class="flex flex-col items-center gap-1 opacity-40">
+<span class="material-icons">settings</span>
+<span class="text-[10px] font-bold">Setelan</span>
+</button>
+</div>
+<!-- Background Pattern Decoration -->
+<div class="fixed inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.05] z-[-1]">
+<svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="40" id="grid" patternunits="userSpaceOnUse" width="40">
+<path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+</svg>
+</div>
+</body></html>

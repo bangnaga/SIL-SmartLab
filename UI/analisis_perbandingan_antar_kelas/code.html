@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<!-- iOS Status Bar Spacer -->
+<div class="h-11 bg-white/80 dark:bg-background-dark/80 ios-blur sticky top-0 z-50"></div>
+<!-- Header -->
+<header class="bg-white/80 dark:bg-background-dark/80 ios-blur sticky top-11 z-50 border-b border-primary/10 px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-icons text-primary">arrow_back_ios_new</span>
+</button>
+<h1 class="text-lg font-semibold">Analisis Perbandingan</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-icons">file_download</span>
+</button>
+</header>
+<main class="p-4 space-y-6 pb-24">
+<!-- Filter Section -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<h2 class="text-sm font-medium text-slate-500 uppercase tracking-wider">Filter Kelas</h2>
+<span class="text-xs text-primary font-medium">Reset</span>
+</div>
+<div class="flex gap-2 overflow-x-auto hide-scrollbar pb-1">
+<button class="flex-none px-4 py-2 bg-primary text-white rounded-full text-sm font-medium shadow-sm shadow-primary/30">
+                    Kelas A (Analitik)
+                </button>
+<button class="flex-none px-4 py-2 bg-white dark:bg-slate-800 border border-primary/20 text-slate-600 dark:text-slate-300 rounded-full text-sm font-medium">
+                    Kelas B (Klinik)
+                </button>
+<button class="flex-none px-4 py-2 bg-white dark:bg-slate-800 border border-primary/20 text-slate-600 dark:text-slate-300 rounded-full text-sm font-medium">
+                    Kelas C (Mikro)
+                </button>
+</div>
+<div class="bg-white dark:bg-slate-800 p-3 rounded-xl border border-primary/5 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-icons text-primary text-sm">calendar_today</span>
+<span class="text-sm font-medium">Semester Ganjil 2023/2024</span>
+</div>
+<span class="material-icons text-slate-400">expand_more</span>
+</div>
+</section>
+<!-- KPI Summary Cards -->
+<section class="grid grid-cols-2 gap-3">
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl border-l-4 border-primary shadow-sm">
+<p class="text-xs text-slate-500 font-medium">Rata-rata Gabungan</p>
+<div class="mt-1 flex items-baseline gap-1">
+<span class="text-2xl font-bold">80.3</span>
+<span class="text-[10px] text-green-500 font-medium">↑ 2.4%</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-4 rounded-xl border-l-4 border-emerald-500 shadow-sm">
+<p class="text-xs text-slate-500 font-medium">Tingkat Kelulusan</p>
+<div class="mt-1 flex items-baseline gap-1">
+<span class="text-2xl font-bold">88.5%</span>
+<span class="text-[10px] text-emerald-500 font-medium">Optimal</span>
+</div>
+</div>
+</section>
+<!-- Main Comparison Chart (Mockup) -->
+<section class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-primary/5 shadow-sm space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="font-semibold text-sm">Performa Kuis vs Praktikum</h3>
+<div class="flex bg-slate-100 dark:bg-slate-700 p-1 rounded-lg">
+<button class="px-3 py-1 bg-white dark:bg-slate-600 rounded-md shadow-sm text-[10px] font-bold uppercase tracking-tighter">Bar</button>
+<button class="px-3 py-1 text-slate-400 text-[10px] font-bold uppercase tracking-tighter">Line</button>
+</div>
+</div>
+<div class="relative h-48 w-full flex items-end justify-around gap-2 pt-6">
+<!-- Chart Bars Placeholder -->
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<div class="w-full flex justify-center gap-1 items-end h-full">
+<div class="w-4 bg-primary rounded-t-sm" style="height: 75%;"></div>
+<div class="w-4 bg-primary/40 rounded-t-sm" style="height: 65%;"></div>
+</div>
+<span class="text-[10px] font-medium text-slate-500">Kuis 1</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<div class="w-full flex justify-center gap-1 items-end h-full">
+<div class="w-4 bg-primary rounded-t-sm" style="height: 85%;"></div>
+<div class="w-4 bg-primary/40 rounded-t-sm" style="height: 70%;"></div>
+</div>
+<span class="text-[10px] font-medium text-slate-500">Kuis 2</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<div class="w-full flex justify-center gap-1 items-end h-full">
+<div class="w-4 bg-primary rounded-t-sm" style="height: 60%;"></div>
+<div class="w-4 bg-primary/40 rounded-t-sm" style="height: 80%;"></div>
+</div>
+<span class="text-[10px] font-medium text-slate-500">Prak 1</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-1 group">
+<div class="w-full flex justify-center gap-1 items-end h-full">
+<div class="w-4 bg-primary rounded-t-sm" style="height: 90%;"></div>
+<div class="w-4 bg-primary/40 rounded-t-sm" style="height: 85%;"></div>
+</div>
+<span class="text-[10px] font-medium text-slate-500">Prak 2</span>
+</div>
+</div>
+<div class="flex justify-center gap-4 pt-2 border-t border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-primary"></div>
+<span class="text-[10px] font-medium text-slate-500">Kelas A</span>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="w-2.5 h-2.5 rounded-full bg-primary/40"></div>
+<span class="text-[10px] font-medium text-slate-500">Kelas B</span>
+</div>
+</div>
+</section>
+<!-- Detailed Metrics Table -->
+<section class="space-y-3">
+<h3 class="font-semibold text-sm">Rincian Metrik Perbandingan</h3>
+<div class="overflow-hidden rounded-xl border border-primary/5 shadow-sm">
+<table class="w-full text-left bg-white dark:bg-slate-800 border-collapse">
+<thead class="bg-slate-50 dark:bg-slate-700/50">
+<tr>
+<th class="p-3 text-[11px] font-semibold text-slate-500 uppercase">Metrik</th>
+<th class="p-3 text-[11px] font-semibold text-slate-500 uppercase text-center">Kls A</th>
+<th class="p-3 text-[11px] font-semibold text-slate-500 uppercase text-center">Kls B</th>
+<th class="p-3 text-[11px] font-semibold text-slate-500 uppercase text-center">Selisih</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+<tr>
+<td class="p-3 text-xs font-medium">Nilai Tertinggi</td>
+<td class="p-3 text-xs text-center font-bold">98</td>
+<td class="p-3 text-xs text-center font-bold">95</td>
+<td class="p-3 text-xs text-center text-green-500 font-medium">+3</td>
+</tr>
+<tr>
+<td class="p-3 text-xs font-medium">Nilai Terendah</td>
+<td class="p-3 text-xs text-center font-bold">62</td>
+<td class="p-3 text-xs text-center font-bold">58</td>
+<td class="p-3 text-xs text-center text-green-500 font-medium">+4</td>
+</tr>
+<tr>
+<td class="p-3 text-xs font-medium">Std. Deviasi</td>
+<td class="p-3 text-xs text-center font-bold">4.2</td>
+<td class="p-3 text-xs text-center font-bold">5.8</td>
+<td class="p-3 text-xs text-center text-red-500 font-medium">-1.6</td>
+</tr>
+<tr>
+<td class="p-3 text-xs font-medium">Median</td>
+<td class="p-3 text-xs text-center font-bold">81</td>
+<td class="p-3 text-xs text-center font-bold">79</td>
+<td class="p-3 text-xs text-center text-green-500 font-medium">+2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Insights Card -->
+<section class="bg-primary/5 border border-primary/20 p-4 rounded-xl space-y-2">
+<div class="flex items-center gap-2">
+<span class="material-icons text-primary text-lg">lightbulb</span>
+<h4 class="text-sm font-semibold text-primary">Insight AI</h4>
+</div>
+<p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                Performa <strong>Kelas A</strong> cenderung lebih stabil dengan standar deviasi lebih rendah dibandingkan <strong>Kelas B</strong>. Namun, nilai praktikum 2 pada Kelas B menunjukkan peningkatan signifikan yang perlu diobservasi lebih lanjut.
+            </p>
+</section>
+</main>
+<!-- Bottom Navigation (iOS Style) -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/90 ios-blur border-t border-slate-200 dark:border-slate-800 px-6 py-2 pb-6 flex justify-between items-center z-50">
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons">home</span>
+<span class="text-[10px]">Beranda</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons">groups</span>
+<span class="text-[10px]">Kelas</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-icons">bar_chart</span>
+<span class="text-[10px] font-medium">Analisis</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-icons">settings</span>
+<span class="text-[10px]">Akun</span>
+</div>
+</nav>
+</body></html>

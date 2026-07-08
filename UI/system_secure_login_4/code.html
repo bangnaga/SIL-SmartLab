@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Login - Poltekkes Muhammadiyah Makassar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#008744", // Poltekkes Green
+                        "secondary": "#E2C300", // Poltekkes Yellow (refined from logo)
+                        "background-light": "#fcfdfc",
+                        "background-dark": "#0a120d",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --primary-color: #008744;
+            --secondary-color: #E2C300;
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            min-height: max(884px, 100dvh);
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200 min-h-screen flex flex-col">
+<div class="h-10 w-full"></div>
+<main class="flex-1 flex flex-col items-center justify-center px-6 pb-12">
+<div class="w-full max-w-sm mb-8 text-center">
+<div class="inline-flex items-center justify-center w-32 h-32 mb-4 bg-white dark:bg-transparent rounded-full p-1 border-2 border-[var(--secondary-color)] shadow-sm">
+<img alt="Logo Politeknik Kesehatan Muhammadiyah Makassar" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy6Hz4yJEFiXdGTliX3WereHmwa9VGQAInQDQ3HiCcx3lt1dwp4J8lS4CY1lxDai1tK9Fl1RvVS-2gf6YWwiiJ9QZnzNTF-ClD809rvEnZDA-uPxo8RH-RSF_ILVyT8NimlFQ_oFJ36iIIaBTo8wui_KH33inW89GVkTq57nTNsoWLOwp_hwLotXnDf_-Wd9jSd3_KJLWKg5M2z1AZ1msFa5d6dkvf_UxDa_ZUeJZo5zaX4UV7fzdfjNgOTlX3TC2CTcGGCpd5d4VA"/>
+</div>
+<h1 class="text-xl font-800 tracking-tight text-slate-900 dark:text-white leading-tight uppercase">
+                Politeknik Kesehatan<br/>Muhammadiyah Makassar
+            </h1>
+<p class="text-[11px] font-700 text-[var(--primary-color)] mt-2 tracking-widest uppercase opacity-90">
+                Sistem Manajemen Laboratorium Medis
+            </p>
+</div>
+<div class="w-full max-w-sm bg-white dark:bg-slate-900/50 p-8 rounded-2xl shadow-2xl shadow-emerald-900/5 dark:shadow-none border border-slate-100 dark:border-slate-800">
+<div class="mb-6 text-center">
+<h2 class="text-lg font-700 text-slate-700 dark:text-slate-200">Masuk ke akun Anda</h2>
+</div>
+<div class="flex p-1 bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 rounded-xl mb-6">
+<button class="flex-1 py-2.5 text-[11px] font-800 rounded-lg bg-white dark:bg-slate-700 shadow-sm text-[var(--primary-color)] transition-all">
+                    ADMIN
+                </button>
+<button class="flex-1 py-2.5 text-[11px] font-700 rounded-lg text-slate-500 dark:text-slate-400 hover:text-[var(--primary-color)] transition-all">
+                    DOSEN
+                </button>
+<button class="flex-1 py-2.5 text-[11px] font-700 rounded-lg text-slate-500 dark:text-slate-400 hover:text-[var(--primary-color)] transition-all">
+                    MAHASISWA
+                </button>
+</div>
+<form class="space-y-4" onsubmit="return false;">
+<div class="space-y-1.5">
+<label class="text-[10px] font-800 text-slate-400 dark:text-slate-500 uppercase tracking-widest ml-1">Nama Pengguna</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 group-focus-within:text-[var(--primary-color)] transition-colors">person</span>
+</div>
+<input class="block w-full pl-11 pr-4 py-3.5 bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 focus:border-[var(--primary-color)] focus:ring-1 focus:ring-[var(--primary-color)] rounded-xl text-slate-900 dark:text-white placeholder-slate-300 transition-all font-medium text-sm" placeholder="lab.admin.01" type="text"/>
+</div>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between items-center ml-1">
+<label class="text-[10px] font-800 text-slate-400 dark:text-slate-500 uppercase tracking-widest">Kata Sandi</label>
+<a class="text-[11px] font-700 text-[var(--primary-color)] hover:underline" href="#">Lupa?</a>
+</div>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 group-focus-within:text-[var(--primary-color)] transition-colors">lock</span>
+</div>
+<input class="block w-full pl-11 pr-12 py-3.5 bg-slate-50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700 focus:border-[var(--primary-color)] focus:ring-1 focus:ring-[var(--primary-color)] rounded-xl text-slate-900 dark:text-white placeholder-slate-300 transition-all font-medium text-sm" placeholder="••••••••" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200" type="button">
+<span class="material-symbols-outlined text-xl">visibility_off</span>
+</button>
+</div>
+</div>
+<button class="w-full bg-[var(--primary-color)] hover:bg-[#00753b] text-white font-700 py-4 rounded-xl shadow-lg shadow-emerald-900/10 transition-all active:scale-[0.98] mt-4 flex items-center justify-center gap-2" type="submit">
+<span>Masuk Aman</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</form>
+<div class="pt-6 mt-6 border-t border-slate-100 dark:border-slate-800 flex flex-col items-center">
+<p class="text-[11px] text-slate-400 font-700 uppercase tracking-wider mb-4">Atau masuk dengan</p>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-slate-400 dark:text-slate-300 active:bg-emerald-50 active:text-[var(--primary-color)] transition-all flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">face</span>
+</button>
+<button class="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 text-slate-400 dark:text-slate-300 active:bg-emerald-50 active:text-[var(--primary-color)] transition-all flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">fingerprint</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-10 text-center space-y-4">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/50 rounded-full">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="text-[10px] font-800 text-emerald-700 dark:text-emerald-400 uppercase tracking-widest leading-none">Sistem Online</span>
+</div>
+<div class="flex items-center justify-center gap-4 text-slate-400 dark:text-slate-600">
+<span class="text-[10px] font-700 tracking-widest uppercase">Patuh HIPAA</span>
+<span class="w-1 h-1 bg-slate-300 dark:bg-slate-700 rounded-full"></span>
+<span class="text-[10px] font-700 tracking-widest uppercase">v4.2.0-aman</span>
+</div>
+</div>
+</main>
+<div class="h-8 w-full flex justify-center items-end pb-3">
+<div class="w-32 h-1 bg-slate-300 dark:bg-slate-700 rounded-full opacity-30"></div>
+</div>
+
+</body></html>

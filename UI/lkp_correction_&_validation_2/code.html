@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Validasi Dosen &amp; Verifikasi AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "ai-purple": "#8b5cf6",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            -webkit-tap-highlight-color: transparent;
+            overscroll-behavior-y: none;
+            min-height: max(884px, 100dvh);
+        }
+        .safe-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        .safe-top {
+            padding-top: env(safe-area-inset-top);
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .ai-shimmer {
+            background: linear-gradient(90deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.1));
+            background-size: 200% 100%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10 safe-top">
+<div class="px-4 py-3 flex items-center justify-between">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-icons-round text-primary">chevron_left</span>
+</button>
+<div class="text-center">
+<h1 class="text-sm font-bold uppercase tracking-wider text-slate-500">Koreksi LKP</h1>
+<p class="text-[11px] font-medium text-primary">Hematologi - Morfologi Sel</p>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary">science</span>
+</button>
+</div>
+</header>
+<main class="pb-44">
+<section class="px-4 mt-4">
+<div class="bg-white dark:bg-slate-900/50 rounded-xl p-4 border border-primary/5 shadow-sm flex items-center gap-4">
+<div class="relative">
+<img alt="Foto Mahasiswa" class="w-14 h-14 rounded-full object-cover border-2 border-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATgasuHLBWmCz4DgdddyHljQtfY_tm-vqjW01XBN383vBaYIAraoEbDFA6qtpr7bXTwChk23uzfQVKsW0OyOjNgUjDCKtmcgKDqWvl-SIgQc32YE1hQvLQepn9K9niBHBx272lF9el_PvW1-Zk_-dj-Jdh653-LMftKGflVjRhaj0VWtNYN4ZXoVYU9LJ1YihmXELeQgtjmo_fOY88UupszbVv4LnSds1p2eUntoGLh1PLeU3Q_SMHEgV5HGNK29cDS-OX41YPwz49"/>
+<span class="absolute bottom-0 right-0 w-4 h-4 bg-yellow-500 border-2 border-white dark:border-slate-900 rounded-full"></span>
+</div>
+<div class="flex-1">
+<h2 class="font-bold text-slate-800 dark:text-white text-sm">Aris Setiawan</h2>
+<p class="text-[10px] text-slate-500 font-medium">NIM: 20210410082 • Kelompok B</p>
+<div class="mt-1.5 inline-flex items-center px-2 py-0.5 rounded bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-tight">
+                        Menunggu Tinjauan
+                    </div>
+</div>
+</div>
+</section>
+<nav class="px-4 mt-6 flex gap-1">
+<button class="flex-1 py-2 text-xs font-bold text-primary border-b-2 border-primary uppercase">Input Data</button>
+<button class="flex-1 py-2 text-xs font-bold text-slate-400 border-b-2 border-transparent uppercase">Lampiran</button>
+<button class="flex-1 py-2 text-xs font-bold text-slate-400 border-b-2 border-transparent uppercase">Log</button>
+</nav>
+<div class="px-4 mt-6 space-y-6">
+<div>
+<div class="flex items-center gap-2 mb-3">
+<span class="w-1 h-4 bg-primary rounded-full"></span>
+<h3 class="text-xs font-extrabold text-slate-400 uppercase tracking-widest">Tahap Pra-Analitik</h3>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="p-3 bg-white dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-800">
+<p class="text-[10px] font-bold text-slate-400 uppercase">ID Pasien</p>
+<p class="text-sm font-semibold mt-0.5">PX-99281-Z</p>
+</div>
+<div class="p-3 bg-white dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-800">
+<p class="text-[10px] font-bold text-slate-400 uppercase">Jenis Spesimen</p>
+<p class="text-sm font-semibold mt-0.5">Apusan Darah</p>
+</div>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="w-1 h-4 bg-ai-purple rounded-full"></span>
+<h3 class="text-xs font-extrabold text-slate-400 uppercase tracking-widest">Tahap Analitik</h3>
+</div>
+<div class="flex items-center gap-1.5 px-2 py-1 rounded-full bg-ai-purple/10 border border-ai-purple/20">
+<span class="material-symbols-outlined text-[14px] text-ai-purple">smart_toy</span>
+<span class="text-[10px] font-bold text-ai-purple uppercase">Bantuan AI</span>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-900/50 rounded-xl border border-slate-100 dark:border-slate-800 divide-y divide-slate-100 dark:divide-slate-800 overflow-hidden">
+<div class="p-4">
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase">Parameter Pengamatan</p>
+<p class="text-sm font-bold text-slate-800 dark:text-white">Identifikasi Sel Darah Putih</p>
+</div>
+<button class="flex items-center gap-1 px-2.5 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-lg text-primary text-[10px] font-bold border border-primary/10">
+<span class="material-symbols-outlined text-sm">visibility</span>
+                                Lihat Foto Original
+                            </button>
+</div>
+</div>
+<div class="p-4 bg-ai-purple/[0.03] dark:bg-ai-purple/[0.05]">
+<p class="text-[10px] font-bold text-ai-purple uppercase mb-3 flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">analytics</span> Prediksi Machine Learning
+                        </p>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-2.5 bg-white dark:bg-slate-800 rounded-lg border border-ai-purple/10">
+<span class="text-xs font-medium">Neutrofil Segmen</span>
+<div class="flex items-center gap-3">
+<span class="text-sm font-black text-ai-purple">62%</span>
+<span class="text-[10px] font-bold text-slate-400">(Acc: 98.2%)</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-2.5 bg-white dark:bg-slate-800 rounded-lg border border-ai-purple/10">
+<span class="text-xs font-medium">Limfosit</span>
+<div class="flex items-center gap-3">
+<span class="text-sm font-black text-ai-purple">28%</span>
+<span class="text-[10px] font-bold text-slate-400">(Acc: 95.4%)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4">
+<p class="text-[10px] font-bold text-slate-400 uppercase mb-3">Verifikasi Hasil AI</p>
+<div class="grid grid-cols-3 gap-2">
+<label class="relative flex flex-col items-center justify-center p-2 rounded-xl border-2 border-slate-100 dark:border-slate-800 cursor-pointer has-[:checked]:border-green-500 has-[:checked]:bg-green-50 dark:has-[:checked]:bg-green-500/10 transition-all">
+<input checked="" class="hidden" name="ai_verification" type="radio"/>
+<span class="material-symbols-outlined text-green-500 mb-1">check_circle</span>
+<span class="text-[10px] font-bold text-center">Setuju</span>
+</label>
+<label class="relative flex flex-col items-center justify-center p-2 rounded-xl border-2 border-slate-100 dark:border-slate-800 cursor-pointer has-[:checked]:border-amber-500 has-[:checked]:bg-amber-50 dark:has-[:checked]:bg-amber-500/10 transition-all">
+<input class="hidden" name="ai_verification" type="radio"/>
+<span class="material-symbols-outlined text-amber-500 mb-1">edit_square</span>
+<span class="text-[10px] font-bold text-center">Koreksi</span>
+</label>
+<label class="relative flex flex-col items-center justify-center p-2 rounded-xl border-2 border-slate-100 dark:border-slate-800 cursor-pointer has-[:checked]:border-red-500 has-[:checked]:bg-red-50 dark:has-[:checked]:bg-red-500/10 transition-all">
+<input class="hidden" name="ai_verification" type="radio"/>
+<span class="material-symbols-outlined text-red-500 mb-1">cancel</span>
+<span class="text-[10px] font-bold text-center">Tolak</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-sm font-bold text-slate-800 dark:text-white">Koreksi &amp; Umpan Balik</h3>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-icons-round text-sm">history</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Lihat Rubrik</span>
+</div>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-[10px] font-extrabold text-slate-400 uppercase tracking-wider mb-2">Catatan Dosen</label>
+<textarea class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-3 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none" placeholder="Berikan umpan balik terperinci mengenai teknik atau temuan mahasiswa..." rows="3"></textarea>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex-1">
+<label class="block text-[10px] font-extrabold text-slate-400 uppercase tracking-wider mb-2">Nilai (0-100)</label>
+<div class="relative">
+<input class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-3 pl-10 text-lg font-bold text-primary focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none" placeholder="00" type="number"/>
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-icons-round text-slate-400">grade</span>
+</div>
+</div>
+<div class="flex-none">
+<label class="block text-[10px] font-extrabold text-slate-400 uppercase tracking-wider mb-2">Revisi?</label>
+<label class="flex items-center cursor-pointer h-[50px]">
+<input class="hidden peer" type="checkbox"/>
+<div class="w-12 h-6 bg-slate-200 dark:bg-slate-700 rounded-full peer peer-checked:bg-primary relative transition-colors after:content-[''] after:absolute after:top-1 after:left-1 after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:after:translate-x-6"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 safe-bottom">
+<div class="px-4 py-4 flex gap-3">
+<button class="flex-1 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-bold text-[12px] active:scale-95 transition-transform uppercase tracking-wider">
+                Simpan Draft
+            </button>
+<button class="flex-[2] h-12 rounded-xl bg-primary text-white font-bold text-[12px] shadow-lg shadow-primary/25 active:scale-95 transition-transform uppercase tracking-wider flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">verified_user</span>
+                Validasi LKP
+            </button>
+</div>
+<div class="pb-2 flex justify-center">
+<div class="w-32 h-1 bg-slate-300 dark:bg-slate-700 rounded-full opacity-30"></div>
+</div>
+</footer>
+
+</body></html>

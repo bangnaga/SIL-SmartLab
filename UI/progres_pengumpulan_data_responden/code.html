@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Progres Pengumpulan Data Responden</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .circular-progress {
+            background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+                        conic-gradient(#137fec 56.6%, #e2e8f0 0);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-100 min-h-screen">
+<!-- iOS Status Bar Spacer -->
+<div class="h-11 w-full bg-white/80 dark:bg-background-dark/80 ios-blur sticky top-0 z-50"></div>
+<!-- Navigation Header -->
+<header class="sticky top-11 z-50 bg-white/80 dark:bg-background-dark/80 ios-blur border-b border-slate-200 dark:border-slate-800 px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<button class="p-1 -ml-1 text-primary">
+<span class="material-icons-round">chevron_left</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight">Progres Responden</h1>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-icons-round text-[20px]">refresh</span>
+</button>
+</div>
+</header>
+<main class="p-4 pb-24 space-y-5">
+<!-- Summary Circular Progress Card -->
+<section class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex flex-col items-center">
+<div class="relative w-48 h-48 flex items-center justify-center">
+<div class="circular-progress w-full h-full rounded-full flex items-center justify-center">
+<div class="text-center">
+<span class="text-4xl font-extrabold text-primary block">85</span>
+<span class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-widest">Total N</span>
+</div>
+</div>
+</div>
+<div class="mt-6 w-full space-y-4">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-sm text-slate-500 dark:text-slate-400">Target Sample (N)</p>
+<p class="text-xl font-bold">150 Responden</p>
+</div>
+<div class="text-right">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary">
+                                56.6% Selesai
+                            </span>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800 p-3 rounded-lg flex items-center gap-3">
+<span class="material-icons-round text-primary">info</span>
+<p class="text-xs leading-relaxed">
+                            Butuh <span class="font-bold text-primary">15 responden</span> lagi untuk mencapai syarat minimum validitas (N=100).
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Breakdown -->
+<section class="space-y-3">
+<h2 class="text-sm font-bold uppercase tracking-wider text-slate-500 px-1">Rincian Kategori</h2>
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800 space-y-5">
+<!-- Mahasiswa -->
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="font-medium">Mahasiswa</span>
+<span class="font-bold">40/70</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 57%"></div>
+</div>
+</div>
+<!-- Dosen -->
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="font-medium">Dosen</span>
+<span class="font-bold">25/40</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 62%"></div>
+</div>
+</div>
+<!-- Laboran -->
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="font-medium">Laboran</span>
+<span class="font-bold">20/40</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 50%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Daily Collection Timeline -->
+<section class="space-y-3">
+<h2 class="text-sm font-bold uppercase tracking-wider text-slate-500 px-1">Aktivitas Harian</h2>
+<div class="bg-white dark:bg-slate-900 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-end justify-between h-32 gap-2 px-1">
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-sm" style="height: 40%"></div>
+<span class="text-[10px] text-slate-400">Sen</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-sm" style="height: 60%"></div>
+<span class="text-[10px] text-slate-400">Sel</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/40 rounded-t-sm" style="height: 35%"></div>
+<span class="text-[10px] text-slate-400">Rab</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/20 rounded-t-sm" style="height: 75%"></div>
+<span class="text-[10px] text-slate-400">Kam</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/60 rounded-t-sm" style="height: 90%"></div>
+<span class="text-[10px] text-slate-400 font-bold text-primary">Jum</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-slate-200 dark:bg-slate-800 rounded-t-sm" style="height: 20%"></div>
+<span class="text-[10px] text-slate-400">Sab</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-slate-200 dark:bg-slate-800 rounded-t-sm" style="height: 10%"></div>
+<span class="text-[10px] text-slate-400">Min</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Respondents List -->
+<section class="space-y-3">
+<div class="flex justify-between items-center px-1">
+<h2 class="text-sm font-bold uppercase tracking-wider text-slate-500">Responden Terbaru</h2>
+<button class="text-xs font-bold text-primary">Lihat Semua</button>
+</div>
+<div class="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 divide-y divide-slate-100 dark:divide-slate-800">
+<!-- Item 1 -->
+<div class="p-4 flex items-center gap-4">
+<img alt="User Profile" class="w-10 h-10 rounded-full object-cover" data-alt="Close up portrait of a young male student" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvGp_EjdFWPnnPQCEoLLWuaEaDR5_581nLTQnsnXMdpoS59fNOUfC_e4pvMNijrKGmamuxRb_rZ_1QQlud46cvIafINdVFwOSzfmhcot5hW3NxunAqEotk3N9Cf0yDLe65ZdINeAza26mbP9blzoCDnKmC448AAx6dZHxIXkJxHdPgRIXPSHSYb1_iTTZ9SIkvAMjK7FBQiu_GINwIhGvis5XfhMLvUvCXDoDX2HzgQ49jqVEOBFgPFr56ZufMDfsrI9kuyekiEb5J"/>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold truncate">Ahmad Fauzi</p>
+<p class="text-xs text-slate-500">Mahasiswa • 2 menit yang lalu</p>
+</div>
+<span class="material-icons-round text-green-500 text-sm">check_circle</span>
+</div>
+<!-- Item 2 -->
+<div class="p-4 flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
+                        DA
+                    </div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold truncate">Dr. Agus Susanto</p>
+<p class="text-xs text-slate-500">Dosen • 1 jam yang lalu</p>
+</div>
+<span class="material-icons-round text-green-500 text-sm">check_circle</span>
+</div>
+<!-- Item 3 -->
+<div class="p-4 flex items-center gap-4">
+<img alt="User Profile" class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of a female professional lab worker" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOwzV_-pdZDKpSap8w5vGOGSOopmeULxolRSjKmBYspGe8OQBLSiR-cnGauIFCpbURvHcy7T8Rrhog3j-Jl0nr_f_6I0e8NE2ehJkRs7SHLQ6oQ29KGlVc5Ngu8o4SNXKLYRR1IXcJ_LnpTwti1rrRrpmgv4iCsg2K8gtq6DkxioL0jYhVF_tV_Ltr3ap18KT-Pj67sAv27VaIopWG8pv2aShzWJF6rCHPZyzAHrd25K4FfI0rGtHHyWSmjnCfLu9pb69P92Fl0OVm"/>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-bold truncate">Siti Aminah</p>
+<p class="text-xs text-slate-500">Laboran • 3 jam yang lalu</p>
+</div>
+<span class="material-icons-round text-green-500 text-sm">check_circle</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-background-dark/90 ios-blur border-t border-slate-200 dark:border-slate-800 p-4 pb-8 flex gap-3">
+<button class="flex-1 bg-primary text-white font-bold py-3.5 rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 active:scale-95 transition-transform">
+<span class="material-icons-round text-lg">download</span>
+            Ekspor Data
+        </button>
+<button class="w-14 h-14 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-xl flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-icons-round">share</span>
+</button>
+</div>
+</body></html>

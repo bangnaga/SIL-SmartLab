@@ -1,0 +1,82 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String?
+  role      String   @default("student") // student, lecturer, laboran, admin
+  password  String   @default("password123")
+  createdAt DateTime @default(now())
+}
+
+model Inventory {
+  id          Int       @id @default(autoincrement())
+  name        String
+  category    String
+  stock       Int
+  unit        String
+  location    String?
+  expiredDate DateTime?
+  createdAt   DateTime  @default(now())
+}
+
+model Loan {
+  id         Int      @id @default(autoincrement())
+  userId     Int
+  itemId     Int
+  quantity   Int
+  loanDate   DateTime @default(now())
+  returnDate DateTime?
+  status     String   @default("borrowed") // borrowed, returned, overdue
+}
+
+model LabWorksheet {
+  id             Int      @id @default(autoincrement())
+  studentId      Int
+  lecturerId     Int?
+  sampleId       String
+  prediction     String
+  confidence     Float
+  actualResult   String?
+  grade          Float?
+  feedback       String?
+  status         String   @default("submitted") // submitted, graded, revision
+  createdAt      DateTime @default(now())
+}
+
+model AuditTrail {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  action    String
+  resource  String
+  details   String?
+  createdAt DateTime @default(now())
+}
+
+model LearningMaterial {
+  id          Int      @id @default(autoincrement())
+  title       String
+  type        String   // PDF, Video, Audio
+  category    String
+  url         String
+  createdAt   DateTime @default(now())
+}
+
+model QuizResult {
+  id         Int      @id @default(autoincrement())
+  studentId  Int
+  quizId     Int
+  score      Float
+  details    String?  // JSON string of answers
+  createdAt  DateTime @default(now())
+}
