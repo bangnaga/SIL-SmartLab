@@ -16,8 +16,6 @@
         "@dnd-kit/utilities": "^3.2.2",
         "@google/generative-ai": "^0.24.1",
         "@libsql/client": "^0.17.4",
-        "@teachablemachine/image": "^0.8.5",
-        "@tensorflow/tfjs": "^4.22.0",
         "cors": "^2.8.6",
         "express": "^5.2.1",
         "framer-motion": "^12.35.0",
