@@ -1,5 +1,6 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { fileURLToPath } from 'url';
 import webpack from 'webpack';
 import process from 'process';
@@ -40,6 +41,11 @@ export default {
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html',
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: 'public', to: '' }
+            ],
         }),
         new webpack.DefinePlugin({
             'process.env.REACT_APP_API_URL': JSON.stringify(process.env.REACT_APP_API_URL || ''),
