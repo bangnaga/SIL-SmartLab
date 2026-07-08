@@ -1,6 +1,8 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { fileURLToPath } from 'url';
+import webpack from 'webpack';
+import process from 'process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -38,6 +40,9 @@ export default {
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html',
+        }),
+        new webpack.DefinePlugin({
+            'process.env.REACT_APP_API_URL': JSON.stringify(process.env.REACT_APP_API_URL || ''),
         }),
     ],
     optimization: {

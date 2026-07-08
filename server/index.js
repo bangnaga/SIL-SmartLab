@@ -54,9 +54,17 @@ const db = new sqlite3.Database(dbPath, (err) => {
     }
 });
 
-app.use(cors());
+app.use(cors({
+    origin: [
+        'http://localhost:5173',
+        'http://localhost:3000',
+        /\.vercel\.app$/,
+    ],
+    credentials: true
+}));
 app.use(express.json());
 app.use('/Profil', express.static(profilDir));
+
 
 // Helper: promisified db methods
 const dbAll = (sql, params = []) => new Promise((resolve, reject) => {
