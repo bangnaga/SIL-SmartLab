@@ -150,7 +150,7 @@ app.post('/api/auth/login', async (req, res) => {
         if (!user) return res.status(401).json({ error: 'Invalid credentials' });
         
         // Update last_active on login
-        await dbRun('UPDATE users SET last_active = datetime("now", "localtime") WHERE id = ?', [user.id]);
+        await dbRun('UPDATE users SET last_active = datetime(\'now\', \'localtime\') WHERE id = ?', [user.id]);
         
         res.json({ message: 'Login successful', user });
     } catch (err) {
@@ -163,7 +163,7 @@ app.post('/api/auth/heartbeat', async (req, res) => {
         const { userId } = req.body;
         if (!userId) return res.status(400).json({ error: 'userId is required' });
         
-        await dbRun('UPDATE users SET last_active = datetime("now", "localtime") WHERE id = ?', [userId]);
+        await dbRun('UPDATE users SET last_active = datetime(\'now\', \'localtime\') WHERE id = ?', [userId]);
         res.json({ message: 'Heartbeat received' });
     } catch (err) {
         res.status(500).json({ error: err.message });
