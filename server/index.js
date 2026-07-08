@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import sqlite3 from 'sqlite3';
+import { createClient } from '@libsql/client';
 import multer from 'multer';
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
@@ -44,15 +44,18 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const dbPath = join(__dirname, '../sil.db');
 
-// Database connection
-const db = new sqlite3.Database(dbPath, (err) => {
-    if (err) {
-        console.error('Error connecting to database:', err.message);
-    } else {
-        console.log('Connected to the SQLite database.');
-        db.run('PRAGMA foreign_keys = ON');
-    }
-});
+// Database connection — auto-detect Turso (production) vs local SQLite (dev)
+const db = createClient(
+    process.env.TURSO_DATABASE_URL
+        ? { url: process.env.TURSO_DATABASE_URL, authToken: process.env.TURSO_AUTH_TOKEN }
+        : { url: `file:${dbPath}` }
+);
+
+// Run startup PRAGMA
+db.execute('PRAGMA foreign_keys = ON').then(() => {
+    const mode = process.env.TURSO_DATABASE_URL ? 'Turso Cloud' : 'Local SQLite';
+    console.log(`Connected to database (${mode}).`);
+}).catch(err => console.error('DB init error:', err.message));
 
 app.use(cors({
     origin: [
@@ -66,16 +69,19 @@ app.use(express.json());
 app.use('/Profil', express.static(profilDir));
 
 
-// Helper: promisified db methods
-const dbAll = (sql, params = []) => new Promise((resolve, reject) => {
-    db.all(sql, params, (err, rows) => err ? reject(err) : resolve(rows));
-});
-const dbGet = (sql, params = []) => new Promise((resolve, reject) => {
-    db.get(sql, params, (err, row) => err ? reject(err) : resolve(row));
-});
-const dbRun = (sql, params = []) => new Promise((resolve, reject) => {
-    db.run(sql, params, function (err) { err ? reject(err) : resolve({ lastID: this.lastID, changes: this.changes }); });
-});
+// Helper: libsql-compatible db methods (same interface as before)
+const dbAll = async (sql, params = []) => {
+    const result = await db.execute({ sql, args: params });
+    return result.rows;
+};
+const dbGet = async (sql, params = []) => {
+    const result = await db.execute({ sql, args: params });
+    return result.rows[0] || null;
+};
+const dbRun = async (sql, params = []) => {
+    const result = await db.execute({ sql, args: params });
+    return { lastID: Number(result.lastInsertRowid), changes: result.rowsAffected };
+};
 
 async function attachMaterialContent(materials) {
     if (!materials || materials.length === 0) return [];
