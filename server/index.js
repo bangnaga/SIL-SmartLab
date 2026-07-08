@@ -21,17 +21,7 @@ if (!fs.existsSync(profilDir)) {
     fs.mkdirSync(profilDir, { recursive: true });
 }
 
-const profileUpload = multer({
-    storage: multer.diskStorage({
-        destination: (req, file, cb) => {
-            cb(null, profilDir);
-        },
-        filename: (req, file, cb) => {
-            const ext = file.originalname.split('.').pop();
-            cb(null, `user_${req.params.id}_${Date.now()}.${ext}`);
-        }
-    })
-});
+const profileUpload = multer({ storage: multer.memoryStorage() });
 
 // Dynamic Gemini AI Fetcher helper
 async function getGenAI() {
@@ -310,17 +300,11 @@ app.post('/api/users/:id/avatar', profileUpload.single('avatar'), async (req, re
         if (!req.file) {
             return res.status(400).json({ error: 'No file uploaded' });
         }
-        const avatarUrl = `/Profil/${req.file.filename}`;
-
-        // Get the old avatar url to delete the file
-        const oldUser = await dbGet('SELECT avatar_url FROM users WHERE id = ?', [req.params.id]);
-        if (oldUser && oldUser.avatar_url && oldUser.avatar_url.startsWith('/Profil/')) {
-            const oldFilename = oldUser.avatar_url.replace('/Profil/', '');
-            const oldFilePath = join(profilDir, oldFilename);
-            if (fs.existsSync(oldFilePath)) {
-                fs.unlinkSync(oldFilePath);
-            }
-        }
+        
+        // Convert buffer to base64
+        const b64 = req.file.buffer.toString('base64');
+        const mimeType = req.file.mimetype;
+        const avatarUrl = `data:${mimeType};base64,${b64}`;
 
         await dbRun('UPDATE users SET avatar_url = ? WHERE id = ?', [avatarUrl, req.params.id]);
         res.json({ message: 'Avatar updated successfully', avatar_url: avatarUrl });
@@ -1921,7 +1905,11 @@ app.get('/api/reports', async (req, res) => {
 // ========================
 // START SERVER
 // ========================
-app.listen(PORT, () => {
-    console.log(`🚀 SIL API Server running on http://localhost:${PORT}`);
-    console.log(`📋 Endpoints: auth, users, laboratories, courses, classes, inventory, loans, worksheets, quiz, materials, calendar, audit, analytics, support`);
-});
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`🚀 SIL API Server running on http://localhost:${PORT}`);
+        console.log(`📋 Endpoints: auth, users, laboratories, courses, classes, inventory, loans, worksheets, quiz, materials, calendar, audit, analytics, support`);
+    });
+}
+
+export default app;

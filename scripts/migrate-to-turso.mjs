@@ -66,6 +66,10 @@ async function main() {
     }
 
     console.log('\n📦 Migrasi data...');
+    
+    // Disable FK checks for bulk insert
+    await turso.execute('PRAGMA foreign_keys = OFF');
+    
     const tableOrder = ['users', 'laboratories', 'courses', 'classes', 'inventory', 'loans', 'materials', 'topics', 'quiz_questions', 'quiz_results', 'flashcard_progress', 'worksheets', 'audit_logs', 'support_tickets', 'settings', 'media_files'];
     
     for (const table of tableOrder) {
@@ -80,6 +84,10 @@ async function main() {
             await migrateTable(name);
         }
     }
+    
+    // Re-enable FK checks
+    await turso.execute('PRAGMA foreign_keys = ON');
+
 
     console.log('\n🎉 Migrasi selesai!');
     localDb.close();
